@@ -12,11 +12,14 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails-i18n'
 
 gem 'rb-readline'
 gem 'listen'
 
 gem "paperclip"
+
+gem 'toastr-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
