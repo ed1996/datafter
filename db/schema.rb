@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190428205428) do
+ActiveRecord::Schema.define(version: 20190505205032) do
+
+  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "Nom"
+    t.string "Prenom"
+    t.date "date_naissance"
+    t.date "date_deces"
+    t.string "lieu_enterrement"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_hommages_on_user_id"
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -31,4 +44,5 @@ ActiveRecord::Schema.define(version: 20190428205428) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "hommages", "users"
 end

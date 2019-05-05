@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Nom: MyString
+  Prenom: MyString
+  date_naissance: 2019-05-05
+  date_deces: 2019-05-05
+  lieu_enterrement: MyString
+  description: MyText
+  user: one
+
+two:
+  Nom: MyString
+  Prenom: MyString
+  date_naissance: 2019-05-05
+  date_deces: 2019-05-05
+  lieu_enterrement: MyString
+  description: MyText
+  user: two

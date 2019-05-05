@@ -2,18 +2,20 @@
 @import "bootstrap";
 @import "toastr";
 
-.avatar-small {
-  width: 28px;
+.container {
+  width: 80%;
 }
 
+
+.avatar-small {
+  width: 25px;
+}
 .avatar-medium {
   width: 48px;
 }
-
 .avatar-large {
   width: 68px;
 }
-
 .avatar-full {
   width: 100%;
 }
