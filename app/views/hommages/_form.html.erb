@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Rendre hommage
+  </div>
+  <div class="panel-body">
+    <div class="container">
+      <%= form_for @hommage do |f| %>
+        <div class="row">
+            <div class="form-group">
+              <%= f.text_field :Nom, placeholder:"Nom du défunt", class:"form-control" %>
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="form-group">
+              <%= f.text_field :Prenom, placeholder:"Prénom du défunt", class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              Date de naissance
+              <%= f.date_field :date_naissance, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              Date de décès
+              <%= f.date_field :date_deces, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <%= f.text_field :lieu_enterrement, placeholder:"Lieu de l'enterrement", class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <%= f.text_area :description, placeholder:"Biographie du défunt", class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Je valide mon annonce", class:"btn btn-primary" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
