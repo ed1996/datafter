@@ -5,6 +5,7 @@
   <div class="panel-body">
     <div class="container">
       <%= form_for @hommage do |f| %>
+          <%= render 'shared/errors' %>
         <div class="row">
             <div class="form-group">
               <%= f.text_field :Nom, placeholder:"Nom du défunt", class:"form-control" %>
