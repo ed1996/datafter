@@ -1,5 +1,6 @@
 class Hommage < ApplicationRecord
   belongs_to :user
+  has_many :photos
 
   validates :Nom, presence: true
   validates :Prenom, presence: true

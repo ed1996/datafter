@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190505205032) do
+ActiveRecord::Schema.define(version: 20190508142915) do
 
   create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "Nom"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20190505205032) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_hommages_on_user_id"
+  end
+
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "hommage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["hommage_id"], name: "index_photos_on_hommage_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,4 +56,5 @@ ActiveRecord::Schema.define(version: 20190505205032) do
   end
 
   add_foreign_key "hommages", "users"
+  add_foreign_key "photos", "hommages"
 end
