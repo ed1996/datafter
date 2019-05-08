@@ -16,8 +16,7 @@
           <li><%= link_to 'Inscription', new_user_registration_path %></li>
           <li><%= link_to 'Connexion', new_user_session_path %></li>
         <% else %>
-
-
+            <li><%= link_to 'Rendre hommage', new_hommage_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user), class:"img-circle avatar-small" %> <%= current_user.fullname %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
