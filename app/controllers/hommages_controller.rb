@@ -20,7 +20,7 @@ class HommagesController < ApplicationController
             @hommage.photos.create(image: i)
           end
       end
-      @photos = @room.photos
+      @photos = @hommage.photos
       redirect_to edit_hommage_path(@hommage), notice:"Votre annonce a été ajouté avec succès"
     else
       render :new
@@ -42,7 +42,7 @@ class HommagesController < ApplicationController
           @hommage.photos.create(image: i)
         end
       end
-      @photos = @room.photos
+      @photos = @hommage.photos
       redirect_to edit_hommage_path(@hommage), notice:"Modification enregistrée..."
     else
       render :edit

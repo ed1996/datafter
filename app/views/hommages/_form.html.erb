@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
     <div class="container">
-      <%= form_for @hommage do |f| %>
+      <%= form_for @hommage, html: {multipart: true} do |f| %>
           <%= render 'shared/errors' %>
         <div class="row">
             <div class="form-group">
@@ -37,6 +37,17 @@
               <%= f.text_field :lieu_enterrement, placeholder:"Lieu de l'enterrement", class:"form-control" %>
             </div>
           </div>
+
+          <div class="row">
+            <div class="form-group">
+              <span class="btn btn-default btn-file">
+                Téléchargez les photos !
+                <%= file_field_tag "images[]", type: :file %>
+              </span>
+            </div>
+          </div>
+
+          <div id="photos"><%= render 'photos/list' %></div>
 
           <div class="row">
             <div class="form-group">
