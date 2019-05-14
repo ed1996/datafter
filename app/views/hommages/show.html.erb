@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length > 0 %>
+      </div>
+
+      <div class="col-md-7">
+        <h4><%= @hommage.Prenom %> <%= @hommage.Nom %></h4>
+        <p><%= @hommage.date_naissance %> - <%= @hommage.date_deces %></p>
+        <hr>
+        <p><%= @hommage.description %></p>
+        <p>Lieu de l'enterrement : <%= @hommage.lieu_enterrement %></p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
