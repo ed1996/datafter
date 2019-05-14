@@ -1,5 +1,9 @@
 ### Getting Started Projetc Datafter
 
+Add publishable_key and secret_key 
+in files
+config => initialiszers => stripe.rb 
+
 Init variables environment: config/local_env.yml
 
     - For send email: gmail_username and gmail_password and 

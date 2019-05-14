@@ -1,3 +1,9 @@
+class SubdomainBlank
+  def self.matches?(request)
+    request.subdomain.blank?
+  end
+end
+
 Rails.application.routes.draw do
   devise_for :users, :path=>'',
                       :path_names=>{:sign_in=>'login', :sign_out=>'logout', :edit=>'profile'},
@@ -6,6 +12,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resources :subscribers
   resources :users, only: [:show]
   resources :hommages
   resources :photos

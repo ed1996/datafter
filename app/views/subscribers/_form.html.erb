@@ -1,0 +1,9 @@
+<%= form_tag subscriber_path(1), method: :put do %>
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Abonnement mensuel"
+          data-amount="3500"
+          data-locale="auto"></script><span>35€ par mois</span>
+<% end %>
