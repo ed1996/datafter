@@ -1,0 +1,26 @@
+# Rename this file to local_env.yml
+# Add account settings and API keys here.
+# This file should be listed in .gitignore to keep your settings secret!
+# Each entry gets set as a local environment variable.
+# This file overrides ENV variables in the Unix shell.
+# For example, setting:
+# GOOGLE_CLIENT_ID: 'Your_client id api'
+# GOOGLE_CLIENT_SECRET: 'Your_client secret api'
+# makes 'Your_Gmail_Username' available as ENV["GOOGLE_CLIENT_SECRET"]
+GOOGLE_CLIENT_ID: ''
+GOOGLE_CLIENT_SECRET: ''
+
+FACEBOOK_CLIENT_ID: ''
+FACEBOOK_CLIENT_SECRET: ''
+
+gmail_username: ''
+gmail_password: ''
+
+# MYSQL_PASSWORD: 'root'
+# MYSQL_USERNAME: 'root'
+# MYSQL_HOST: '127.0.0.1'
+# DATABASE_NAME: 'datafter'
+MYSQL_PASSWORD: ''
+MYSQL_USERNAME: ''
+MYSQL_HOST: ''
+DATABASE_NAME: ''
