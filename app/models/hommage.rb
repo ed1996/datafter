@@ -7,5 +7,5 @@ class Hommage < ApplicationRecord
   validates :date_naissance, presence: true
   validates :date_deces, presence: true
   validates :lieu_enterrement, presence: true
-  validates :description, presence: true, length: {maximum: 600}
+  validates :description, presence: true, length: {maximum: 2600}
 end
