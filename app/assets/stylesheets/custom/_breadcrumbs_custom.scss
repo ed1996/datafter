@@ -1,0 +1,31 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: transparent;
+  border-radius: $border-radius-base;
+  color:$brand-primary;
+  > li{
+    display: inline-block;
+
+    + li:before {
+      content: '\e5c8';
+      font-family:"Material Icons";
+      color:$gray-darker;
+      padding: 0 6px;
+      vertical-align: middle;
+      @media (min-width: $screen-sm-min) {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  > li:last-of-type{
+    color:$gray-darker;
+  }
+}

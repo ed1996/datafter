@@ -1,29 +1,7 @@
+@charset "UTF-8";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
 
-.container {
-  width: 80%;
-}
-
-
-.avatar-small {
-  width: 25px;
-}
-.avatar-medium {
-  width: 48px;
-}
-.avatar-large {
-  width: 68px;
-}
-.avatar-full {
-  width: 100%;
-}
-
-.panel-heading-preview {
-  padding: 0;
-}
-
-.panel-heading.preview img {
-  width: 100%;
-}
+@import "variables";
+@import "toolkit";

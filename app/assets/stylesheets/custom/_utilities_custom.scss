@@ -1,0 +1,105 @@
+//
+// Utility custom classes
+// --------------------------------------------------
+
+/*Divider*/
+.divider {
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: -41px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    content: url('../images/divider-1.png');
+    display: inline-block;
+
+  }
+}
+
+.divider-2 {
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: -41px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    content: url('../images/divider-2.png');
+    display: inline-block;
+  }
+  &-variant-1 {
+    &:before {
+      bottom: -32px;
+    }
+  }
+}
+
+.align-stretch {
+  @include align-items(stretch);
+}
+
+.grid-layout {
+  @media (max-width: $screen-xs-min - 1) {
+    .col-xs-2 {
+      padding: 0 5px;
+      &:first-of-type {
+        padding-left: 15px;
+      }
+      &:last-of-type {
+        padding-right: 15px;
+      }
+    }
+
+  }
+  @media (max-width: $screen-lg-min - 1) {
+    p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+
+}
+
+.percent-before {
+  position: relative;
+  &:after {
+    content: "%";
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-matrix;
+  }
+  &-2 {
+    &:after {
+      font-size: 36px;
+    }
+  }
+}
+
+.round{
+  border-radius: 50%;
+  img{
+    border-radius: 50%;
+  }
+}
+
+.width-auto{
+  width: auto;
+  max-width: 100%;
+}
+.img-link{
+  img{
+    transition: .3s;
+  }
+  &:hover{
+    img{
+      opacity: .5;
+    }
+  }
+}
+.margin-bottom{
+  margin-bottom: -1px;
+}

@@ -1,25 +1,47 @@
 <!-- Static navbar -->
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Datafter', root_path, {:class=>"navbar-brand"} %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <% if (!user_signed_in?) %>
-          <li><%= link_to 'Inscription', new_user_registration_path %></li>
-          <li><%= link_to 'Connexion', new_user_session_path %></li>
-        <% else %>
-            <li><%= link_to 'Rendre hommage', new_hommage_path %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user), class:"img-circle avatar-small" %> <%= current_user.fullname %> <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+<nav class="page-head">
+  <!-- RD Navbar-->
+  <div class="rd-navbar-wrap">
+    <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-sm-stick-up-offset="50px" data-lg-stick-up-offset="200px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"><span data-rd-navbar-toggle="#rd-navbar-right-panel" data-custom-toggle-disable-on-blur="true" class="rd-navbar-right-panel-toggle"></span>
+      <div class="rd-navbar-inner">
+        <div class="rd-navbar-panel-wrap">
+          <!-- RD Navbar Panel-->
+          <div class="rd-navbar-panel">
+            <!-- RD Navbar Toggle-->
+            <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+            <!-- RD Navbar Brand-->
+            <div class="rd-navbar-brand brand-static"><a href="#" class="brand-name">
+              <div class="brand-logo"><img src="" alt="" width="235" height="71"/></div></a></div>
+          </div>
+          <div id="rd-navbar-right-panel" class="rd-navbar-right-panel">
+            <address class="address"><span class="icon icon-sm icon-white icon-border fa-map-marker"></span><span class="txt-darker"><a href="contacts.html">5750 S Kenwood Ave 3,<br>Chicago, IL 60637</a></span></address>
+            <div class="time"><span class="icon icon-sm icon-white icon-border fa-clock-o"></span><span>Mon–Fri 9:00–19:00 <br>Sat–Sun 10:00–17:00</span></div>
+            <div class="contact-info"><span class="icon icon-sm icon-white icon-border fa-phone"></span><span><a href="callto:#"><span>1-800-1234-567</span> <br/><span>Call us please</span></a></span></div>
+          </div>
+        </div>
+        <div class="rd-navbar-nav-wrap">
+          <!-- RD Navbar Brand-->
+          <div class="rd-navbar-brand brand-fixed"><a href="index.html" class="brand-name">
+            <div class="brand-logo"><%= link_to 'Datafter', root_path, {:class=>"navbar-brand"} %><img src="" alt="" width="235" height="71"/></div></a></div>
+          <!-- RD Search-->
+          <form action="search-results.html" method="GET" data-search-live="rd-search-results-live" class="rd-search">
+            <div id="rd-search" class="form-group">
+              <label for="rd-search-form-input" class="form-label">Search</label>
+              <input id="rd-search-form-input" type="text" name="s" autocomplete="off" class="form-control"/>
+              <button type="submit" class="fa-search"></button>
+            </div>
+            <div id="rd-search-results-live" class="rd-search-results-live"></div>
+          </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span><a href="cart.html" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
+          <!-- RD Navbar Nav-->
+          <ul class="rd-navbar-nav">
+            <% if (!user_signed_in?) %>
+              <li class="active"><%= link_to 'Inscription', new_user_registration_path %></li>
+              <li><%= link_to 'Connexion', new_user_session_path %></li>
+            <% else %>
+              <li><%= link_to 'Rendre hommage', new_hommage_path %></li>
+              <li>
+                <a href="#"><%= image_tag avatar_url(current_user), class:"img-circle avatar-small" %> <%= current_user.fullname %> <span class="caret"></span></a>
+                <ul class="rd-navbar-dropdown">
                   <li><%= link_to 'Mes hommages', hommages_path %></li>
                   <li><%= link_to 'Mes messages', root_path %></li>
                   <li><%= link_to 'Mon profil', user_path(current_user.id) %></li>
@@ -29,7 +51,9 @@
                 </ul>
               </li>
             <% end %>
-      </ul>
-    </div><!--/.nav-collapse -->
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
 </nav>

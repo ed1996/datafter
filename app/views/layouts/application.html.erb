@@ -9,10 +9,14 @@
   </head>
 
   <body>
-  <%= render 'layouts/navigation' %>
+  <div class="page">
+    <%= render 'layouts/navigation' %>
+  </div>
 
  <%= render 'shared/message' %>
 
   <div class="container"><%= yield %></div>
+  <%= javascript_include_tag 'core.min' %>
+  <%= javascript_include_tag 'jsfooter' %>
   </body>
 </html>

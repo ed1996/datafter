@@ -1,0 +1,213 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+// Page styles
+// --------------------------------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $content-bg;
+}
+
+// Links
+
+a {
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid $hr-border;
+}
+
+.hr-double {
+  position: relative;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    top: -21px;
+    left: 0;
+    background-color: $color-comet;
+  }
+
+  &:after {
+    top: -17px;
+    left: 0;
+  }
+}
+
+.page-foot {
+  .rd-navbar-brand {
+    display: inline-block;
+    padding-top: 18px;
+    .brand-logo {
+      top: 2px;
+    }
+  }
+  .address, .time, .contact-info {
+    @media (max-width: $screen-sm-min - 1) {
+      max-width: 205px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    span:first-of-type {
+      margin-right: 15px;
+    }
+  }
+  color: $gray-light;
+  &.bg-pampas {
+    color: $gray-light;
+    .brand-name {
+      color: $gray-base;
+    }
+    p.small {
+      color: $gray-darker;
+    }
+    .icon-border {
+      border-color: $gray-dark;
+    }
+    .hr-double {
+      &:before, &:after {
+        background-color: $gray-dark;
+      }
+    }
+    .contact-info a {
+      color: $color-matrix;
+      span:first-of-type {
+        color: $gray-base;
+      }
+      &:hover {
+        color: $gray-base;
+      }
+    }
+  }
+}
+
+.footer-center {
+  &.bg-pampas {
+    .hr-double {
+      &:before, &:after {
+        background-color: $gray-dark;
+      }
+    }
+
+    .brand-name {
+      color: $gray-base;
+    }
+    color: $gray-darker;
+  }
+  &.bg-ebony {
+    color: $gray-darker;
+  }
+}
+
+.img-block {
+  img {
+    width: auto;
+    height: auto;
+  }
+}
+
+.footer-minimal {
+  .page-foot-wrap {
+    position: relative;
+    @include flex-direction(column);
+    @include display-flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    @media (min-width: $screen-lg-min) {
+      @include flex-direction(row);
+    }
+  }
+
+  .list-inline {
+    li {
+      display: block;
+      @media (min-width: $screen-xs-min) {
+        display: inline-block;
+      }
+      &.active {
+        a {
+          color: $white;
+        }
+      }
+      & + li {
+        margin-top: 10px;
+        margin-left: 0;
+        @media (min-width: $screen-xs-min) {
+          margin-left: 10px;
+          margin-top: 0;
+        }
+        @media (min-width: 1600px) {
+          margin-left: 55px;
+        }
+      }
+    }
+
+  }
+  .fa-search {
+    font-size: 16px;
+    color: $brand-primary;
+    transition: .3s;
+    margin-right: 20px;
+    &:hover {
+      cursor: pointer;
+      color: $white;
+    }
+  }
+  .rd-navbar-shop {
+    position: static;
+    @include transform(translateY(0));
+  }
+  &.bg-pampas {
+    color: $gray-darker;
+    .brand-name {
+      color: $gray-base;
+    }
+    .list-inline {
+      li {
+        a {
+          color: $color-matrix;
+          &:hover {
+            color: $gray-base;
+          }
+        }
+        &.active {
+          a {
+            color: $gray-base;
+          }
+        }
+      }
+    }
+    span.fa-search {
+      color: $color-matrix;
+      &:hover {
+        color: $gray-base;
+      }
+    }
+    .hr-double {
+      &:before, &:after {
+        background-color: $gray-dark;
+      }
+    }
+  }
+}

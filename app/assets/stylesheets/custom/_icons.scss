@@ -1,0 +1,169 @@
+
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  &:before {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+// Alternate icons
+// --------------------------------------------------
+
+.icon-default {
+
+}
+
+.icon-primary {
+
+}
+
+.icon-white {
+  color: $white;
+}
+.icon-grey{
+  color:$color-light-grey;
+}
+.icon-border {
+  border: 1px solid $color-comet;
+}
+.icon-comet{
+  color:$color-comet;
+}
+.icon-matrix{
+  color:$color-matrix;
+}
+.icon-darker{
+  color:$gray-darker;
+}
+.icon-silver{
+  color:#c8c8c8;
+}
+// Button Sizest
+// --------------------------------------------------
+.icon-xxs{
+  font-size: 18px;
+  &-2{
+    font-size: 14px;
+  }
+  &-3{
+    font-size: 16px;
+  }
+}
+.icon-xs {
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  line-height: 1.7;
+  text-align: center;
+  &-2{
+    width: 45px;
+    height: 45px;
+    line-height: 2.4;
+  }
+  &-3{
+    font-size: 20px;
+  }
+}
+
+.icon-sm {
+  font-size: 26px;
+  width: 45px;
+  height: 45px;
+  line-height: 1.65;
+  text-align: center;
+  &-2{
+    font-size: 20px;
+  }
+
+}
+.icon-md{
+  font-size: 40px;
+  line-height:1;
+}
+.icon-md-2{
+  font-size: 46px;
+  line-height: 1.65;
+  width: 80px;
+  height: 80px;
+}
+.icon-lg {
+  font-size: 50px;
+  line-height: 1.65;
+  width: 85px;
+  height: 85px;
+}
+
+
+.icon-round{
+  border-radius: 50%;
+  border:1px solid $gray-darker;
+  &:after{
+    position: absolute;
+    top:4px;
+    bottom:4px;
+    right: 4px;
+    left:4px;
+    content:"";
+    display: inline-block;
+    border:1px solid $gray-darker;
+    border-radius: 50%;
+
+  }
+}
+.icon-facebook{
+  color:#46629e;
+  border-color:#46629e;
+  &:focus, &:active{
+    color:#46629e;
+  }
+  &:hover{
+    background-color:#46629e;
+    color:$white;
+
+  }
+}
+.icon-twitter{
+  color:#1da1f2;
+  border-color:#1da1f2;
+  &:focus, &:active{
+    color:#1da1f2;
+  }
+  &:hover{
+    background-color:#1da1f2;
+    color:$white;
+
+  }
+}
+.icon-google{
+  color:#d73d32;
+  border-color:#d73d32;
+  &:focus, &:active{
+    color:#d73d32;
+  }
+  &:hover{
+    background-color:#d73d32;
+    color:$white;
+
+  }
+}
+
+.fa-star{
+  color:#f9be30;
+  font-size: 16px;
+}

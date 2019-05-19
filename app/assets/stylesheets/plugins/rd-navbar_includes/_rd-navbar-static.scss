@@ -1,0 +1,29 @@
+/*
+* Static Layout
+*/
+
+.rd-navbar-static {
+  display: block;
+
+  // RD Navbar brand
+  .rd-navbar-brand{
+
+  }
+
+  // RD Navbar nav wrap
+  .rd-navbar-nav-wrap {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rd-navbar-nav{
+    > li {
+      display: inline-block;
+
+      & + li{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,95 @@
+/**
+ *	This element is created inside your target element
+ *	It is used so that your own element will not need to be altered
+ **/
+.time_circles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+  position: absolute;
+  text-align: center;
+  font-family: $font-family-sec;
+  top: 50% !important;
+  transform: translateY(-63%) !important;
+  -webkit-transform: translateY(-63%) !important;
+}
+
+@media (min-width: $screen-lg) {
+  #DateCountdown {
+    width: 100%;
+  }
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 18px !important;
+  color: $white;
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+  right: 0;
+  font-weight: 400;
+  @media (min-width: 350px) {
+    bottom: -60px;
+  }
+  @media (min-width: 430px) {
+    bottom: -70px;
+  }
+  @media (min-width: $screen-xs-min) {
+    bottom: -75px;
+  }
+  @media (min-width: 500px) {
+    bottom: -85px;
+  }
+  @media (min-width: 640px) {
+    bottom: -115px;
+  }
+  @media (min-width: $screen-sm-min) {
+    bottom: -95px;
+  }
+  @media (min-width: $screen-md-min) {
+    bottom: -115px;
+  }
+  & + * {
+    margin-top: 0;
+  }
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  @media (min-width: $screen-sm) {
+    font-size: 30px;
+  }
+
+  @media (min-width: $screen-lg) {
+    font-size: 36px !important;
+  }
+}
+
+.countdown-wrapper {
+  @media (min-width: $screen-lg-min) {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+}

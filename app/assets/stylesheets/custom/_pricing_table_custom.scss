@@ -1,0 +1,63 @@
+//
+// Custom Pricing Table
+// --------------------------------------------------
+
+.pricing-table {
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid $gray-dark;
+  padding: 32px 15px 143px;
+  @media (min-width: $screen-xs-min) {
+    min-width: 300px;
+  }
+  @media (min-width: $screen-md-min) {
+    padding: 32px 29px 143px;
+    min-width: 100%;
+  }
+  &-footer {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    bottom: 30px;
+  }
+}
+
+.pricing-table-variant-1 {
+  position: relative;
+  max-width: 270px;
+  margin: 0 auto;
+  text-align: center;
+  transition: .3s;
+  background-color: $white;
+  padding: 0 0 45px;
+  .title {
+    padding: 5px 0;
+    background-color: $color-ebony-clay;
+    *{
+      color: $white;
+    }
+  }
+  .price {
+    padding: 21px 0;
+    background-color: $color-comet;
+
+    .h2 {
+      color: $white;
+      font-weight: 700;
+    }
+  }
+  .pricing-table-body {
+    padding: 36px 27px;
+    text-align: left;
+  }
+  .table-footer {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    bottom: 0;
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3);
+  }
+}

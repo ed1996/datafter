@@ -1,0 +1,339 @@
+/*
+* @subsection   Easy Responsive Tabs
+*
+* @description  Describes style declarations for Easy Responsive Tabs extension
+*
+* @author       Samson Onna
+* @link         samson3d@gmail.com
+* @version      1.0.0
+*/
+
+$tabs-btn-height: 40px;
+$tabs-btn-indent: 0;
+
+$tabs-btn-color: $gray-base;
+$tabs-btn-background: transparent;
+
+$tabs-btn-active-color: $gray-base;
+$tabs-btn-active-background: transparent;
+
+$tabs-btn-border-radius: 4px;
+$tabs-btn-border: 1px solid $color-ebony-clay;
+
+$tabs-btn-padding: 10px 31px;
+
+$tab-padding: 20px;
+
+.resp-tabs-list {
+  li {
+    cursor: pointer;
+
+    &:hover {
+
+    }
+  }
+}
+
+.resp-accordion {
+  display: none;
+}
+
+.resp-tab-content {
+  display: none;
+}
+
+.resp-tab-content-active {
+  display: block;
+}
+
+.responsive-tabs-default {
+  .resp-tabs-list {
+    display: none;
+    word-spacing: $tabs-btn-indent - 4px;
+    margin-bottom: -1px;
+  }
+
+  .resp-accordion, .resp-tabs-list > li {
+    position: relative;
+    display: inline-block;
+    word-spacing: normal;
+    //padding: 10px 33px 10px 10px;
+    padding: 10px;
+    background: $tabs-btn-background;
+    text-align: center;
+    cursor: pointer;
+    //transition: border-color 0.4s, color 0.4s;
+    font-size: 18px;
+    color:$brand-primary;
+    &:after {
+      content: '\e145';
+      font-family: "Material Icons";
+      font-size: 20px;
+      vertical-align: middle;
+      position: absolute;
+      top:50%;
+      @include transform(translateY(-50%));
+      right:15px;
+    }
+    & + li {
+      margin-left: 60px;
+    }
+    &:hover, &.resp-tab-active {
+      color: $gray-base;
+      background: $tabs-btn-active-background;
+    }
+
+    &.resp-tab-active {
+      border-bottom: $tabs-btn-border;
+      &:after {
+        content: '\e15b';
+      }
+    }
+  }
+
+  .resp-tabs-list-2 > li {
+    &:hover, &.resp-tab-active {
+      color: $gray-base;
+      background: $tabs-btn-active-background;
+    }
+  }
+  .resp-tabs-list-3 > li {
+    color:$brand-primary;
+    &:hover, &.resp-tab-active {
+      color: $gray-base;
+      background: $tabs-btn-active-background;
+    }
+  }
+
+  .resp-accordion {
+    display: block;
+    border-radius: 0;
+  }
+
+  .resp-tab-content {
+    display: none;
+    padding: 20px 0 0;
+    background: $tabs-btn-background;
+    //border: $tabs-btn-border;
+    //color: $tabs-btn-active-color;
+    background: $tabs-btn-active-background;
+  }
+}
+
+.responsive-tabs:not(.resp-easy-accordion) {
+  @media (min-width: 768px) {
+    .resp-accordion {
+      display: none;
+    }
+    .resp-tab-item:after {
+      display: none;
+    }
+    .resp-tabs-list {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .responsive-tabs-default-variant-2:not(.resp-easy-accordion) {
+    .resp-tabs-list, .resp-tabs-container {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .resp-tabs-container {
+      width: 65%;
+      float: right;
+      &-2 {
+        width: 77%;
+      }
+
+    }
+    .resp-tab-content {
+      padding: 0 0 0 53px;
+      border-left: 1px solid $gray-darker;
+    }
+    .resp-tabs-list {
+      width: 35%;
+      &-2 {
+        width: 23%;
+      }
+      li {
+        text-align: right;
+        display:block;
+        border-bottom: none;
+        color: $brand-primary;
+        padding: 0 10px;
+        margin-right: -1px;
+        @media (min-width: $screen-lg-min) {
+          padding: 0 30px 0 0;
+        }
+        &:hover{
+          color:$gray-base;
+        }
+        &.resp-tab-active {
+          color: $gray-base;
+          border-right: 1px solid $color-ebony-clay;
+
+        }
+        & + li {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.responsive-tabs-btn {
+  .resp-tabs-list {
+    li {
+      padding: 17px 22px;
+      font-size: 14px;
+      color:$color-matrix;
+      //transition: border-color 0.4s, color 0.4s;
+      & + li {
+        margin-left: 17px;
+      }
+      &.resp-tab-active, &:hover {
+        border: none;
+        color: $white;
+        background-color: $color-matrix;
+      }
+    }
+  }
+  .resp-tab-content {
+    padding: 30px 0;
+    &-2 {
+      padding: 30px 0 45px;
+      @media (min-width: $screen-sm-min) {
+        padding: 17px 0;
+      }
+
+    }
+  }
+  .resp-accordion {
+    padding:17px 36px 17px 22px;
+    font-size: 18px;
+    display: block;
+    word-spacing: normal;
+    text-align: center;
+    cursor: pointer;
+    color: $color-matrix;
+    border: none;
+    box-shadow: inset 0 0 0 2px $color-matrix;
+    border-radius: 0;
+    background-color: transparent;
+    transition: .4s;
+    &.resp-tab-active, &:hover {
+      border: none;
+      color: $white;
+      background-color: $color-matrix;
+    }
+  }
+  .resp-tab-content + .resp-accordion {
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .responsive-tabs-btn-variant-2:not(.resp-easy-accordion) {
+    .resp-tabs-list, .resp-tabs-container {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .resp-tabs-container {
+      width: 65%;
+      float: right;
+
+    }
+    .resp-tab-content {
+      padding: 0 0 0 30px;
+      border: none;
+    }
+    .resp-tabs-list {
+      width: 35%;
+      li {
+        width: 100%;
+        & + li {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+.responsive-tabs-default-variant-3 {
+
+  .resp-accordion {
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    padding: 20px 45px 20px 20px;
+    color: $color-matrix;
+    border-bottom: 1px solid $gray-dark;
+    transition: .3s;
+    &:after{
+      display: none;
+    }
+    &.resp-tab-active {
+      border-color: transparent;
+      color: $color-matrix;
+      .btn-plus-2 {
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+    &:first-of-type {
+      border-top: 1px solid $gray-dark;
+    }
+  }
+  .resp-tab-content {
+    border-bottom: 1px solid $gray-dark;
+    padding: 0 20px 20px;
+  }
+  .btn-plus-2 {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    @include transform(translateY(-50%));
+    @media (min-width: $screen-sm-min) {
+      right: -6px;
+    }
+  }
+}
+
+.btn-plus-2 {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  font-size: 21px;
+  text-align: center;
+  line-height: 16px;
+  margin-right: 21px;
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background-color: $gray-light;
+    transition: 0.4s;
+    opacity: 1;
+  }
+  &:after {
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    background-color: $gray-light;
+  }
+}

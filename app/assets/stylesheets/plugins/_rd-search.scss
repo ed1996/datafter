@@ -1,0 +1,58 @@
+//
+// Search Results
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.rd-search-results {
+  padding-left: 30px;
+  h5 {
+    font-size: 22px;
+  }
+}
+
+ol.search_list {
+  text-align: left;
+  padding-left: 0;
+  font-size: 14px;
+  list-style-type: none;
+  counter-reset: li;
+  li {
+    list-style-type: none;
+    position: relative;
+  }
+  .search_title:before {
+    font-family:$font-family-base;
+    font-size: 16px;
+    position: relative;
+    top: 0;
+    left: -55px;
+    content: counter(li, decimal-leading-zero) '.';
+    counter-increment: li;
+    color: $gray-darker;
+  }
+  h5 {
+    font-family: $font-family-sec;
+  }
+}
+
+.result-item {
+  list-style-type: decimal-leading-zero;
+
+  @media (min-width: $screen-sm-min) {
+    padding-left: 30px;
+  }
+}
+
+.search_title {
+  margin-bottom: 6px;
+}
+
+.result-item + .result-item {
+  margin-top: 25px;
+}
+
+.match {
+  color: $brand-primary
+}
