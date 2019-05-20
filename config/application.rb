@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Datafter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.load_defaults 5.1
 
     config.before_configuration do

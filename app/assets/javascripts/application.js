@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require toastr
 //= require turbolinks
+//= require html5shiv.min
 //= require_tree .
 
 toastr.options = {
