@@ -5,7 +5,8 @@ class HommagesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @hommages = current_user.hommages
+    @q = current_user.hommages.ransack(params[:q])
+    @hommages = @q.result(distinct: true)
   end
 
   def new
