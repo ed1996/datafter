@@ -38,19 +38,19 @@
               <li class="<%= active_for(path: "/login") %>"><%= link_to 'Connexion', new_user_session_path %></li>
             <% else %>
               <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Rendre hommage', new_hommage_path %></li>
-              <li class="<%= active_for(path: "/hommages") %>">
+              <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
+              <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
-                    <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
-                    <%= current_user.fullname %> <span class="caret"></span>
-                  </a>
+                  <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
+                  <%= current_user.fullname %> <span class="caret"></span>
+                </a>
                 <ul class="rd-navbar-dropdown">
-                  <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Mes messages', root_path %></li>
+                  <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>
                   <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user.id) %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
+                  <li class="<%= active_for(path: "/profile") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
                 </ul>
               </li>
+              <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
             <% end %>
           </ul>
         </div>
