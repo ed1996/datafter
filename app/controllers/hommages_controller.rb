@@ -6,7 +6,7 @@ class HommagesController < ApplicationController
 
   def index
     @q = current_user.hommages.ransack(params[:q])
-    @hommages = @q.result(distinct: true)
+    @hommages = @q.result
   end
 
   def new
