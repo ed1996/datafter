@@ -9,8 +9,12 @@
             <!-- RD Navbar Toggle-->
             <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
             <!-- RD Navbar Brand-->
-            <div class="rd-navbar-brand brand-static"><a href="index.html" class="brand-name">
-              <div class="brand-logo"><img src="/assets/images/logo-1-46x53.png" alt="" width="235" height="71"/></div></a></div>
+            <div class="rd-navbar-brand brand-static"><a href="<%= root_path %>" class="brand-name">
+              <div class="brand-logo">
+                <img src="/assets/images/logo-1-46x53.png" alt="" width="235" height="71"/>
+              </div>
+            </a>
+            </div>
           </div>
           <div id="rd-navbar-right-panel" class="rd-navbar-right-panel">
             <address class="address"><span class="icon icon-sm icon-white icon-border fa-map-marker"></span><span class="txt-darker"><a href="contacts.html">5750 S Kenwood Ave 3,<br>Chicago, IL 60637</a></span></address>
@@ -20,8 +24,13 @@
         </div>
         <div class="rd-navbar-nav-wrap">
           <!-- RD Navbar Brand-->
-          <div class="rd-navbar-brand brand-fixed"><a href="index.html" class="brand-name">
-            <div class="brand-logo"><%= link_to 'Datafter', root_path, {:class=>"navbar-brand"} %><img src="" alt="" width="235" height="71"/></div></a></div>
+          <div class="rd-navbar-brand brand-fixed">
+            <a href="<%= root_path %>" class="brand-name">
+              <div class="brand-logo">
+                <img src="" alt="" width="235" height="71"/>
+              </div>
+            </a>
+          </div>
           <!-- RD Search-->
           <form action="search-results.html" method="GET" data-search-live="rd-search-results-live" class="rd-search">
             <div id="rd-search" class="form-group">
