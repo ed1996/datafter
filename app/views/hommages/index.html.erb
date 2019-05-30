@@ -6,13 +6,13 @@
       <li>Tout mes hommages</li>
     </ol>
   </div>
-
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Mes hommages</h2>
-
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tout mes hommages</h2>
   <div class="range">
     <div class="cell-md-8 cell-md-preffix-2">
       <%= render 'layouts/search' %>
     </div>
+  </div>
+  <div class="range">
     <% @hommages.each do |hommage| %>
       <div class="cell-xs-6 cell-md-3 offset-top-60 offset-md-top-0">
         <div class="thumbnail">
