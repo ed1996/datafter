@@ -4,11 +4,12 @@
     <li><%= link_to "Mes hommages", hommages_path%></li>
     <li>
       <% if @hommage %>
-        Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %></li>
+        Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %>
       <% else %>
         Rendre un hommage
       <% end %>
-      </ol>
+    </li>
+  </ol>
   <h2 class="divider offset-top-80">
     <% if @hommage %>
       Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %></li>

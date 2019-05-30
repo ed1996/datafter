@@ -32,14 +32,15 @@
             </a>
           </div>
           <!-- RD Search-->
-          <form action="search-results.html" method="GET" data-search-live="rd-search-results-live" class="rd-search">
+          <form action="/hommages/search" method="GET" data-search-live="rd-search-results-live" class="rd-search">
             <div id="rd-search" class="form-group">
               <label for="rd-search-form-input" class="form-label">Search</label>
-              <input id="rd-search-form-input" type="text" name="s" autocomplete="off" class="form-control"/>
+              <input id="rd-search-form-input" type="text" name="q[last_name_or_first_name_cont]" autocomplete="off" class="form-control"/>
               <button type="submit" class="fa-search"></button>
             </div>
             <div id="rd-search-results-live" class="rd-search-results-live"></div>
-          </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span><a href="cart.html" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
+          </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span>
+          <a href="cart.html" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
           <!-- RD Navbar Nav-->
           <ul class="rd-navbar-nav">
             <% if (!user_signed_in?) %>
