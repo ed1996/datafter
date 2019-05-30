@@ -296,15 +296,13 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  # TODO omiauth facebook
-  # config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'], callback_url: "http://localhost:3000/auth/auth/facebook/callback"
+  config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'], callback_url: "http://localhost:3000/auth/facebook/callback"
 
 
   # Add the credentials from your Google application to your secrets
   # Configure Google omniauth with proper scope
-  # TODO omiauth google
-  #config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {
-      # callback_url: "http://localhost:3000/auth/auth/google_oauth2/callback",
-      # scope: "contacts.readonly,userinfo.email"
-  # }
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {
+      callback_url: "http://localhost:3000/auth/google_oauth2/callback",
+      scope: "contacts.readonly,userinfo.email"
+  }
 end
