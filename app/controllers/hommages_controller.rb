@@ -4,8 +4,17 @@ class HommagesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :require_same_user, only: [:edit, :update]
 
+  def search
+    @q = current_user.hommages.ransack(params[:q])
+    @hommages = @q.result(distinct: true)
+  end
+
   def index
-    @hommages = current_user.hommages
+    @q = current_user.hommages.ransack(params[:q])
+    if params.has_key?(:q) && params.has_key?(:commit)
+      @notSearch = true
+    end
+    @hommages = @q.result(distinct: true)
   end
 
   def new
@@ -55,7 +64,7 @@ class HommagesController < ApplicationController
   end
 
   def hommage_params
-    params.require(:hommage).permit(:Nom, :Prenom, :date_naissance, :date_deces, :lieu_enterrement, :description)
+    params.require(:hommage).permit(:last_name, :first_name, :date_birth, :date_death, :burial_place, :description)
   end
 
   def require_same_user

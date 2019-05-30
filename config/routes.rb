@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :subscribers
   resources :users, only: [:show]
-  resources :hommages
+  resources :hommages do
+    get 'search', on: :collection
+  end
   resources :photos
 end
