@@ -10,7 +10,7 @@
     bottom: -41px;
     left: 50%;
     @include transform(translateX(-50%));
-    content: url('../images/divider-1.png');
+    content: url('images/divider-1.png');
     display: inline-block;
 
   }
@@ -23,7 +23,7 @@
     bottom: -41px;
     left: 50%;
     @include transform(translateX(-50%));
-    content: url('../images/divider-2.png');
+    content: url('images/divider-2.png');
     display: inline-block;
   }
   &-variant-1 {

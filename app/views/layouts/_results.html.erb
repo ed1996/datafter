@@ -1,18 +1,7 @@
-<div class="container">
-  <div class="text-center">
-    <ol class="breadcrumb">
-      <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Mes hommages", hommages_path%></li>
-      <li>Tout mes hommages</li>
-    </ol>
-  </div>
-
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Mes hommages</h2>
-
-  <div class="range">
-    <div class="cell-md-8 cell-md-preffix-2">
-      <%= render 'layouts/search' %>
-    </div>
+<div class="rd-search-results offset-top-60">
+  <% if @hommages.length == 0 %>
+    <div class="h5 offset-top-90">Aucun résultat n'est trouvé</div>
+  <% else %>
     <% @hommages.each do |hommage| %>
       <div class="cell-xs-6 cell-md-3 offset-top-60 offset-md-top-0">
         <div class="thumbnail"><img src="<%= hommage.photos[0].image.url(:thumb) if hommage.photos.length > 0 %>" width="270" height="230" alt="<%= hommage.first_name %> <%= hommage.last_name %>" /></div>
@@ -23,5 +12,5 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>

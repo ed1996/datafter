@@ -4,8 +4,8 @@
     <title>Datafter</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
   </head>
 
   <body>
@@ -13,7 +13,11 @@
     <%= render 'layouts/navigation' %>
     <%= render 'shared/message' %>
 
-    <div class="container"><%= yield %></div>
+    <main class="page-content">
+      <section class="section-34 section-bottom-78">
+      <%= yield %>
+      </section>
+    </main>
   </div>
 
   <%= javascript_include_tag 'core.min' %>
