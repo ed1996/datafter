@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 20190514131158) do
 
   create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "Nom"
-    t.string "Prenom"
-    t.date "date_naissance"
-    t.date "date_deces"
-    t.string "lieu_enterrement"
+    t.string "last_name"
+    t.string "first_name"
+    t.date "date_birth"
+    t.date "date_death"
+    t.string "burial_place"
     t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
