@@ -5,8 +5,21 @@ class HommagesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def index
+    limit = params[:limit] || 10
+    page = params[:page] || 10
+    offset = ((page.to_i - 1) * limit.to_i) || 0
+    term = params[:term] || nil
+    hommages = []
+    hommages = current_user.hommages
+                   .where('last_name LIKE ? '\
+                          'OR first_name LIKE ?', "%#{term}%", "%#{term}%")
+                   .limit(limit)
+                   .offset(offset) if term
+    render json: hommages
+=begin
     @q = current_user.hommages.ransack(params[:q])
     @hommages = @q.result
+=end
   end
 
   def new

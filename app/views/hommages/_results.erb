@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @search_results_hommages.each do |hommage| %>
+    <tr>
+      <td><%= hommage.last_name %></td>
+      <td><%= hommage.first_name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

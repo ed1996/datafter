@@ -1,22 +1,4 @@
-<%= search_form_for @q do |f| %>
-  <%= f.label :Nom_cont %>
-  <%= f.search_field :Nom_cont %>
-  <%= f.submit %>
+<%= form_tag(hommages_path, method: "get", remote: true) do %>
+  <%= text_field_tag :q, params[:q], placeholder: "Enter search term" %>
+  <%= submit_tag "Search" %>
 <% end %>
-
-<table>
-  <thead>
-  <tr>
-    <th><%= sort_link(@q, :Nom) %></th>
-    <th><%= sort_link(@q, :Prenom) %></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @hommages.each do |hommage| %>
-    <tr>
-      <td><%= hommage.Nom %></td>
-      <td><%= hommage.Prenom %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
