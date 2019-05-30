@@ -1,28 +1,29 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Mes hommages", hommages_path, class:"sidebar-link active" %></li>
-    </ul>
+<div class="container">
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Datafter', root_path%></li>
+      <li><%= link_to "Mes hommages", hommages_path%></li>
+      <li>Tout mes hommages</li>
+    </ol>
   </div>
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading"> Mes hommages</div>
-      <div class="panel-body">
-        <% @hommages.each do |hommage| %>
-        <div class="row">
-          <div class="col-md-2">
-            <%= image_tag hommage.photos[0].image.url(:thumb) if hommage.photos.length > 0 %>
-          </div>
-          <div class="col-md-7">
-            <h4><%= hommage.Prenom %> <%= hommage.Nom %></h4>
-          </div>
-          <div class="col-md-3 right">
-            <%= link_to "Mettre à jour", edit_hommage_path(hommage), class:"btn btn-primary" %>
-          </div>
-        </div>
-            <hr>
-            <% end %>
-      </div>
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tout mes hommages</h2>
+  <div class="range">
+    <div class="cell-md-8 cell-md-preffix-2">
+      <%= render 'layouts/search' %>
     </div>
+  </div>
+  <div class="range">
+    <% @hommages.each do |hommage| %>
+      <div class="cell-xs-6 cell-md-3 offset-top-60 offset-md-top-0">
+        <div class="thumbnail">
+          <%= image_tag hommage.photos[0].image.url(), class: "img-responsive" if hommage.photos.length > 0 %>
+        </div>
+        <div class="caption offset-top-13">
+          <%= link_to hommage.first_name + " - " + hommage.last_name, edit_hommage_path(hommage), class:"h3" %>
+          <p class="small txt-darker"><%= hommage.burial_place %></p>
+          <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

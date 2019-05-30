@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Datafter', root_path%></li>
+      <li><%= link_to "Mes hommages", hommages_path%></li>
+      <li>Recherche</li>
+    </ol>
+  </div>
+
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Recherche</h2>
+
+  <div class="range">
+    <div class="cell-md-8 cell-md-preffix-2">
+      <%= render 'layouts/search' %>
+      <%= render 'layouts/results' %>
+      <%= render 'layouts/paginate' %>
+    </div>
+  </div>
+</div>

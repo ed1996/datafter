@@ -9,8 +9,12 @@
             <!-- RD Navbar Toggle-->
             <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
             <!-- RD Navbar Brand-->
-            <div class="rd-navbar-brand brand-static"><a href="index.html" class="brand-name">
-              <div class="brand-logo"><img src="/assets/images/logo-1-46x53.png" alt="" width="235" height="71"/></div></a></div>
+            <div class="rd-navbar-brand brand-static"><a href="<%= root_path %>" class="brand-name">
+              <div class="brand-logo">
+                <img src="/assets/images/logo-1-46x53.png" alt="" width="235" height="71"/>
+              </div>
+            </a>
+            </div>
           </div>
           <div id="rd-navbar-right-panel" class="rd-navbar-right-panel">
             <address class="address"><span class="icon icon-sm icon-white icon-border fa-map-marker"></span><span class="txt-darker"><a href="contacts.html">5750 S Kenwood Ave 3,<br>Chicago, IL 60637</a></span></address>
@@ -20,17 +24,23 @@
         </div>
         <div class="rd-navbar-nav-wrap">
           <!-- RD Navbar Brand-->
-          <div class="rd-navbar-brand brand-fixed"><a href="index.html" class="brand-name">
-            <div class="brand-logo"><%= link_to 'Datafter', root_path, {:class=>"navbar-brand"} %><img src="" alt="" width="235" height="71"/></div></a></div>
+          <div class="rd-navbar-brand brand-fixed">
+            <a href="<%= root_path %>" class="brand-name">
+              <div class="brand-logo">
+                <img src="" alt="" width="235" height="71"/>
+              </div>
+            </a>
+          </div>
           <!-- RD Search-->
-          <form action="search-results.html" method="GET" data-search-live="rd-search-results-live" class="rd-search">
+          <form action="/hommages/search" method="GET" data-search-live="rd-search-results-live" class="rd-search">
             <div id="rd-search" class="form-group">
               <label for="rd-search-form-input" class="form-label">Search</label>
-              <input id="rd-search-form-input" type="text" name="s" autocomplete="off" class="form-control"/>
+              <input id="rd-search-form-input" type="text" name="q[last_name_or_first_name_cont]" autocomplete="off" class="form-control"/>
               <button type="submit" class="fa-search"></button>
             </div>
             <div id="rd-search-results-live" class="rd-search-results-live"></div>
-          </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span><a href="cart.html" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
+          </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span>
+          <a href="cart.html" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
           <!-- RD Navbar Nav-->
           <ul class="rd-navbar-nav">
             <% if (!user_signed_in?) %>
@@ -38,19 +48,19 @@
               <li class="<%= active_for(path: "/login") %>"><%= link_to 'Connexion', new_user_session_path %></li>
             <% else %>
               <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Rendre hommage', new_hommage_path %></li>
-              <li class="<%= active_for(path: "/hommages") %>">
+              <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
+              <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
-                    <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
-                    <%= current_user.fullname %> <span class="caret"></span>
-                  </a>
+                  <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
+                  <%= current_user.last_name %> <%= current_user.first_name %> <span class="caret"></span>
+                </a>
                 <ul class="rd-navbar-dropdown">
-                  <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Mes messages', root_path %></li>
+                  <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>
                   <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user.id) %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
-                  <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
+                  <li class="<%= active_for(path: "/profile") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
                 </ul>
               </li>
+              <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
             <% end %>
           </ul>
         </div>
