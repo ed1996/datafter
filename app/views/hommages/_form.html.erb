@@ -8,33 +8,33 @@
           <%= render 'shared/errors' %>
         <div class="row">
             <div class="form-group">
-              <%= f.text_field :Nom, placeholder:"Nom du défunt", class:"form-control" %>
+              <%= f.text_field :last_name, placeholder:"Nom du défunt", class:"form-control" %>
             </div>
         </div>
 
           <div class="row">
             <div class="form-group">
-              <%= f.text_field :Prenom, placeholder:"Prénom du défunt", class:"form-control" %>
+              <%= f.text_field :first_name, placeholder:"Prénom du défunt", class:"form-control" %>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group">
               Date de naissance
-              <%= f.date_field :date_naissance, class:"form-control" %>
+              <%= f.date_field :date_birth, class:"form-control" %>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group">
               Date de décès
-              <%= f.date_field :date_deces, class:"form-control" %>
+              <%= f.date_field :date_death, class:"form-control" %>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group">
-              <%= f.text_field :lieu_enterrement, placeholder:"Lieu de l'enterrement", class:"form-control" %>
+              <%= f.text_field :burial_place, placeholder:"Lieu de l'enterrement", class:"form-control" %>
             </div>
           </div>
 
