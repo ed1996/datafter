@@ -1,21 +1,21 @@
 <%= search_form_for @q do |f| %>
-  <%= f.label :Nom_cont %>
-  <%= f.search_field :Nom_cont %>
+  <%= f.label :last_name_cont %>
+  <%= f.search_field :first_name_cont %>
   <%= f.submit %>
 <% end %>
 
 <table>
   <thead>
   <tr>
-    <th><%= sort_link(@q, :Nom) %></th>
-    <th><%= sort_link(@q, :Prenom) %></th>
+    <th><%= sort_link(@q, :last_name) %></th>
+    <th><%= sort_link(@q, :first_name) %></th>
   </tr>
   </thead>
   <tbody>
   <% @hommages.each do |hommage| %>
     <tr>
-      <td><%= hommage.Nom %></td>
-      <td><%= hommage.Prenom %></td>
+      <td><%= hommage.last_name %></td>
+      <td><%= hommage.first_name %></td>
     </tr>
   <% end %>
   </tbody>
