@@ -11,7 +11,8 @@ class Hommage < ApplicationRecord
 
   def self.search(search)
     if search
-      where('last_name LIKE ?', "%#{search}%")
+      where('last_name LIKE ? '\
+            'OR first_name LIKE ?', "%#{search}%", "%#{search}%")
     else
 
     end
