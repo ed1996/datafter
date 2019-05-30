@@ -42,7 +42,7 @@
               <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
                   <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
-                  <%= current_user.fullname %> <span class="caret"></span>
+                  <%= current_user.last_name %> <%= current_user.first_name %> <span class="caret"></span>
                 </a>
                 <ul class="rd-navbar-dropdown">
                   <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>

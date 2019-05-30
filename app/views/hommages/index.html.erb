@@ -15,7 +15,7 @@
             <%= image_tag hommage.photos[0].image.url(:thumb) if hommage.photos.length > 0 %>
           </div>
           <div class="col-md-7">
-            <h4><%= hommage.Prenom %> <%= hommage.Nom %></h4>
+            <h4><%= hommage.first_name %> <%= hommage.last_name %></h4>
           </div>
           <div class="col-md-3 right">
             <%= link_to "Mettre à jour", edit_hommage_path(hommage), class:"btn btn-primary" %>

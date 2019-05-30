@@ -7,11 +7,11 @@
       </div>
 
       <div class="col-md-7">
-        <h4><%= @hommage.Prenom %> <%= @hommage.Nom %></h4>
-        <p><%= @hommage.date_naissance %> - <%= @hommage.date_deces %></p>
+        <h4><%= @hommage.lastfirst %> <%= @hommage.last_name %></h4>
+        <p><%= @hommage.date_birth %> - <%= @hommage.date_death %></p>
         <hr>
         <p><%= @hommage.description %></p>
-        <p>Lieu de l'enterrement : <%= @hommage.lieu_enterrement %></p>
+        <p>Lieu de l'enterrement : <%= @hommage.burial_place %></p>
       </div>
 
     </div>

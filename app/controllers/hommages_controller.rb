@@ -69,7 +69,7 @@ class HommagesController < ApplicationController
   end
 
   def hommage_params
-    params.require(:hommage).permit(:Nom, :Prenom, :date_naissance, :date_deces, :lieu_enterrement, :description)
+    params.require(:hommage).permit(:last_name, :first_name, :date_birth, :date_death, :burial_place, :description)
   end
 
   def require_same_user

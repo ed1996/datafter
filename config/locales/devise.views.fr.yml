@@ -9,9 +9,13 @@ fr:
         current_password: Mot de passe actuel
         current_sign_in_at: Date de la connexion actuelle
         current_sign_in_ip: IP de la connexion actuelle
+        date_birth: date de naissaince
         email: Courriel
         encrypted_password: Mot de passe crypté
         failed_attempts: Tentatives échouées
+        fist_name: Prénom
+        fullname: Nom complet
+        last_name: Nom de famille
         last_sign_in_at: Date de la dernière connexion
         last_sign_in_ip: IP de la dernière connexion
         locked_at: Verrouillé à
@@ -25,7 +29,6 @@ fr:
         unconfirmed_email: Courriel non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
-        fullname: Nom complet
     models:
       user: Utilisateur
   devise:
