@@ -1,18 +1,29 @@
-<div class="row">
-  <div class="col-md-3">
-    <%= image_tag avatar_url(@user), class:"avatar-full" %>
-    <div class="panel panel-default">
-      <div class="panel-heading">Vérification</div>
-      <div class="panel-body">
-        Email: <%= @user.email %><br>
-        Tél : <%= @user.phone_number %>
+<div class="shell">
+  <div class="text-center">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Datafter', root_path%></li>
+      <li><%= link_to "Mes hommages", hommages_path%></li>
+      <li><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
+      <li>Mon profil</li>
+    </ol>
+  </div>
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Team Member Page</h2>
+  <div class="range">
+    <div class="cell-sm-4">
+      <div class="inset-md-right-22">
+        <%= image_tag avatar_url(@user), class:"avatar-full", alt: @user.first_name, width: "345", height: "354" %>
+        <ul class="list offset-top-15">
+          <li><span class="icon-xxs icon-darker icon fa-phone"></span> <a href="callto:#" class="call-link"><span class="fw-bold"><%= @user.phone_number %></span></a>
+          </li>
+          <li><span class="icon-xxs icon-darker icon fa-map-marker"></span> <span class="txt-light"><a href="mailto:<%= @user.email %>"><%= @user.email %></a></span>
+          </li>
+        </ul><a href="mailto:<%= @user.email %>" class="btn btn-primary btn-sm btn-width-full offset-top-32">Contactez-moi</a>
       </div>
     </div>
-  </div>
-  <div class="col-md-9">
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-    <div class="description row-space-3">
-      <%= @user.description %>
+    <div class="cell-sm-8">
+      <div class="h3 reveal-block"><%= @user.first_name %> <%= @user.last_name %></div>
+      <hr class="offset-top-12"/>
+      <h5 class="divider-small offset-top-22"><%= @user.description %></h5>
     </div>
   </div>
 </div>
