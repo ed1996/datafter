@@ -13,17 +13,20 @@
   <div class="page">
     <%= render 'layouts/navigation' %>
     <%= render 'shared/message' %>
-
     <main class="page-content">
-      <section class="section-34 section-bottom-78">
-      <%= yield %>
-      </section>
+      <% if action_name == "home" and controller_name === "pages" %>
+        <%= yield %>
+      <% else %>
+        <section class="section-34 section-bottom-78">
+          <%= yield %>
+        </section>
+      <% end %>
     </main>
 
     <%= render 'layouts/footer' %>
   </div>
 
-  <% if action_name == "show" and controller_name == "hommages" %>
+  <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>
     <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
