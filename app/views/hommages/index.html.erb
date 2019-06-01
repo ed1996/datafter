@@ -2,8 +2,8 @@
   <div class="text-center">
     <ol class="breadcrumb">
       <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Mes hommages", hommages_path%></li>
-      <li>Tout mes hommages</li>
+      <li><%= link_to "Hommages", list_hommages_path%></li>
+      <li>Mes hommages</li>
     </ol>
   </div>
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tout mes hommages</h2>
@@ -12,18 +12,5 @@
       <%= render 'layouts/search' %>
     </div>
   </div>
-  <div class="range">
-    <% @hommages.each do |hommage| %>
-      <div class="cell-xs-6 cell-md-3 offset-top-60 offset-md-top-0">
-        <div class="thumbnail">
-          <%= image_tag hommage.photos[0].image.url(), class: "img-responsive" if hommage.photos.length > 0 %>
-        </div>
-        <div class="caption offset-top-13">
-          <%= link_to hommage.first_name + " - " + hommage.last_name, edit_hommage_path(hommage), class:"h3" %>
-          <p class="small txt-darker"><%= hommage.burial_place %></p>
-          <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'layouts/hommages' %>
 </div>
