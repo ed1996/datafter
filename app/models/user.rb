@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
+  validates :last_name, :first_name, presence:true, length: {maximum: 50}
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -27,11 +32,6 @@ class User < ApplicationRecord
       user.refresh_token = auth.credentials.refresh_token
     end
   end
-
-  validates :last_name, :first_name, presence:true, length: {maximum: 50}
-
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :hommages
 end
