@@ -12,7 +12,7 @@
   </ol>
   <h2 class="divider offset-top-80">
     <% if @hommage.id %>
-      Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %></li>
+      Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %>
     <% else %>
       Rendre un hommage
     <% end %>
@@ -73,7 +73,9 @@
               <%= f.text_area :description, placeholder:"Biographie du défunt", class:"form-control" %>
             </div>
           </div>
-          <%= f.submit "Je valide mon annonce", class:"offset-top-30 btn btn-primary btn-sm btn-width-full" %>
+          <div class="cell-xs-12 text-center offset-top-27">
+            <%= f.submit "Je valide mon annonce", class:"btn btn-primary btn-sm btn-min-width-230" %>
+          </div>
         </div>
       <% end %>
     </div>
