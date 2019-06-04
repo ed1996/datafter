@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190530191941) do
+ActiveRecord::Schema.define(version: 20190604124239) do
 
-  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
     t.string "last_name"
     t.string "first_name"
     t.date "date_birth"
@@ -22,12 +22,19 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "lastName"
-    t.string "firstName"
     t.index ["user_id"], name: "index_hommages_on_user_id"
   end
 
-  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
+    t.text "body"
+    t.string "receivers"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
     t.bigint "hommage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +45,7 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.index ["hommage_id"], name: "index_photos_on_hommage_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -71,4 +78,6 @@ ActiveRecord::Schema.define(version: 20190530191941) do
   end
 
   add_foreign_key "hommages", "users"
+  add_foreign_key "memories", "users"
+  add_foreign_key "photos", "hommages"
 end

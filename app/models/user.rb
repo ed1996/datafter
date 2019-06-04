@@ -34,4 +34,5 @@ class User < ApplicationRecord
   end
 
   has_many :hommages
+  has_one :memory
 end

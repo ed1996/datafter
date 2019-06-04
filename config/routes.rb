@@ -19,4 +19,5 @@ Rails.application.routes.draw do
     get 'list', on: :collection
   end
   resources :photos
+  resources :memories
 end
