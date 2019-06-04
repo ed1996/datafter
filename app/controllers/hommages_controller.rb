@@ -5,12 +5,20 @@ class HommagesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def search
-    @q = current_user.hommages.ransack(params[:q])
+    @q = Hommage.ransack(params[:q])
     @hommages = @q.result(distinct: true)
   end
 
   def index
     @q = current_user.hommages.ransack(params[:q])
+    if params.has_key?(:q) && params.has_key?(:commit)
+      @notSearch = true
+    end
+    @hommages = @q.result(distinct: true)
+  end
+
+  def list
+    @q = Hommage.ransack(params[:q])
     if params.has_key?(:q) && params.has_key?(:commit)
       @notSearch = true
     end
