@@ -3,7 +3,7 @@
     <li><%= link_to 'Datafter', root_path%></li>
     <li><%= link_to "Mes hommages", hommages_path%></li>
     <li>
-      <% if @hommage %>
+      <% if @hommage.id %>
         Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %>
       <% else %>
         Rendre un hommage
@@ -11,7 +11,7 @@
     </li>
   </ol>
   <h2 class="divider offset-top-80">
-    <% if @hommage %>
+    <% if @hommage.id %>
       Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %></li>
     <% else %>
       Rendre un hommage
