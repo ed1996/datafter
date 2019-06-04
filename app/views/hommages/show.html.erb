@@ -8,7 +8,9 @@
     </ol>
   </div>
 
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %></h2>
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %>   <% if @hommage.user_id === current_user.id %>
+      <a href="<%= edit_hommage_path(@hommage) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+    <% end %></h2>
   <div class="range">
     <div class="cell-sm-6 cell-sm-preffix-3 cell-md-4 cell-md-preffix-0">
       <div class="inset-md-right-22">

@@ -1,47 +1,39 @@
-<section class="section-83">
-  <div class="shell">
-    <h2 class="text-center divider">Contact Us for Urgent Help</h2>
-    <div class="range offset-top-118">
-      <div class="cell-lg-8 cell-lg-preffix-2">
-        <!-- RD Mailform-->
-        <form data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" class="rd-mailform text-left">
-          <div class="range">
-            <div class="cell-sm-6">
-              <div class="form-group">
-                <label for="contact-name" class="form-label">Your first name</label>
-                <input id="contact-name" type="text" name="name" data-constraints="@Required" class="form-control"/>
-              </div>
-            </div>
-            <div class="cell-sm-6 offset-top-48 offset-sm-top-0">
-              <div class="form-group">
-                <label for="contact-name-last" class="form-label">Your last name</label>
-                <input id="contact-name-last" type="text" name="phone" data-constraints="@Required" class="form-control"/>
-              </div>
-            </div>
-            <div class="cell-sm-6 offset-top-48">
-              <div class="form-group">
-                <label for="contact-phone" class="form-label">Your phone</label>
-                <input id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric" class="form-control"/>
-              </div>
-            </div>
-            <div class="cell-sm-6 offset-top-48">
-              <div class="form-group">
-                <label for="contact-email" class="form-label">Your email</label>
-                <input id="contact-email" type="email" name="email" data-constraints="@Required @Email" class="form-control"/>
-              </div>
-            </div>
-            <div class="cell-xs-12 offset-top-48">
-              <div class="form-group">
-                <label for="contact-message" class="form-label">Message</label>
-                <textarea id="contact-message" name="message" data-constraints="@Required" class="form-control"></textarea>
-              </div>
-            </div>
-            <div class="cell-xs-12 text-center offset-top-27">
-              <button type="submit" class="btn btn-primary btn-sm btn-min-width-230">Send</button>
-            </div>
-          </div>
-        </form>
+
+<!-- RD Mailform-->
+<form data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" class="rd-mailform text-left">
+  <div class="range">
+    <div class="cell-sm-6">
+      <div class="form-group">
+        <label for="contact-name" class="form-label">Your first name</label>
+        <input id="contact-name" type="text" name="name" data-constraints="@Required" class="form-control"/>
       </div>
     </div>
+    <div class="cell-sm-6 offset-top-48 offset-sm-top-0">
+      <div class="form-group">
+        <label for="contact-name-last" class="form-label">Your last name</label>
+        <input id="contact-name-last" type="text" name="phone" data-constraints="@Required" class="form-control"/>
+      </div>
+    </div>
+    <div class="cell-sm-6 offset-top-48">
+      <div class="form-group">
+        <label for="contact-phone" class="form-label">Your phone</label>
+        <input id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric" class="form-control"/>
+      </div>
+    </div>
+    <div class="cell-sm-6 offset-top-48">
+      <div class="form-group">
+        <label for="contact-email" class="form-label">Your email</label>
+        <input id="contact-email" type="email" name="email" data-constraints="@Required @Email" class="form-control"/>
+      </div>
+    </div>
+    <div class="cell-xs-12 offset-top-48">
+      <div class="form-group">
+        <label for="contact-message" class="form-label">Message</label>
+        <textarea id="contact-message" name="message" data-constraints="@Required" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="cell-xs-12 text-center offset-top-27">
+      <button type="submit" class="btn btn-primary btn-sm btn-min-width-230">Envoyer</button>
+    </div>
   </div>
-</section>
+</form>
