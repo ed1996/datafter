@@ -1,7 +1,7 @@
 class HommagesController < ApplicationController
 
   before_action :set_hommage, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:search, :list, :show]
   before_action :require_same_user, only: [:edit, :update]
 
   def search

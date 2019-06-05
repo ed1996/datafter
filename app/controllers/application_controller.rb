@@ -12,9 +12,7 @@ class ApplicationController < ActionController::Base
   before_action :set_search
 
   def set_search
-    if  current_user
-      @q = current_user.hommages.ransack(params[:q])
-      @hommages = @q.result(distinct: true)
-    end
+    @q = Hommage.ransack(params[:q])
+    @hommages = @q.result(distinct: true)
   end
 end
