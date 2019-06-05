@@ -6,14 +6,14 @@
         <% @hommages.each do |hommage| %>
           <div class="cell-xs-6 cell-md-3 offset-top-50 offset-md-top-0">
             <div class="thumbnail">  <%= image_tag hommage.photos[0].image.url(), class: "img-responsive", height: "270", width: "230" if hommage.photos.length > 0 %></div>
-            <div class="caption offset-top-13"><%= link_to hommage.first_name + " - " + hommage.last_name, new_user_registration_path, class:"h3" %></a>
+            <div class="caption offset-top-13"><%= link_to hommage.first_name + " - " + hommage.last_name, hommage_path(hommage), class:"h3" %></a>
               <p class="small txt-darker"><%= hommage.burial_place %></p>
               <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
             </div>
           </div>
         <% end %>
       </div>
-      <div class="text-center offset-top-40"><a href="<%= hommages_path %>" class="btn btn-sm btn-transparent-2">view all obituaries</a></div>
+      <div class="text-center offset-top-40"><a href="<%= list_hommages_path %>" class="btn btn-sm btn-transparent-2">view all obituaries</a></div>
     </div>
   </section>
 <% else %>
