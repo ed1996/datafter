@@ -1,8 +1,12 @@
 ### Getting Started Projetc Datafter
 
 Add publishable_key and secret_key 
-in files
-config => initialiszers => stripe.rb 
+in files config => initialiszers => stripe.rb 
+
+#### Fake card stripe:
+Number: 4242424242424242
+Date: > today
+CVC: 123
 
 Init variables environment: config/local_env.yml
 
