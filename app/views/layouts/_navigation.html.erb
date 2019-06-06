@@ -42,7 +42,7 @@
           </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span>
           <a href="<%= new_subscriber_path %>" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
           <!-- RD Navbar Nav-->
-          <ul class="rd-navbar-nav">
+          <ul class="rd-navbar-nav display-flex ai-center">
             <% if (!user_signed_in?) %>
               <li class="<%= active_for(path: "/") %>"><%= link_to 'Accueil', '/' %></li>
               <li class="<%= active_for(path: "/services") %>"><%= link_to 'Services', "/services" %></li>
@@ -63,8 +63,12 @@
               <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Signalement décès', new_hommage_path %></li>
               <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
-                  <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
-                  <%= current_user.last_name %> <%= current_user.first_name %> <span class="caret"></span>
+                  <div class="display-flex ai-center">
+                    <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm") %>
+                    <div class="padding-left-xs max-width-sm text-ellipsis">
+                      <%= current_user.last_name %> <%= current_user.first_name %>
+                    </div>
+                  </div>
                 </a>
                 <ul class="rd-navbar-dropdown">
                   <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>
