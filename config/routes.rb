@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get '/contact', to: 'pages#contact'
+  get '/services', to: 'pages#services'
+
   resources :subscribers
   resources :users, only: [:show]
   resources :hommages do
