@@ -79,6 +79,20 @@
   }
 }
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
 .round{
   border-radius: 50%;
   img{
@@ -86,10 +100,15 @@
   }
 }
 
+.max-width-sm {
+  max-width: 15rem;
+}
+
 .width-auto{
   width: auto;
   max-width: 100%;
 }
+
 .img-link{
   img{
     transition: .3s;
@@ -100,6 +119,11 @@
     }
   }
 }
+
 .margin-bottom{
   margin-bottom: -1px;
+}
+
+.padding-left-xs {
+  padding-left: .8rem;
 }
