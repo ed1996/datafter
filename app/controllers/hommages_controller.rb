@@ -1,6 +1,7 @@
 class HommagesController < ApplicationController
 
   before_action :set_hommage, only: [:show, :edit, :update]
+  before_action :require_subscribed!, except: [:search, :list, :show]
   before_action :authenticate_user!, except: [:search, :list, :show]
   before_action :require_same_user, only: [:edit, :update]
 
@@ -73,6 +74,13 @@ class HommagesController < ApplicationController
 
   def hommage_params
     params.require(:hommage).permit(:last_name, :first_name, :date_birth, :date_death, :burial_place, :description)
+  end
+
+  def require_subscribed!
+    if current_user.subscribed != true
+        flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+        redirect_to new_subscriber_path
+    end
   end
 
   def require_same_user
