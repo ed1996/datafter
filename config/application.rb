@@ -11,8 +11,7 @@ module Datafter
     # Initialize configuration defaults for originally generated Rails version.
     config.assets.paths << Rails.root.join("app", "assets")
     config.load_defaults 5.1
-    config.assets.precompile += %w( style.css )
-
+    config.assets.precompile += ['stripe.js', %w( style.css )]
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
       YAML.load(File.open(env_file)).each do |key, value|

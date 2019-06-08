@@ -10,20 +10,22 @@
   </head>
 
   <body>
-  <div class="page">
+  <div class="page display-flex fd-column">
     <%= render 'layouts/navigation' %>
-    <%= render 'shared/message' %>
-    <main class="page-content">
-      <% if (action_name == "home" and controller_name === "pages") or (controller_name == "hommages" and (action_name === "list" or action_name === "index" or action_name === "search")) %>
-        <%= yield %>
-      <% else %>
-        <section class="section-34 section-bottom-78">
+    <div>
+      <%= render 'shared/message' %>
+      <main class="page-content flex-1">
+        <% if (action_name == "home" and controller_name === "pages") or (controller_name == "hommages" and (action_name === "list" or action_name === "index" or action_name === "search")) %>
           <%= yield %>
-        </section>
-      <% end %>
-    </main>
+        <% else %>
+          <section class="section-34 section-bottom-78">
+            <%= yield %>
+          </section>
+        <% end %>
+      </main>
 
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
+    </div>
   </div>
 
   <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>

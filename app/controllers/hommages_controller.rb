@@ -79,7 +79,7 @@ class HommagesController < ApplicationController
   def require_subscribed!
     if current_user.subscribed != true
         flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
-        redirect_to new_subscriber_path
+        redirect_to subscribers_path
     end
   end
 

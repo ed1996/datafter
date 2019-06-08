@@ -93,6 +93,33 @@
   align-items: center;
 }
 
+.jc-center {
+  justify-content: center;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.height-100vh {
+  height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.overflow-y-auto {
+  overflow: {
+    x: hidden;
+    y: auto !important;
+  };
+}
+
 .round{
   border-radius: 50%;
   img{
