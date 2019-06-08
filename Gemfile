@@ -12,7 +12,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 gem 'bootstrap-sass', '~> 3.3.7'
-
+gem 'popper_js'
 gem 'jquery-rails'
 
 gem 'devise'
