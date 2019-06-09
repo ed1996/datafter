@@ -14,6 +14,10 @@ textarea {
 // --------------------------------------------------
 
 .page {
+  overflow: {
+    y: auto;
+    x: hidden;
+  };
   background-color: $content-bg;
 }
 
