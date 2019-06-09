@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Datafter</title>
-  <%= csrf_meta_tags %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
-  <%= javascript_include_tag 'core.min' %>
-</head>
+<html class="height-100">
+  <head>
+    <title>Datafter</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+    <%= javascript_include_tag 'core.min' %>
+  </head>
 
-  <body>
-  <div class="page display-flex fd-column">
-    <%= render 'layouts/navigation' %>
-    <div>
+  <body class="height-100 display-flex fd-column">
+    <div class="page flex-1 display-flex fd-column">
+      <%= render 'layouts/navigation' %>
       <%= render 'shared/message' %>
       <main class="page-content flex-1">
         <% if (action_name == "home" and controller_name === "pages") or (controller_name == "hommages" and (action_name === "list" or action_name === "index" or action_name === "search")) %>
@@ -25,13 +24,11 @@
 
       <%= render 'layouts/footer' %>
     </div>
-  </div>
+    <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>
+      <% render 'layouts/gallery' %>
+    <% end %>
 
-  <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>
-    <% render 'layouts/gallery' %>
-  <% end %>
-
-  <%= javascript_include_tag 'core.min' %>
-  <%= javascript_include_tag 'jsfooter' %>
+    <%= javascript_include_tag 'core.min' %>
+    <%= javascript_include_tag 'jsfooter' %>
   </body>
 </html>
