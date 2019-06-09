@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "lastName"
-    t.string "firstName"
     t.index ["user_id"], name: "index_hommages_on_user_id"
   end
 
@@ -71,4 +69,5 @@ ActiveRecord::Schema.define(version: 20190530191941) do
   end
 
   add_foreign_key "hommages", "users"
+  add_foreign_key "photos", "hommages"
 end
