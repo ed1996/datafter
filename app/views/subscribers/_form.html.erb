@@ -1,5 +1,8 @@
 <%= form_tag subscriber_path(1),  method: :put, id: "payment-form" do %>
   <%= javascript_include_tag 'stripe' %>
+    <script type="text/javascript">
+        Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
+    </script>
   <div class="offset-top-48 form-group">
     <label for="email" for="card-element" class="form-label">Adresse e-mail</label>
     <div id="card-element">
