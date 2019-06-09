@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190530191941) do
+ActiveRecord::Schema.define(version: 20190609152131) do
 
-  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "autocompletes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "address"
+    t.integer "street_number"
+    t.string "locality"
+    t.string "route"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.integer "postal_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "last_name"
     t.string "first_name"
     t.date "date_birth"
@@ -22,12 +34,17 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "lastName"
-    t.string "firstName"
+    t.string "address"
+    t.integer "street_number"
+    t.string "locality"
+    t.string "route"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.integer "postal_code"
     t.index ["user_id"], name: "index_hommages_on_user_id"
   end
 
-  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.bigint "hommage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +55,16 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.index ["hommage_id"], name: "index_photos_on_hommage_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -66,6 +92,22 @@ ActiveRecord::Schema.define(version: 20190530191941) do
     t.integer "expires_at"
     t.boolean "expires"
     t.string "refresh_token"
+    t.string "address"
+    t.integer "street_number"
+    t.string "locality"
+    t.string "route"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.integer "postal_code"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
