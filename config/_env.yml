@@ -16,6 +16,9 @@ FACEBOOK_CLIENT_SECRET: ''
 gmail_username: ''
 gmail_password: ''
 
+STRIPE_PUBLISHABLE_KEY: 'pk_test_vZZJYxpcq1AYeYg6NCDt7Oz6'
+STRIPE_SECRET_KEY: 'sk_test_u3S6j4XYQDBJqImSaNug0Jbu'
+
 # MYSQL_PASSWORD: 'root'
 # MYSQL_USERNAME: 'root'
 # MYSQL_HOST: '127.0.0.1'
