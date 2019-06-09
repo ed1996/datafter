@@ -113,4 +113,5 @@ ActiveRecord::Schema.define(version: 20190609152131) do
   end
 
   add_foreign_key "hommages", "users"
+  add_foreign_key "photos", "hommages"
 end

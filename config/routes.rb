@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/services', to: 'pages#services'
 
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_error"
+
   resources :subscribers
   resources :users, only: [:show]
   resources :hommages do

@@ -17,7 +17,7 @@
             </div>
           </div>
           <div id="rd-navbar-right-panel" class="rd-navbar-right-panel">
-            <address class="address"><span class="icon icon-sm icon-white icon-border fa-map-marker"></span><span class="txt-darker"><a href="contacts.html">5750 S Kenwood Ave 3,<br>Chicago, IL 60637</a></span></address>
+            <address class="address"><span class="icon icon-sm icon-white icon-border fa-map-marker"></span><span class="txt-darker"><a href="<%= root_path %>">5750 S Kenwood Ave 3,<br>Chicago, IL 60637</a></span></address>
             <div class="time"><span class="icon icon-sm icon-white icon-border fa-clock-o"></span><span>Mon–Fri 9:00–19:00 <br>Sat–Sun 10:00–17:00</span></div>
             <div class="contact-info"><span class="icon icon-sm icon-white icon-border fa-phone"></span><span><a href="callto:#"><span>1-800-1234-567</span> <br/><span>Call us please</span></a></span></div>
           </div>
@@ -40,28 +40,44 @@
             </div>
             <div id="rd-search-results-live" class="rd-search-results-live"></div>
           </form><span data-custom-toggle="rd-search" data-custom-toggle-disable-on-blur="true" class="rd-navbar-search-toggle"></span>
-          <a href="<%= new_subscriber_path %>" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
+          <a href="<%= subscribers_path %>" class="rd-navbar-shop fa-shopping-cart"><span>10</span></a>
           <!-- RD Navbar Nav-->
-          <ul class="rd-navbar-nav">
+          <ul class="rd-navbar-nav display-flex ai-center jc-center">
             <% if (!user_signed_in?) %>
+              <li class="<%= active_for(path: "/") %>"><%= link_to 'Accueil', '/' %></li>
+              <li class="<%= active_for(path: "/services") %>"><%= link_to 'Services', "/services" %></li>
+              <li class="<%= active_for(path: "/hommages/list") %>"><%= link_to 'Hommage', list_hommages_path %></li>
+              <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', "/contact" %></li>
               <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Inscription', new_user_registration_path %></li>
               <li class="<%= active_for(path: "/login") %>"><%= link_to 'Connexion', new_user_session_path %></li>
             <% else %>
-              <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Rendre hommage', new_hommage_path %></li>
-              <li class="<%= active_for(path: "/hommages/list") %>"><%= link_to 'Hommages', list_hommages_path %></li>
-              <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
+              <li class="<%= active_for(path: "/") %>"><%= link_to 'Accueil', '/' %></li>
+              <li class="<%= active_for(path: "/services") %>"><%= link_to 'Services', "/services" %></li>
+              <li class="<%= active_for(path: "/hommages/list") %> <%= active_for(path: "/hommages") %>">
+                <a href="#">Hommage</a>
+                <ul class="rd-navbar-dropdown">
+                  <li class="<%= active_for(path: "/hommages/list") %>"><%= link_to 'Hommage', list_hommages_path %></li>
+                  <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
+                </ul>
+              </li>
+              <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Signalement décès', new_hommage_path %></li>
               <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
-                  <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm", :width => 10) %>
-                  <%= current_user.last_name %> <%= current_user.first_name %> <span class="caret"></span>
+                  <div class="display-flex ai-center">
+                    <%= image_tag(avatar_url(current_user), class:"img-circle avatar-sm") %>
+                    <div class="padding-left-xs max-width-sm text-ellipsis">
+                      <%= current_user.last_name %> <%= current_user.first_name %>
+                    </div>
+                  </div>
                 </a>
                 <ul class="rd-navbar-dropdown">
                   <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>
                   <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user.id) %></li>
                   <li class="<%= active_for(path: "/profile") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
+                  <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
-              <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
+              <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', "/contact" %></li>
             <% end %>
           </ul>
         </div>
