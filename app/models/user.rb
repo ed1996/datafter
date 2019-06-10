@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :trackable,
-         :confirmable, :lockable, :timeoutable,
-         :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2] #:confirmable
 
   validates :last_name, :first_name, presence:true, length: {maximum: 50}
 
@@ -22,17 +21,25 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.username = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-      user.token = auth.credentials.token
-      user.expires = auth.credentials.expires
-      user.expires_at = auth.credentials.expires_at
-      user.refresh_token = auth.credentials.refresh_token
-      user.skip_confirmation!
+    if self.where(email: auth.info.email).exists?
+      return_user = self.where(email: auth.info.email).first
+      return_user.provider = auth.provider
+      return_user.uid = auth.uid
+    else
+      return_user = self.create do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.image = auth.info.image
+        user.last_name = auth.info.name
+        user.first_name = auth.info.name
+        user.password = Devise.friendly_token[0,20]
+        user.username = auth.info.username
+        user.email = auth.info.email
+        user.token = auth.credentials.token
+        user.expires_at = Time.at(auth.credentials.expires_at)
+      end
     end
+    return_user
   end
 
   has_many :hommages
