@@ -17,7 +17,7 @@
   <div class="range">
     <div class="cell-sm-6 cell-sm-preffix-3 cell-md-4 cell-md-preffix-0">
       <div class="inset-md-right-22">
-        <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length > 0 %>
+        <%= render "layouts/thumbnail", images: @photos  %>
         <!-- Accordion-->
         <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group offset-top-40">
           <div class="panel panel-default">

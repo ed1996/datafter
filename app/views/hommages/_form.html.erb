@@ -64,7 +64,6 @@
               <label for="images" class="form-label">Ajouter des photos !</label>
               <%= file_field_tag "images[]", type: :file %>
             </span>
-              <%= :images %>
             </div>
             <% if @photos %>
               <div id="photos"><%= render 'photos/list', resource: @photos %></div>

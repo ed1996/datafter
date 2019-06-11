@@ -1,0 +1,5 @@
+<% if images.length > 0 %>
+<%= image_tag images[0].image.url(), class: "img-responsive", height: (defined?height ? height : ""), width: (defined?width ? width : "") %>
+<% else %>
+  <%= image_tag "/assets/images/hommage-default.jpg", class: "img-responsive", height: (defined?height ? height : ""), width: (defined?width ? width : "230") %>
+<% end %>
