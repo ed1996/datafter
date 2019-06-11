@@ -29,9 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
   #
   def facebook
-    logger.debug "tru"
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    logger.debug  @user.email
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
