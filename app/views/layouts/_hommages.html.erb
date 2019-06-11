@@ -1,7 +1,7 @@
 <% if action_name == "home" and controller_name === "pages" %>
   <section class="section-60 section-md-83 bg-pampas">
     <div class="shell">
-      <h2 class="text-center divider">Obituaries</h2>
+      <h2 class="text-center divider">Hommages</h2>
       <div class="range text-center text-md-left">
         <% @hommages.each do |hommage| %>
           <div class="cell-xs-6 cell-md-3 offset-top-50 offset-md-top-0">
@@ -13,7 +13,7 @@
           </div>
         <% end %>
       </div>
-      <div class="text-center offset-top-40"><a href="<%= list_hommages_path %>" class="btn btn-sm btn-transparent-2">view all obituaries</a></div>
+      <div class="text-center offset-top-40"><a href="<%= list_hommages_path %>" class="btn btn-sm btn-transparent-2">voir tous les hommages</a></div>
     </div>
   </section>
 <% else %>
