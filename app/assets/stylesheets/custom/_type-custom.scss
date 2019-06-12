@@ -512,8 +512,11 @@ address {
 }
 
 .bg-image {
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: {
+    size: cover;
+    repeat: no-repeat;
+    position: 50%;
+  };
   &-1 {
     background-image: url("images/404-1920x506.jpg");
   }
