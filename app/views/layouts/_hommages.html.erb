@@ -5,7 +5,7 @@
       <div class="range text-center text-md-left">
         <% @hommages.each do |hommage| %>
           <div class="cell-xs-6 cell-md-3 offset-top-50 offset-md-top-0">
-            <div class="thumbnail"><%= render "layouts/thumbnail", images: hommage.photos, height: "270", width: "230" %></div>
+            <div class="thumbnail height-30rem"><%= render "layouts/thumbnail", notResponsive: true, images: hommage.photos, width: "230" %></div>
             <div class="caption offset-top-13"><%= link_to hommage.first_name + " - " + hommage.last_name, hommage_path(hommage), class:"h3" %></a>
               <p class="small txt-darker"><%= hommage.burial_place %></p>
               <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
@@ -20,8 +20,8 @@
   <div class="<% if action_name === 'search' %>rd-search-results offset-top-60 <% else %>range <% end %>">
     <% @hommages.each do |hommage| %>
       <div class="cell-xs-6 cell-md-3 offset-top-60 offset-md-top-0">
-        <div class="thumbnail">
-          <%= render "layouts/thumbnail", images: hommage.photos %>
+        <div class="thumbnail height-30rem background-cover-center" style="background-image: url(<%= hommage.photos.length ? hommage.photos[0].image.url() : "/assets/images/hommage-default.jpg" %>);">
+          <%= render "layouts/thumbnail", notResponsive: true, images: hommage.photos %>
         </div>
         <div class="caption offset-top-13">
           <%= link_to hommage.first_name + " - " + hommage.last_name, hommage_path(hommage), class:"h3" %>
