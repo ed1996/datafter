@@ -29,9 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
   #
   def facebook
-    logger.debug "tru"
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    logger.debug  @user.email
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
@@ -58,14 +56,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     data = access_token.info
     user = User.where(email: data['email']).first
     # Uncomment the section below if you want users to be created if they don't exist
-    unless user
-         user = User.create(
-             name: data['name'],
-             last_name: data['name'],
-            email: data['email'],
-            password: Devise.friendly_token[0,20]
-         )
-     end
+    unless (user = User.create(
+        name: data['name'],
+        last_name: data['name'],
+        email: data['email'],
+        password: Devise.friendly_token[0, 20]))
+    end
     user
   end
 

@@ -1,11 +1,1 @@
-<section class="section-53 bg-image bg-image-2 section-bottom-88">
-  <div class="container text-center txt-white">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="h1">422</div>
-        <div class="h2 divider">Sorry! Page Not Found</div>
-        <div class="h5 offset-top-90">The change you wanted was rejected (422) The requested page could not be found - this could be due to a spelling error in the URL or a removed page.</div><a href="<%= root_path %>" class="btn-sm btn btn-primary btn-min-width-240 offset-top-42">Retour à l'accueil</a>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render "errors/layout", bgImg: "bg-image-2", code: "422", title: "The change you wanted was rejected (422) The requested page could not be found - this could be due to a spelling error in the URL or a removed page." %>

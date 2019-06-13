@@ -1,0 +1,17 @@
+<% if defined? (image) and defined? (image.image.url())%>
+  <% if defined?(notResponsive) %>
+    <div class="height-<%= (defined?(height) ? height : "35rem") %> background-cover-center" style="background-image: url(<%= image.image.url() %>);">
+      <%= image_tag image.image.url(), class: "display-none", alt: defined?(alt) ? alt : "" %>
+    </div>
+  <% else %>
+    <%= image_tag image.image.url(), class: "img-responsive", height: (defined?(height) ? height : "230"), width: (defined?(width) ? width : "230"), alt: defined?(alt) ? alt : "" %>
+  <% end %>
+<% else %>
+  <% if defined?(notResponsive) %>
+    <div class="height-<%= defined?(height) ? height : "35rem" %> background-cover-center" style="background-image: url(/assets/images/hommage-default.jpg);">
+      <%= image_tag "/assets/images/hommage-default.jpg", class: "display-none", alt: defined?(alt) ? alt : "" %>
+    </div>
+  <% else %>
+    <%= image_tag "/assets/images/hommage-default.jpg", class: "img-responsive", height: (defined?(height) ? height : ""), width: (defined?(width) ? width : "230"), alt: (defined?(alt) ? alt : "") %>
+  <% end %>
+<% end %>
