@@ -5,6 +5,7 @@
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render 'shared/devise_errors' %>
 
+<<<<<<< HEAD
         <div class="form-group">
           <p>Saisissez l'adresse e-mail associé à votre compte.
           Nous vous enverrons un lien par e-mail pour réinitialiser votre mot de passe.</p>
@@ -15,5 +16,14 @@
           <%= f.submit "Envoyez un lien de réinitialisation", class:"btn btn-primary" %>
         </div>
     <% end %>
+=======
+  <div class=" form-group offset-top-23">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email" %>
+  </div>
+
+  <div class="actions offset-top-23">
+    <%= f.submit "Send me reset password instructions" %>
+>>>>>>> integration
   </div>
 </div>

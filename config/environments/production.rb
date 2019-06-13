@@ -5,9 +5,8 @@ Rails.application.configure do
       :storage=>:cloudinary,
       :path=>':id/:style/:filename'
                                                })
-
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'datafter.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST'], :protocol => 'https'}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
