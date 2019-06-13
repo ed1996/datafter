@@ -1,14 +1,13 @@
 <div class="shell text-center">
-  <ol class="breadcrumb">
+  <ol class="breadcrumb display-flex jc-center">
     <li><%= link_to 'Datafter', root_path%></li>
-    <li><%= link_to "Mes hommages", hommages_path%></li>
-    <li>
-      <% if @hommage.id %>
-        Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %>
-      <% else %>
-        Rendre un hommage
-      <% end %>
-    </li>
+    <li  class="text-ellipsis"><%= link_to "Mes hommages", hommages_path%></li>
+    <% if @hommage.id %>
+      <li class="text-ellipsis"><a href="<%= hommage_path(@hommage) %>">Détail <%= @hommage.first_name + "Hommage " + @hommage.last_name%></a></li>
+      <li class="text-ellipsis">Modifier l'hommage <%= @hommage.first_name %> <%= @hommage.last_name %></li>
+    <% else %>
+      <li>Rendre un hommage</li>
+    <% end %>
   </ol>
   <h2 class="divider offset-top-80">
     <% if @hommage.id %>
@@ -67,7 +66,7 @@
             </div>
             <% if @photos %>
               <div id="photos"><%= render 'photos/list', resource: @photos %></div>
-              <% end %>
+            <% end %>
           </div>
           <div class="cell-sm-12 offset-top-46">
             <div class="form-group">
