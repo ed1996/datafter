@@ -84,7 +84,7 @@
               <% @photos.each do |photo| %>
                 <div class="item">
                   <!-- PhotoSwipe-->
-                  <a data-photo-swipe-item="1" data-size="1200x789" href="<%= photo.image.url() %>" data-author="Unknow" class="figure">
+                  <a data-photo-swipe-item="" data-size="1200x789" href="<%= photo.image.url() %>" data-author="Unknow" class="figure">
                     <%= render "layouts/thumbnail",  notResponsive: true, height: "60rem", image: photo, alt: @hommage.first_name + " " + @hommage.last_name %>
                   </a>
                 </div>

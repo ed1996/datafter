@@ -38,13 +38,15 @@
               <%= f.text_field :phone_number, class: "form-control", placeholder: "Numéro de téléphone" %>
             </div>
           </div>
-          <div class="cell-sm-6 offset-top-48">
+          <div class="cell-sm-12 display-flex offset-top-48">
             <div class="form-group">
                <span class="btn btn-default btn-file">
                   <label for="images" class="form-label">Ajouter une photo de profil !</label>
-                 <%= file_field_tag "avatar", type: :file %>
+                 <%= f.file_field "avatar", type: :file %>
               </span>
             </div>
+          </div>
+          <div class="cell-sm-12 offset-top-25">
             <div id="photos"><%= render 'photos/list', resource => resource %></div>
           </div>
           <div class="cell-sm-12 offset-top-48">

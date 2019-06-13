@@ -1,34 +1,22 @@
 <div class="row">
   <% if resource and defined?(resource.last_name) %>
     <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading preview">
-          <%= image_tag(avatar_url(resource)) %>
-        </div>
-        <div class="panel-body">
-          <span class="pull-right">
-            <%= link_to resource, remote: true, method: :put, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
-              Suppression
-            <% end %>
-          </span>
-        </div>
+      <div class="panel-heading preview">
+        <%= image_tag avatar_url(resource) %>
       </div>
+      <%= link_to resource, class: "btn-width-full btn btn-transparent-2 btn-xxs", remote: true, method: :avatarDestroy, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
+        Suppression
+      <% end %>
     </div>
   <% else %>
     <% resource.each do |photo| %>
       <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading preview">
-            <%= image_tag photo.image.url() %>
-          </div>
-          <div class="panel-body">
-          <span class="pull-right">
-            <%= link_to photo, remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
-              Suppression
-            <% end %>
-          </span>
-          </div>
+        <div class="panel-heading preview">
+          <%= image_tag photo.image.url() %>
         </div>
+        <%= link_to photo, class: "btn-width-full btn-transparent-2 btn-xxs", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
+          Suppression
+        <% end %>
       </div>
     <% end %>
   <% end %>

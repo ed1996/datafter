@@ -64,10 +64,12 @@
               <%= file_field_tag "images[]", type: :file %>
             </span>
             </div>
-            <% if @photos %>
-              <div id="photos"><%= render 'photos/list', resource: @photos %></div>
-            <% end %>
           </div>
+          <% if @photos %>
+            <div class="cell-sm-12 offset-top-25">
+              <div id="photos"><%= render 'photos/list', resource: @photos %></div>
+            </div>
+          <% end %>
           <div class="cell-sm-12 offset-top-46">
             <div class="form-group">
               <label for="burial-place" class="form-label">Biographie du défunt</label>
