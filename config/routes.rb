@@ -9,6 +9,7 @@ Rails.application.routes.draw do
              path: '',
              controllers: {
                 registrations: "users/registrations",
+                confirmations: "confirmations",
                 omniauth_callbacks: "users/omniauth_callbacks"
              },
              path_names: {
