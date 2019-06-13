@@ -14,6 +14,8 @@ class User < ApplicationRecord
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.first_name = data["first_name"] if user.first_name.blank?
         user.last_name = data["last_name"] if user.last_name.blank?
+        user.first_name = data["first_name"] if user.first_name.blank?
+        user.fullname = data["first_name"] if user.first_name.blank? + " " + data["last_name"] if user.last_name.blank?
         user.date_of_birth = data["date_of_birth"] if user.date_of_birth.blank?
         user.email = data["email"] if user.email.blank?
       end
@@ -30,6 +32,7 @@ class User < ApplicationRecord
         user.provider = auth.provider
         user.uid = auth.uid
         user.image = auth.info.image
+        user.fullname = auth.info.name
         user.last_name = auth.info.name
         user.first_name = auth.info.name
         user.password = Devise.friendly_token[0,20]
