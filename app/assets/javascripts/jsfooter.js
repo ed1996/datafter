@@ -16,8 +16,8 @@ var userAgent = navigator.userAgent.toLowerCase(),
   isTouch = "ontouchstart" in window,
 
   plugins = {
-    pointerEvents: isIE < 11 ? "js/pointer-events.min.js" : false,
-    smoothScroll: $html.hasClass("use--smoothscroll") ? "js/smoothscroll.min.js" : false,
+    pointerEvents: isIE < 11 ? "pointer-events.min.js" : false,
+    smoothScroll: $html.hasClass("use--smoothscroll") ? "smoothscroll.min.js" : false,
     bootstrapTooltip: $("[data-toggle='tooltip']"),
     bootstrapTabs: $(".tabs"),
     rdParallax: $(".rd-parallax"),

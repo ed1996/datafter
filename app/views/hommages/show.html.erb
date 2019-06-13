@@ -112,7 +112,7 @@
             <div class="range offset-top-0">
               <div class="cell-xs-6 cell-sm-3">
                 <div class="thumbnail text-center thumbnail-product thumbnail-product-variant-1"><a href="#" class="img-link">
-                  <%= image_tag @photos[0].image.url(), class:"img-responsive", width:"152", width:"154" if @photos.length > 0 %>
+                  <%= render "layouts/thumbnail", height: "35rem", image: @photos[0], alt: @hommage.first_name + " " + @hommage.last_name %>
                 </a>
                   <div class="caption">
                     <div class="reveal-block"><a href="single.html" class="h5 txt-matrix">Heavenly Red <br class="veil reveal-lg-inline"> Rose Hand-tied</a></div>
