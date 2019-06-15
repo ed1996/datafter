@@ -3,7 +3,7 @@
     <li><%= link_to 'Datafter', root_path%></li>
     <li  class="text-ellipsis"><%= link_to "Mes hommages", hommages_path%></li>
     <% if @hommage.id %>
-      <li class="text-ellipsis"><a href="<%= hommage_path(@hommage) %>">Détail <%= @hommage.first_name + "Hommage " + @hommage.last_name%></a></li>
+      <li class="text-ellipsis"><a href="<%= hommage_path(@hommage) %>">Détail <%= @hommage.first_name + " " + @hommage.last_name%></a></li>
       <li class="text-ellipsis">Modifier l'hommage <%= @hommage.first_name %> <%= @hommage.last_name %></li>
     <% else %>
       <li>Rendre un hommage</li>
