@@ -8,14 +8,27 @@ class HommagesController < ApplicationController
   def search
     @q = Hommage.ransack(params[:q])
     @hommages = @q.result(distinct: true)
+    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @hommages }
+      format.js
+      end
   end
 
   def index
     @q = current_user.hommages.ransack(params[:q])
+
     if params.has_key?(:q) && params.has_key?(:commit)
       @notSearch = true
     end
     @hommages = @q.result(distinct: true)
+    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @hommages }
+      format.js
+      end
   end
 
   def list
@@ -24,6 +37,12 @@ class HommagesController < ApplicationController
       @notSearch = true
     end
     @hommages = @q.result(distinct: true)
+    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @hommages }
+      format.js
+    end
   end
 
   def new
@@ -34,9 +53,9 @@ class HommagesController < ApplicationController
     @hommage = current_user.hommages.build(hommage_params)
     if @hommage.save
       if params[:images]
-          params[:images].each do |i|
-            @hommage.photos.create(image: i)
-          end
+        params[:images].each do |i|
+          @hommage.photos.create(image: i)
+        end
       end
       @photos = @hommage.photos
       redirect_to edit_hommage_path(@hommage), notice:"Votre annonce a été ajouté avec succès"
@@ -78,8 +97,8 @@ class HommagesController < ApplicationController
 
   def require_subscribed!
     if current_user.subscribed != true
-        flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
-        redirect_to subscribers_path
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to subscribers_path
     end
   end
 

@@ -14,6 +14,7 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'popper_js'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.1.1'
 
 gem 'activerecord-session_store'
 gem 'devise'

@@ -31,3 +31,9 @@
     <% end %>
   </div>
 <% end %>
+
+<% if action_name != "home" and controller_name != "pages" %>
+  <div class="text-center offset-top-40">
+    <%= will_paginate @products, :renderer => 'PaginateHelper::LinkRenderer' %>
+  </div>
+<% end %>
