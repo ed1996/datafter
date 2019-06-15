@@ -45,5 +45,11 @@ class User < ApplicationRecord
     return_user
   end
 
+  private
+
+  def delete_avatar
+    self.avatar = nil
+  end
+
   has_many :hommages
 end
