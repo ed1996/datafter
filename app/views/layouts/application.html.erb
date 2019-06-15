@@ -3,6 +3,7 @@
   <head>
     <title>Datafter</title>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag asset_path('/assets/images/favicon/favicon.ico') %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
   </head>
@@ -16,7 +17,7 @@
           <% if controller_name == "errors" or (action_name == "home" and controller_name === "pages") %>
             <%= yield %>
           <% else %>
-            <section class="<% if controller_name != "hommages" or (controller_name == "hommages" and (action_name != "list" and action_name != "index" and action_name != "search")) %>section-34<% end %> section-bottom-78">
+            <section class="<% if controller_name != "hommages" or (controller_name == "hommages" and (action_name != "list" and action_name != "index" and action_name != "search")) %>section-53<% end %> section-bottom-78">
               <%= yield %>
             </section>
           <% end %>

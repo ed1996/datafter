@@ -16,7 +16,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 46px;
-    height: 50px;
+    height: 100px;
     z-index: 17;
 
     .brand-name {
@@ -60,7 +60,7 @@
   .rd-navbar-nav-wrap {
     @extend %rd-navbar-transition;
     position: fixed;
-    top: -56px;
+    top: -13px;
     left: 0;
     width: 232px;
     padding: 112px 0 60px;
@@ -193,7 +193,7 @@
       padding-top: 4px;
       left: 56px;
       right: 112px;
-      height: 56px;
+      height: 100px;
       background: $rd-navbar-background;
       z-index: 17;
       @extend %rd-navbar-transition;
