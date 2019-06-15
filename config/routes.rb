@@ -16,6 +16,7 @@ Rails.application.routes.draw do
                  sign_in: 'login',
                  sign_out: 'logout',
                  edit: 'profile',
+                 show: ''
                  # password: 'secret',
                  # confirmation: 'verification',
                  # unlock: 'unblock',

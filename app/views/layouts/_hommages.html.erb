@@ -8,7 +8,7 @@
             <div class="thumbnail height-30rem"><%= render "layouts/thumbnail", notResponsive: true, height: "30rem", image: defined?(hommage.photos[0]) ? hommage.photos[0] : "", alt: hommage.first_name + " " + hommage.last_name %></div>
             <div class="caption offset-top-13  display-flex fd-column">
               <%= link_to hommage.first_name + " - " + hommage.last_name, hommage_path(hommage), class:"h3 text-ellipsis" %></a>
-              <p class="small txt-darker"><%= hommage.burial_place %></p>
+              <p class="small txt-darker text-ellipsis"><%= hommage.burial_place %></p>
               <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
             </div>
           </div>
@@ -24,7 +24,7 @@
         <%= render "layouts/thumbnail", notResponsive: true, image: defined?(hommage.photos[0]) ? hommage.photos[0] : false, height: action_name === 'search' ? "50rem" : "30rem", alt: hommage.first_name + " " + hommage.last_name %>
         <div class="caption offset-top-13 display-flex fd-column">
           <%= link_to hommage.first_name + " - " + hommage.last_name, hommage_path(hommage), class:"h3 text-ellipsis" %>
-          <p class="small txt-darker"><%= hommage.burial_place %></p>
+          <p class="small txt-darker text-ellipsis"><%= hommage.burial_place %></p>
           <p class="offset-md-top-17"><%= hommage.date_birth %> - <%= hommage.date_death %></p>
         </div>
       </div>

@@ -23,18 +23,13 @@
     <div class="cell-sm-8">
       <div class="h3 reveal-block"><%= @user.first_name %> <%= @user.last_name %></div>
       <hr class="offset-top-12"/>
+        <div class="offset-top-22">Vérification du compte : <% if @user.confirmed_at %>
+            Email confirmé
+          <% else %>
+            Email non confirmé
+          <% end %></div>
+      <hr class="offset-top-12"/>
       <h5 class="divider-small offset-top-22"><%= @user.description %></h5>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">Vérification</div>
-    <div class="panel-body">
-      <% if @user.confirmed_at %>
-        Email confirmé
-      <% else %>
-        Email non confirmé
-      <% end %>
     </div>
   </div>
 </div>
