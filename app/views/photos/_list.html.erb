@@ -14,7 +14,7 @@
         <div class="panel-heading preview">
           <%= image_tag photo.image.url() %>
         </div>
-        <%= link_to photo, class: "btn-width-full btn-transparent-2 btn-xxs", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
+        <%= link_to photo, class: "btn-width-full btn btn-transparent-2 btn-xxs", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
           Suppression
         <% end %>
       </div>
