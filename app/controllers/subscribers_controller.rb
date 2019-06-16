@@ -1,6 +1,9 @@
 class SubscribersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :add_breadcrumbs_list_hommages
+  before_action :add_breadcrumbs_hommages
+  add_breadcrumb "Abonnement", :subscribers_path
 
   def index
   end

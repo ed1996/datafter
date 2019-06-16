@@ -1,14 +1,4 @@
 <div class="shell text-center">
-  <ol class="breadcrumb display-flex jc-center">
-    <li><%= link_to 'Datafter', root_path%></li>
-    <li  class="text-ellipsis"><%= link_to "Mes hommages", hommages_path%></li>
-    <% if @hommage.id %>
-      <li class="text-ellipsis"><a href="<%= hommage_path(@hommage) %>">Détail <%= @hommage.first_name + " " + @hommage.last_name%></a></li>
-      <li class="text-ellipsis">Modifier l'hommage <%= @hommage.first_name %> <%= @hommage.last_name %></li>
-    <% else %>
-      <li>Rendre un hommage</li>
-    <% end %>
-  </ol>
   <h2 class="divider offset-top-80">
     <% if @hommage.id %>
       Modifier l'hommage de <%= @hommage.first_name %> <%= @hommage.last_name %>
@@ -21,7 +11,7 @@
       <p class="h5">Create your contact form in seconds. With CF you can manage multiple contact forms easly.</p>
     </div>
   </div>
-  <div class="range offset-md-top-60 offset-top-50">
+  <div class="range offset-md-top-60">
     <div class="cell-lg-8 cell-lg-preffix-2">
       <!-- RD Mailform-->
       <%= form_for @hommage, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>

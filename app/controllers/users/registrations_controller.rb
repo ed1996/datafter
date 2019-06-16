@@ -3,7 +3,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+  before_action :add_breadcrumbs_hommages, only: [:edit]
+  before_action :add_breadcrumbs_my_profile, only: [:edit]
+  before_action :add_breadcrumbs_edit_profile, only: [:edit]
   # GET /resource/sign_up
   # def new
   #   super

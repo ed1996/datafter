@@ -1,16 +1,4 @@
-<%= render 'hommages/banners' %>
 <div class="container">
-  <div class="text-center">
-    <ol class="breadcrumb offset-top-40">
-      <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Tout les hommages", list_hommages_path%></li>
-      <% if current_user %>
-        <li><%= link_to "Mes hommages", hommages_path%></li>
-      <% end %>
-      <li>Recherche</li>
-    </ol>
-  </div>
-
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">Recherche</h2>
 
   <div class="range">

@@ -4,60 +4,39 @@ class HommagesController < ApplicationController
   before_action :authenticate_user!, except: [:search, :list, :show]
   before_action :require_same_user, only: [:edit, :update]
   before_action :require_subscribed!, except: [:search, :list, :show]
+  before_action :add_breadcrumbs_list_hommages, only: [:index, :show, :new, :edit]
+  before_action :add_breadcrumbs_hommages, only: [:index, :list, :show, :edit, :new]
+  before_action :add_breadcrumbs_detail_hommage, only: [:show, :edit]
+  before_action :add_breadcrumbs_edit_hommage, only: [:edit]
 
   def search
     @q = Hommage.ransack(params[:q])
-    @hommages = @q.result(distinct: true)
-    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @hommages }
-      format.js
-      end
+    respond
   end
 
   def index
     @q = current_user.hommages.ransack(params[:q])
-
-    if params.has_key?(:q) && params.has_key?(:commit)
-      @notSearch = true
-    end
-    @hommages = @q.result(distinct: true)
-    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @hommages }
-      format.js
-      end
+    not_search
+    respond
   end
 
   def list
     @q = Hommage.ransack(params[:q])
-    if params.has_key?(:q) && params.has_key?(:commit)
-      @notSearch = true
-    end
-    @hommages = @q.result(distinct: true)
-    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @hommages }
-      format.js
-    end
+    not_search
+    add_breadcrumbs_hommages
+    add_breadcrumbs_list_hommages
+    respond
   end
 
   def new
     @hommage = current_user.hommages.build
+    add_breadcrumb "Rendre un hommage"
   end
 
   def create
     @hommage = current_user.hommages.build(hommage_params)
     if @hommage.save
-      if params[:images]
-        params[:images].each do |i|
-          @hommage.photos.create(image: i)
-        end
-      end
-      @photos = @hommage.photos
+      save_photos
       redirect_to edit_hommage_path(@hommage), notice:"Votre annonce a été ajouté avec succès"
     else
       render :new
@@ -74,12 +53,7 @@ class HommagesController < ApplicationController
 
   def update
     if @hommage.update(hommage_params)
-      if params[:images]
-        params[:images].each do |i|
-          @hommage.photos.create(image: i)
-        end
-      end
-      @photos = @hommage.photos
+      save_photos
       redirect_to edit_hommage_path(@hommage), notice:"Modification enregistrée..."
     else
       render :edit
@@ -89,6 +63,31 @@ class HommagesController < ApplicationController
   private
   def set_hommage
     @hommage = Hommage.find(params[:id])
+  end
+
+  def not_search
+    if params.has_key?(:q) && params.has_key?(:commit)
+      @notSearch = true
+    end
+  end
+
+  def respond
+    @hommages = @q.result(distinct: true)
+    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @hommages }
+      format.js
+    end
+  end
+
+  def save_photos
+    if params[:images]
+      params[:images].each do |i|
+        @hommage.photos.create(image: i)
+      end
+    end
+    @photos = @hommage.photos
   end
 
   def hommage_params
