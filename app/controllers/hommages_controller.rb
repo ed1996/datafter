@@ -62,7 +62,7 @@ class HommagesController < ApplicationController
 
   private
   def set_hommage
-    @hommage = Hommage.find(params[:id])
+    @hommage = Hommage.friendly.find(params[:id])
   end
 
   def not_search

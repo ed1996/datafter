@@ -20,13 +20,13 @@ class ApplicationController < ActionController::Base
 
   private
   def add_breadcrumbs_hommages
-    add_breadcrumb "Mes hommages", :hommages_path
+    if defined? (current_user) and defined?(current_user.id)
+      add_breadcrumb "Mes hommages", :hommages_path
+    end
   end
 
   def add_breadcrumbs_list_hommages
-    if current_user.id
-      add_breadcrumb "Hommages", :list_hommages_path
-    end
+    add_breadcrumb "Hommages", :list_hommages_path
   end
 
   def add_breadcrumbs_detail_hommage
