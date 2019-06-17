@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  before_save :anti_spam
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -49,6 +51,15 @@ class User < ApplicationRecord
 
   def delete_avatar
     self.avatar = nil
+  end
+
+  def anti_spam
+    doc = Nokogiri::HTML::DocumentFragment.parse(self.description)
+    doc.css('a').each do |a|
+      a[:rel] = 'nofollow'
+      a[:target] = '_blank'
+    end
+    self.description = doc.to_s
   end
 
   has_many :hommages

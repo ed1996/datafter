@@ -5,6 +5,14 @@ class SubdomainBlank
 end
 
 Rails.application.routes.draw do
+=begin
+  constraints(host: /^(?!www\.)/i) do
+    match '(*any)' => redirect { |params, request|
+      URI.parse(request.url).tap { |uri| uri.host = "www.#{uri.host}" }.to_s
+    }
+  end
+=end
+
   devise_for :users,
              path: '',
              controllers: {
@@ -27,10 +35,12 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get "/robots.:format", to: "pages#robots"
   get '/contact', to: 'pages#contact'
   get '/services', to: 'pages#services'
 
   get '/confirmation_instructions', to: 'device#mailer#confirmation_instructions'
+  get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
   get "/404", to: "errors#not_found"
   get "/422", to: "errors#unacceptable"
   get "/500", to: "errors#internal_error"
