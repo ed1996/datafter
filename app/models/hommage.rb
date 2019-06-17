@@ -10,7 +10,7 @@ class Hommage < ApplicationRecord
   validates :description, presence: true, length: {maximum: 2600}
 
   extend FriendlyId
-  friendly_id :slug_hommages, use: :slugged
+  friendly_id :slug_hommages, use: [:slugged, :history]
 
   def self.search(search)
     if search
@@ -22,8 +22,6 @@ class Hommage < ApplicationRecord
   end
 
   def slug_hommages
-    [
-        [:last_name, :first_name],
-    ]
+    "#{last_name} #{first_name} #{Time.now}"
   end
 end
