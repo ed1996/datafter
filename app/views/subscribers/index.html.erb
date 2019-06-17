@@ -1,3 +1,5 @@
+<%= content_for :meta_title, "Abonnez-vous Datafter | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "Pour accèder à plus de fonctionnalités de notre plateforme abboner vous; | #{DEFAULT_META["meta_description"]}" %>
 <div class="shell">
   <% if current_user.subscribed? %>
     <h2 class="divider offset-top-80 text-center">Vous êtes déjà abonné.</h2>

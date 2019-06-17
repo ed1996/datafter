@@ -1,3 +1,8 @@
+<%= content_for :meta_title, "#{@hommage.last_name} #{@hommage.first_name} | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "#{@hommage.description} | #{DEFAULT_META["meta_description"]}" %>
+<% if defined? (image) and defined? (image.image.url())%>
+  <%= content_for :meta_image, "#{@hommage.photos[0].image.url()} | #{DEFAULT_META["meta_image"]}" %>
+<% end %>
 <div class="shell">
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %>
     <% if defined?(current_user.id) and (@hommage.user_id === current_user.id) %>
