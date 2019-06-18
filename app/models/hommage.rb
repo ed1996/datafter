@@ -1,7 +1,6 @@
 class Hommage < ApplicationRecord
   belongs_to :user
   has_many :photos
-  html_schema_type :Person
   before_save :anti_spam
 
   validates :last_name, presence: true
@@ -13,9 +12,6 @@ class Hommage < ApplicationRecord
 
   extend FriendlyId
   friendly_id :slug_hommages, use: [:slugged, :history]
-
-  Hommage.html_schema_type # => Mida::SchemaOrg::BlogPosting
-  Hommage.new.html_schema_type # => Mida::SchemaOrg::BlogPosting
 
   def self.search(search)
     if search

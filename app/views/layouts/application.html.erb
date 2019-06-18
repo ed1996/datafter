@@ -23,6 +23,63 @@
     <%= favicon_link_tag asset_path('/assets/images/favicon/favicon.ico') %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+    <% if controller_name == "hommages" %>
+      <% if (action_name == "list" or action_name == "index" or action_name == "search") %>
+        <% @hommages.each do |hommage| %>
+          <% picture = "/assets/images/hommage-default.jpg" %>
+          <% if defined? (hommage.photos[0]) and defined? (hommage.photos[0].image.url()) %>
+            <% picture = hommage.photos[0].image.url() %>
+          <% end %>
+          <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "image": "<%= picture %>",
+              "jobTitle": "Research Assistant",
+              "name": "<%= hommage.first_name %> <%= hommage.last_name %>",
+              "alumniOf": "Dartmouth",
+              "birthPlace": "<%= hommage.first_name %>",
+              "birthDate": "<%= hommage.date_birth %>",
+              "burialPlace": "<%= hommage.burial_place %>",
+              "burialDate": "<%= hommage.date_death %>",
+              "height": "72 inches",
+              "gender": "female",
+              "nationality": "African American",
+              "url": "http://www.example.com",
+              "sameAs" : [ "https://www.facebook.com/",
+                          "http://twitter.com/",
+                          "http://instagram.com/"]
+            }
+          </script>
+        <% end %>
+      <% else %>
+        <% picture = "/assets/images/hommage-default.jpg" %>
+        <% if defined? (@hommage.photos[0]) and defined? (@hommage.photos[0].image.url()) %>
+          <% picture = @hommage.photos[0].image.url() %>
+        <% end %>
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "image": "<%= picture %>",
+              "jobTitle": "Research Assistant",
+              "name": "<%= @hommage.first_name %> <%= @hommage.last_name %>",
+              "alumniOf": "Dartmouth",
+              "birthPlace": "<%= @hommage.first_name %>",
+              "birthDate": "<%= @hommage.date_birth %>",
+              "burialPlace": "<%= @hommage.burial_place %>",
+              "burialDate": "<%= @hommage.date_death %>",
+              "height": "72 inches",
+              "gender": "female",
+              "nationality": "African American",
+              "url": "http://www.example.com",
+              "sameAs" : [ "https://www.facebook.com/",
+                          "http://twitter.com/",
+                          "http://instagram.com/"]
+            }
+          </script>
+      <% end %>
+    <% end %>
   </head>
 
   <body class="height-100 display-flex overflow-x-hidden fd-column">
