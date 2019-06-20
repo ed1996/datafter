@@ -18,7 +18,6 @@ gem 'jquery-rails'
 gem 'will_paginate', '~> 3.1.1'
 
 gem 'friendly_id', '~> 5.2.4'
-gem 'green_monkey'
 
 gem 'activerecord-session_store'
 gem 'devise'
