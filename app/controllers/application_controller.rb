@@ -56,4 +56,24 @@ class ApplicationController < ActionController::Base
   def add_breadcrumbs_services
     add_breadcrumb "Nos services", "/services"
   end
+
+  def require_subscribed!
+    if current_user.subscribed != true
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to subscribers_path
+    end
+  end
+
+  def require_same_user (resource)
+    if current_user.id != resource.user_id
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to root_path
+    end
+  end
+
+  def not_search
+    if params.has_key?(:q) && params.has_key?(:commit)
+      @notSearch = true
+    end
+  end
 end
