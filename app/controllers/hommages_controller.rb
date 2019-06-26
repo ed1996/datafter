@@ -2,7 +2,10 @@ class HommagesController < ApplicationController
 
   before_action :set_hommage, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:search, :list, :show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action only: [:edit, :update] do
+    require_same_user(@hommage)
+  end
+
   before_action :require_subscribed!, except: [:search, :list, :show]
   before_action :add_breadcrumbs_list_hommages, only: [:index, :show, :new, :edit]
   before_action :add_breadcrumbs_hommages, only: [:index, :list, :show, :edit, :new]
@@ -65,12 +68,6 @@ class HommagesController < ApplicationController
     @hommage = Hommage.friendly.find(params[:id])
   end
 
-  def not_search
-    if params.has_key?(:q) && params.has_key?(:commit)
-      @notSearch = true
-    end
-  end
-
   def respond
     @hommages = @q.result(distinct: true)
     @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
@@ -93,19 +90,4 @@ class HommagesController < ApplicationController
   def hommage_params
     params.require(:hommage).permit(:last_name, :first_name, :date_birth, :date_death, :burial_place, :description)
   end
-
-  def require_subscribed!
-    if current_user.subscribed != true
-      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
-      redirect_to subscribers_path
-    end
-  end
-
-  def require_same_user
-    if current_user.id != @hommage.user_id
-      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
-      redirect_to root_path
-    end
-  end
-
 end
