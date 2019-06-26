@@ -2,6 +2,11 @@
 // Utility custom classes
 // --------------------------------------------------
 
+/*Border*/
+.border-default {
+  border: $gray-darker solid 0.05rem;
+}
+
 /*Divider*/
 .divider {
   position: relative;
@@ -146,6 +151,14 @@
 
 .width-10rem {
   width: 10rem;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.min-width-24rem {
+  width: 24rem;
 }
 
 .flex-1 {

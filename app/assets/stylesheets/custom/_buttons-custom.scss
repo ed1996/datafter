@@ -59,6 +59,10 @@
 // Alternate buttons
 // --------------------------------------------------
 
+.btn-meta {
+  @include button-variant-custom($gray-base, $color-pampas, $color-pampas, $white, $brand-danger, $brand-danger)
+}
+
 .btn-default {
   @include button-variant-custom($gray-darker, transparent, $gray, $white, $gray-darker, $gray-darker);
 }
