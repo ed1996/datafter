@@ -60,7 +60,6 @@
                   <li class="<%= active_for(path: "/hommages") %>"><%= link_to 'Mes hommages', hommages_path %></li>
                 </ul>
               </li>
-              <li class="<%= active_for(path: "/hommages/new") %>"><%= link_to 'Signalement décès', new_hommage_path %></li>
               <li class="<%= active_for(path: "/profile") %> <%= active_for(path: "/users/#{current_user.id}") %> <%= active_for(path: "/")%>">
                 <a href="#">
                   <div class="display-flex ai-center">
@@ -74,6 +73,8 @@
                   <li class="<%= active_for(path: "/") %>"><%= link_to 'Mes messages', root_path %></li>
                   <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user.id) %></li>
                   <li class="<%= active_for(path: "/profile") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
+                  <li class="<%= active_for(path: "/messages/new") %>"><%= link_to 'Ajouter un message', new_message_path %></li>
+                  <li class="<%= active_for(path: "/messages") %>"><%= link_to 'Mes messages', messages_path %></li>
                   <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>

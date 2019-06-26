@@ -16,7 +16,7 @@
       <!-- RD Mailform-->
       <%= form_for @hommage, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>
         <div class="range">
-          <%= render 'shared/errors' %>
+          <%= render 'shared/errors', resource: @hommage %>
           <div class="cell-sm-6">
             <div class="form-group">
               <label for="last-name" class="form-label">Nom du défunt</label>
@@ -57,7 +57,9 @@
           </div>
           <% if @photos %>
             <div class="cell-sm-12 offset-top-25">
-              <div id="photos"><%= render 'photos/list', resource: @photos %></div>
+              <div id="photos">
+                <%= render 'photos/list', resource: @photos %>
+              </div>
             </div>
           <% end %>
           <div class="cell-sm-12 offset-top-46">
