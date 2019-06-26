@@ -72,8 +72,7 @@ class MessagesController < ApplicationController
   def save_recipients_messages
     if params[:recipients]
       params[:recipients].each do |i|
-        i.status = 'not_send'
-        @message.recipients_messages.create(recipient: i)
+        @message.recipients_messages.create(recipient: i, status: 'not_send')
       end
     end
     @recipients_messages = @message.recipients_messages

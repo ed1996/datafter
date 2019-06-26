@@ -36,14 +36,18 @@ function addRecipient() {
     btn.addEventListener("click", deleteRecipient, false);
     btn.setAttribute('value',recipient);
     btn.setAttribute('class','btn btn-xs2 btn-meta btn-icon btn-icon-right delete-recipient');
-    let contentBtn = document.createTextNode(recipient);
     let icon = document.createElement("span");
     icon.setAttribute('class', 'icon fa-trash');
     btn.appendChild(icon);
+    let contentBtn = document.createTextNode(recipient);
     btn.appendChild(contentBtn);
+    let input = document.createElement("input");
+    input.setAttribute('type', 'hidden');
+    input.setAttribute('name', `recipients[${recipient}]`);
+    input.setAttribute('value', recipient);
+    btn.appendChild(input);
     recipients.push(recipient);
     document.getElementById("list-recipient").appendChild(btn);
-    document.getElementById("input-recipient").setAttribute('value','');
   }
   else {
     toastr.warning(errors.join(', '));
