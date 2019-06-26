@@ -60,7 +60,7 @@
 // --------------------------------------------------
 
 .btn-meta {
-  @include button-variant-custom($gray-base, $color-pampas, $color-pampas, $white, $brand-danger, $brand-danger)
+  @include button-variant-custom($gray-base, $color-pampas, $gray-base, $white, $brand-danger, $brand-danger)
 }
 
 .btn-default {
