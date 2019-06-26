@@ -1,0 +1,27 @@
+<%= content_for :meta_title, "#{@message.object} | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "#{@message.content} | #{DEFAULT_META["meta_description"]}" %>
+<div class="shell">
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Message <%= @message.object %>
+    <a href="<%= edit_message_path(@message) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+  </h2>
+  <div class="range">
+    <div class="cell-md-8">
+      <div class="h3"><%= @message.object %></div>
+      <p class="small txt-darker"><%= @message.status %></p>
+      <hr class="offset-top-12"/>
+      <!-- Responsive-tabs-->
+      <div class="responsive-tabs responsive-tabs-default offset-top-57">
+        <div class="resp-tabs-container text-left">
+          <div>
+            <p><%= @message.content %></p>
+          </div>
+          <div>
+            <% @recipients_messages.each do |recipients_message| %>
+              <p><%=  recipients_message.recipient %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

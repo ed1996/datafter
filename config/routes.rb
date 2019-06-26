@@ -51,5 +51,9 @@ Rails.application.routes.draw do
     get 'search', on: :collection
     get 'list', on: :collection
   end
+  resources :messages do
+    get 'search', on: :collection
+  end
+  resources :recipients_messages
   resources :photos
 end
