@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  ###    BREADCRUMBS
+  ###### Hommages
   def add_breadcrumbs_hommages
     if defined? (current_user) and defined?(current_user.id)
       add_breadcrumb "Mes hommages", :hommages_path
@@ -41,6 +44,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  ###### Profile
   def add_breadcrumbs_edit_profile
     add_breadcrumb "Modifier mon profil", edit_user_registration_path
   end
@@ -49,6 +54,8 @@ class ApplicationController < ActionController::Base
     add_breadcrumb "Mon profil", user_path(current_user.id)
   end
 
+
+  ###### Divers
   def add_breadcrumbs_contact
     add_breadcrumb "Contactez nous", "/contact"
   end

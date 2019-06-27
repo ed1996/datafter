@@ -1,13 +1,12 @@
-<div class="row">
-  <% resource.each do |recipient| %>
-    <div class="col-md-4">
-      <div class="panel-heading preview">
-        <p><%= recipient.recipient %></p>
-        <p><%= recipient.status %></p>
-      </div>
-      <%= link_to recipient, class: "btn-width-full btn btn-transparent-2 btn-xxs", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
-        Suppression
-      <% end %>
-    </div>
+<% resource.each do |recipient| %>
+  <%= link_to recipient, class: "btn btn-xs2 btn-meta btn-icon btn-icon-right delete-recipient", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer ce destinataire"} do %>
+    <%= recipient.recipient%>
+    <span class="icon fa-trash"></span>
+    <input type="hidden" name="recipients[<%= recipient.recipient %>]" value="<%= recipient.recipient %>">
   <% end %>
-</div>
+  <!--          <a href="/recipients_messages/<%#= recipient.id %>" remote="true" method="delete" type="button" onclick="deleteRecipient(this)" value="<%#=  recipient.recipient %>" class="btn btn-xs2 btn-meta btn-icon btn-icon-right delete-recipient">
+            <%#= recipient.recipient%>
+            <span class="icon fa-trash"></span>
+            <input type="hidden" name="recipients[<%#= recipient.recipient %>]" value="<%#= recipient.recipient %>">
+          </a>-->
+<% end %>

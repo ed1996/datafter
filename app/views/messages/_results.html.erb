@@ -1,0 +1,7 @@
+<% if @messages.length == 0 %>
+<div class="rd-search-results offset-top-60">
+    <div class="h5 offset-top-90 text-center">Aucun résultat n'est trouvé</div>
+</div>
+<% else %>
+  <%= render 'messages/messages' %>
+<% end %>

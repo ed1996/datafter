@@ -3,13 +3,13 @@ class Message < ApplicationRecord
   has_many :recipients_messages
   before_save :anti_spam
 
-  validates :object, presence: true
   validates :content, presence: true, length: {maximum: 2600}
+  validates :object, presence: true
 
   def self.search(search)
     if search
       where('content LIKE ? '\
-            'OR content LIKE ?', "%#{search}%", "%#{search}%")
+            'OR object LIKE ?', "%#{search}%", "%#{search}%")
     end
   end
 

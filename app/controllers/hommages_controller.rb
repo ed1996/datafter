@@ -7,8 +7,8 @@ class HommagesController < ApplicationController
   end
 
   before_action :require_subscribed!, except: [:search, :list, :show]
-  before_action :add_breadcrumbs_list_hommages, only: [:index, :show, :new, :edit]
-  before_action :add_breadcrumbs_hommages, only: [:index, :list, :show, :edit, :new]
+  before_action :add_breadcrumbs_list_hommages, only: [:index, :search, :show, :new, :edit]
+  before_action :add_breadcrumbs_hommages, only: [:index, :search, :list, :show, :edit, :new]
   before_action :add_breadcrumbs_detail_hommage, only: [:show, :edit]
   before_action :add_breadcrumbs_edit_hommage, only: [:edit]
 
