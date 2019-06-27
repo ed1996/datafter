@@ -18,7 +18,7 @@
         <div class="range">
           <%= render 'shared/errors', resource: @message %>
 
-          <%= render 'layouts/inputRecipient', resource: @message.recipients_messages %>
+          <%= render 'layouts/inputRecipient', render_src: 'recipients_messages/list',resource: @message.recipients_messages %>
 
           <div class="cell-sm-12 offset-top-48">
             <div class="form-group">

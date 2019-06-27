@@ -4,7 +4,7 @@
     <div class="border-default display-flex">
       <p id="list-recipient" class="max-height-15rem overflow-y-auto">
 
-        <%= render 'recipients_messages/list', resource: resource %>
+        <%= render render_src, resource: resource %>
       </p>
       <div class="flex-1 display-flex">
         <input class="flex-1 min-width-24rem form-control" type="email" id="input-recipient" placeholder="Ajouter un destinataires" />

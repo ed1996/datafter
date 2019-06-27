@@ -1,8 +1,13 @@
 <div class="<% if action_name === 'search' %>rd-search-results offset-top-60 <% else %> offset-top-0 range <% end %>">
   <% @messages.each do |message| %>
-    <div class="cell-xs-6 cell-md-3 offset-top-60">
-      <%= message.object %>
-      <%= message.content %>
+    <div class="cell-xs-12 border-default offset-top-60">
+      <div class="cell-xs-12 display-flex jc-space-between offset-top-15">
+        <p class="padding-right-xs">Objet : <%= message.object %></p>
+        <a href="<%= edit_message_path(message) %>" class="btn btn-primary btn-xs-2 btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+      </div>
+      <div class="cell-xs-12 offset-top-25">
+        Contenu : <%= message.content %>
+      </div>
     </div>
   <% end %>
 </div>

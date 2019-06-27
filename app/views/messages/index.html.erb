@@ -1,11 +1,11 @@
 <%= content_for :meta_title, "Liste de vos messages Datafter | #{DEFAULT_META["meta_title"]}" %>
 <%= content_for :meta_description, "Parcourez tout vos messages que vous avez créer | #{DEFAULT_META["meta_description"]}" %>
 <div class="container">
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tout mes message</h2>
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tous mes messages</h2>
   <div class="range">
     <div class="cell-md-8 cell-md-preffix-2">
       <%= render 'messages/search' %>
+      <%= render 'messages/messages' %>
     </div>
   </div>
-  <%= render 'messages/messages' %>
 </div>
