@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   before_save :anti_spam
 
+  after_commit :remove_avatar!, on: :destroy
+
+  do_not_validate_attachment_file_type :avatar
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -49,8 +53,12 @@ class User < ApplicationRecord
 
   private
 
-  def delete_avatar
-    self.avatar = nil
+  def remove_avatar!
+    self.user
+    user.remove_avatar!
+    user.remove_avatar = true
+    user.save
+    user.reload
   end
 
   def anti_spam
