@@ -3,7 +3,7 @@
     <div class="cell-xs-12 border-default offset-top-60">
       <div class="cell-xs-12 display-flex jc-space-between offset-top-15">
         <p class="padding-right-xs">Objet : <%= message.object %></p>
-        <a href="<%= edit_message_path(message) %>" class="btn btn-primary btn-xs-2 btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+        <a href="<%= message_path(message) %>" class="btn btn-primary btn-xs-2">Voir le détail</a>
       </div>
       <div class="cell-xs-12 offset-top-25">
         Contenu : <%= message.content %>

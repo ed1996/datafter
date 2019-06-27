@@ -5,6 +5,12 @@ const validate = (email) => {
 };
 let recipients = [];
 
+/*ajax({
+  url: "/books",
+  type: "get",
+  success: function(data) { Rails.$(".random-number")[0].innerHTML = data.html; }
+})*/
+
 function deleteRecipient (e) {
   e = this.value ? this : e;
   let findIndex = recipients.findIndex(r => r === this.value);
