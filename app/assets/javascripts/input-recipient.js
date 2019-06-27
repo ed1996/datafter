@@ -5,13 +5,13 @@ const validate = (email) => {
 };
 let recipients = [];
 
-function deleteRecipient () {
+function deleteRecipient (e) {
+  e = this.value ? this : e;
   let findIndex = recipients.findIndex(r => r === this.value);
   if (findIndex !== -1) {
     recipients.splice(findIndex, 1);
-    console.log(recipients);
   }
-  this.remove();
+  e.remove();
 }
 
 function addRecipient() {
