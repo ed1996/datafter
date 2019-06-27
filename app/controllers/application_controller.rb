@@ -44,6 +44,25 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  ###### Message
+  def add_breadcrumbs_messages
+    if defined? (current_user) and defined?(current_user.id)
+      add_breadcrumb "Mes messages", :messages_path
+    end
+  end
+
+  def add_breadcrumbs_detail_message
+    if @message.id
+      add_breadcrumb "Detail " + @message.object, message_path(@message)
+    end
+  end
+
+  def add_breadcrumbs_edit_message
+    if current_user.id = @message.user_id and @message.id
+      add_breadcrumb "Edition " + @message.object
+    end
+  end
+
 
   ###### Profile
   def add_breadcrumbs_edit_profile

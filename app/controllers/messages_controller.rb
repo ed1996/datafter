@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
     require_same_user(@message)
   end
   before_action :require_subscribed!, except: [:search, :show]
-=begin
-  before_action :add_breadcrumbs_list_messages, only: [:index, :show, :new, :edit]
-=end
+  before_action :add_breadcrumbs_messages, only: [:index, :search, :show, :edit, :new]
+  before_action :add_breadcrumbs_detail_message, only: [:show, :edit]
+  before_action :add_breadcrumbs_edit_message, only: [:edit]
 
 
   def search
