@@ -13,7 +13,6 @@
   </div>
   <div class="range offset-md-top-60">
     <div class="cell-lg-8 cell-lg-preffix-2">
-      <!-- RD Mailform-->
       <%= form_for @message, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>
         <div class="range">
           <%= render 'shared/errors', resource: @message %>
@@ -29,10 +28,10 @@
           <div class="cell-sm-12 offset-top-48">
             <div class="form-group">
               <label for="first-name" class="form-label">Message</label>
+              <!-- TODO champ textarea wyswig -->
               <%= f.text_area :content, placeholder:"Message", class:"form-control" %>
             </div>
           </div>
-          <%#= javascript_include_tag 'upload' %>
           <div class="cell-xs-12 text-center offset-top-27">
             <%= f.submit "Je valide mon message", class:"btn btn-primary btn-sm btn-min-width-230" %>
           </div>
