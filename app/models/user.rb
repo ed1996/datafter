@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   before_save :anti_spam
 
+  do_not_validate_attachment_file_type :avatar
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -48,10 +50,6 @@ class User < ApplicationRecord
   end
 
   private
-
-  def delete_avatar
-    self.avatar = nil
-  end
 
   def anti_spam
     doc = Nokogiri::HTML::DocumentFragment.parse(self.description)
