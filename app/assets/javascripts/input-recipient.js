@@ -5,19 +5,40 @@ const validate = (email) => {
 };
 let recipients = [];
 
-/*ajax({
-  url: "/books",
-  type: "get",
-  success: function(data) { Rails.$(".random-number")[0].innerHTML = data.html; }
-})*/
-
-function deleteRecipient (e) {
+function removeRecipient (e) {
   e = this.value ? this : e;
   let findIndex = recipients.findIndex(r => r === this.value);
   if (findIndex !== -1) {
     recipients.splice(findIndex, 1);
   }
   e.remove();
+}
+
+function confirmDelete () {
+  let e = confirm("Voulez-vous vraiment supprimer ce destinataire ?");
+  if (e === true)
+    return e;
+}
+
+function deleteRecipient (e, url) {
+  if (url) {
+    if ( confirm( "Voulez-vous vraiment supprimer ce destinataire ?" ) ) {
+      if (confirmDelete) {
+        $.ajax({
+          url: url,
+          type: "delete",
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          success: function(response) {
+            console.log(response);
+            //update the DOM
+          }
+        });
+        removeRecipient(e);
+      }
+    }
+  } else {
+    removeRecipient(e);
+  }
 }
 
 function addRecipient() {
