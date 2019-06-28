@@ -47,7 +47,7 @@
           <div class="cell-sm-12 offset-top-48">
             <div class="form-group">
               <label for="description" class="form-label">Votre biographie</label>
-              <%= f.text_area :description, rows:5, col:25, class: "form-control", placeholder: "Ma description" %>
+              <%= f.cktext_area :description, :class => 'anyclas ckeditor', :ckeditor => {:toolbar => 'mini'} %>
             </div>
           </div>
           <div class="cell-sm-12 offset-top-48">
