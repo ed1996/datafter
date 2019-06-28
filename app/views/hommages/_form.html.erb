@@ -68,7 +68,7 @@
           <div class="cell-sm-12 offset-top-46">
             <div class="form-group">
               <label for="burial-place" class="form-label">Biographie du défunt</label>
-              <%= f.text_area :description, placeholder:"Biographie du défunt", class:"form-control" %>
+              <%= f.cktext_area :description, :class => 'anyclas ckeditor', :ckeditor => {:toolbar => 'mini'} %>
             </div>
           </div>
           <div class="cell-xs-12 text-center offset-top-27">
