@@ -1,18 +1,17 @@
+<%= content_for :meta_title, "#{@hommage.last_name} #{@hommage.first_name} | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "#{@hommage.description} | #{DEFAULT_META["meta_description"]}" %>
+<% if defined? (image) and defined? (image.image.url())%>
+  <%= content_for :meta_image, "#{@hommage.photos[0].image.url()} | #{DEFAULT_META["meta_image"]}" %>
+<% end %>
 <div class="shell">
-  <div class="text-center">
-    <ol class="breadcrumb">
-      <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Tout les hommages", list_hommages_path%></li>
-      <li><%= link_to "Mes hommages", hommages_path%></li>
-      <li>Detail <%= @hommage.first_name %> <%= @hommage.last_name %></li>
-    </ol>
-  </div>
-
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %></h2>
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %>
+    <% if defined?(current_user.id) and (@hommage.user_id === current_user.id) %>
+      <a href="<%= edit_hommage_path(@hommage) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+    <% end %></h2>
   <div class="range">
     <div class="cell-sm-6 cell-sm-preffix-3 cell-md-4 cell-md-preffix-0">
       <div class="inset-md-right-22">
-        <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length > 0 %>
+        <%= render "layouts/thumbnail", image: @photos[0]  %>
         <!-- Accordion-->
         <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group offset-top-40">
           <div class="panel panel-default">
@@ -61,7 +60,7 @@
         </ul>
         <div class="resp-tabs-container text-left">
           <div>
-            <p><%= @hommage.description %></p>
+            <p><%= @hommage.description.html_safe %></p>
             <h3 class="offset-top-63">Charitable Donations May be Made to</h3>
             <ul class="list offset-top-20">
               <li><span class="icon-xxs icon-darker icon fa-phone"></span> <span class="fw-bold">1-800-1234-567</span> <a href="callto:1-800-1234-567">Call us please</a>
@@ -80,7 +79,7 @@
                 <div class="item">
                   <!-- PhotoSwipe-->
                   <a data-photo-swipe-item="" data-size="1200x789" href="<%= photo.image.url() %>" data-author="Unknow" class="figure">
-                    <%= image_tag photo.image.url(), width: "770", height: "480", class:"img-responsive", alt: @hommage.first_name + " " + @hommage.last_name %>
+                    <%= render "layouts/thumbnail",  notResponsive: true, height: "60rem", image: photo, alt: @hommage.first_name + " " + @hommage.last_name %>
                   </a>
                 </div>
               <% end %>
@@ -89,7 +88,7 @@
               <% @photos.each do |photo| %>
                 <div class="item">
                   <!-- PhotoSwipe-->
-                  <%= image_tag photo.image.url(), width: "770", height: "480", class:"img-responsive", alt: @hommage.first_name + " " + @hommage.last_name %>
+                  <%= render "layouts/thumbnail", notResponsive: true, height: "15rem", image: photo, alt: @hommage.first_name + " " + @hommage.last_name %>
                 </div>
               <% end %>
             </div>
@@ -107,7 +106,7 @@
             <div class="range offset-top-0">
               <div class="cell-xs-6 cell-sm-3">
                 <div class="thumbnail text-center thumbnail-product thumbnail-product-variant-1"><a href="#" class="img-link">
-                  <%= image_tag @photos[0].image.url(), class:"img-responsive", width:"152", width:"154" if @photos.length > 0 %>
+                  <%= render "layouts/thumbnail", height: "35rem", image: @photos[0], alt: @hommage.first_name + " " + @hommage.last_name %>
                 </a>
                   <div class="caption">
                     <div class="reveal-block"><a href="single.html" class="h5 txt-matrix">Heavenly Red <br class="veil reveal-lg-inline"> Rose Hand-tied</a></div>

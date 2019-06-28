@@ -4,11 +4,11 @@
 
 @mixin indent-responsive($preffix, $postfix, $rules, $medias, $offsets) {
   @if ($postfix != '' and $postfix != null) {
-    $postfix: #{$postfix};
+    $postfix: str_insert($postfix, '-', str_length($postfix) + 1);
   }
 
   @if ($preffix != '' and $preffix != null) {
-    $preffix: #{$preffix};
+    $preffix: str_insert($preffix, '-', str_length($preffix) + 1);
   }
 
   @each $resolution, $alias in $medias {

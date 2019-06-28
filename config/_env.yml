@@ -7,14 +7,23 @@
 # GOOGLE_CLIENT_ID: 'Your_client id api'
 # GOOGLE_CLIENT_SECRET: 'Your_client secret api'
 # makes 'Your_Gmail_Username' available as ENV["GOOGLE_CLIENT_SECRET"]
+GOOGLE_CALLBACK_URL: 'http://localhost:3000/auth/google_oauth2/callback'
 GOOGLE_CLIENT_ID: ''
 GOOGLE_CLIENT_SECRET: ''
 
 FACEBOOK_CLIENT_ID: ''
 FACEBOOK_CLIENT_SECRET: ''
+FACEBOOK_CALLBACK_URL: 'http://localhost:3000/auth/facebook/callback'
 
-gmail_username: ''
-gmail_password: ''
+SENDMAIL_USERNAME: ''
+SENDMAIL_PASSWORD: ''
+MAIL_HOST: ''
+MAILER_HOST: 'localhost:3000:8080'
+MAILER_HOST_PROD: 'datafter.herokuapp.com'
+MAILER_SENDER: 'Datafter <no-reply@datafter.com>'
+
+STRIPE_PUBLISHABLE_KEY: 'pk_test_vZZJYxpcq1AYeYg6NCDt7Oz6'
+STRIPE_SECRET_KEY: 'sk_test_u3S6j4XYQDBJqImSaNug0Jbu'
 
 # MYSQL_PASSWORD: 'root'
 # MYSQL_USERNAME: 'root'

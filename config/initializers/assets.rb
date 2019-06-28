@@ -12,4 +12,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.scss, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( core.min.js jsfooter.js )
+Rails.application.config.assets.precompile += %w( core.min.js jsfooter.js stripe.js input-recipient.js ckeditor/ckeditor.js )

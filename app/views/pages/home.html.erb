@@ -9,9 +9,9 @@
   <div class="swiper-button-next"></div>
   <div class="jumbotron-wrap">
     <div class="jumbotron-variant-1">
-      <h1>Meeting your wishes<br class="veil reveal-lg-inline"> and family's traditions</h1>
-      <h5>We understand every funeral is different because every person is unique<br class="veil reveal-lg-inline"> and each family situation is different.</h5>
-      <div class="btn-group-variant-1"><a href="contacts.html" class="btn btn-primary btn-sm">contact us</a><a href="#" class="btn btn-transparent btn-sm">learn more</a></div>
+      <h1>Un espace hommage<br class="veil reveal-lg-inline"> pour votre être cher</h1>
+      <h5>Rendez hommage à un être cher<br class="veil reveal-lg-inline"> afin qu'il reste toujours présent et témoigner l'amour que vous lui portiez.</h5>
+      <div class="btn-group-variant-1"><a href="/contact" class="btn btn-primary btn-sm">contactez-nous</a><a href="/services" class="btn btn-transparent btn-sm">Service</a></div>
     </div>
   </div>
 </div>
@@ -87,5 +87,14 @@
   </div>
 </section>
 <!-- section Contact Us for Urgent Help-->
-<% render 'layouts/formContact' %>
-<% render 'layouts/map' %>
+<section class="section-83">
+  <div class="shell">
+    <h2 class="text-center divider">Contact Us for Urgent Help</h2>
+    <div class="range">
+      <div class="cell-lg-8 cell-lg-preffix-2">
+        <%= render 'layouts/formContact' %>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'layouts/map' %>
