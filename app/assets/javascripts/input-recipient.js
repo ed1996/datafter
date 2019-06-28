@@ -6,7 +6,6 @@ const validate = (email) => {
 let recipients = [];
 
 function removeRecipient (e) {
-  e = this.value ? this : e;
   let findIndex = recipients.findIndex(r => r === this.value);
   if (findIndex !== -1) {
     recipients.splice(findIndex, 1);
@@ -21,6 +20,7 @@ function confirmDelete () {
 }
 
 function deleteRecipient (e, url) {
+  e = this.value ? this : e;
   if (url) {
     if ( confirm( "Voulez-vous vraiment supprimer ce destinataire ?" ) ) {
       $.ajax({
