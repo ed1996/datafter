@@ -23,18 +23,15 @@ function confirmDelete () {
 function deleteRecipient (e, url) {
   if (url) {
     if ( confirm( "Voulez-vous vraiment supprimer ce destinataire ?" ) ) {
-      if (confirmDelete) {
-        $.ajax({
-          url: url,
-          type: "delete",
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          success: function(response) {
-            console.log(response);
-            //update the DOM
-          }
-        });
-        removeRecipient(e);
-      }
+      $.ajax({
+        url: url,
+        type: "delete",
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        success: function() {
+          removeRecipient(e);
+          toastr.info('Le destinataire a bien été supprimé');
+        }
+      });
     }
   } else {
     removeRecipient(e);

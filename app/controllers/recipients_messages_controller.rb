@@ -8,7 +8,9 @@ class RecipientsMessagesController < ApplicationController
 
     @recipients_messages = RecipientsMessage.where(message_id: message.id)
 
-    respond_to :js
+    respond_to do |format|
+      format.json { render json: @recipients_messages }
+    end
   end
 
 end
