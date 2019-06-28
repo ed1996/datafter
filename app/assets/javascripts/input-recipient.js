@@ -27,13 +27,11 @@ function deleteRecipient (e, url) {
         url: url,
         type: "delete",
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-        success: function(response) {
-          console.log(response);
-          //update the DOM
+        success: function() {
+          removeRecipient(e);
+          toastr.info('Le destinataire a bien été supprimé');
         }
       });
-      removeRecipient(e);
-      toastr.info('Le destinataire a bien été supprimé');
     }
   } else {
     removeRecipient(e);
