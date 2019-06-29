@@ -10,13 +10,13 @@
     </div>
   <% else %>
     <% resource.each do |photo| %>
-      <div class="col-md-4">
+      <div class="col-md-4" id="photo-<%= photo.id %>">
         <div class="panel-heading preview">
           <%= image_tag photo.image.url() %>
         </div>
-        <%= link_to photo, class: "btn-width-full btn btn-transparent-2 btn-xxs", remote: true, method: :delete, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
+        <button class="btn-width-full btn btn-transparent-2 btn-xxs" type="button" data-hommage-picture="<%= photo.id %>" value="<%= photo %>" onclick="deletePicture(this, `/photos/${<%= photo.id %>}`)">
           Suppression
-        <% end %>
+        </button>
       </div>
     <% end %>
   <% end %>

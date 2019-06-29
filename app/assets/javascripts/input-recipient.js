@@ -13,12 +13,6 @@ function removeRecipient (e) {
   e.remove();
 }
 
-function confirmDelete () {
-  let e = confirm("Voulez-vous vraiment supprimer ce destinataire ?");
-  if (e === true)
-    return e;
-}
-
 function deleteRecipient (e, url) {
   e = this.value ? this : e;
   if (url) {
