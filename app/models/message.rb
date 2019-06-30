@@ -26,6 +26,6 @@ class Message < ApplicationRecord
   end
 
   def slug_messages
-    "#{object} #{Time.now}"
+    "message #{object} #{Time.now}"
   end
 end
