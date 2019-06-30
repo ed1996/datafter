@@ -70,7 +70,7 @@ class HommagesController < ApplicationController
 
   def respond
     @hommages = @q.result(distinct: true)
-    @hommages = @hommages.paginate(:page => params[:page], :per_page => 20).order('id DESC')
+    @hommages = @hommages.paginate(:page => params[:page], :per_page => 10).order('id DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @hommages }
