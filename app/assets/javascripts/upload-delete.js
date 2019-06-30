@@ -11,7 +11,6 @@ function removePicture (e, uniq) {
 }
 
 function deletePicture (e, url, method) {
-  console.log(e)
   e = this.value ? this : e;
   if (url) {
     if ( confirm( "Voulez-vous vraiment supprimer cette image ?" ) ) {
@@ -44,7 +43,6 @@ function readURL(input, uniq) {
         let colMd = document.createElement("div");
         let preview = document.createElement("div");
         let img = document.createElement("img");
-        let button = document.createElement("button");
         var inputImg = document.createElement("input");
         var t = document.createTextNode("Suppresion");
 
@@ -52,20 +50,23 @@ function readURL(input, uniq) {
         colMd.setAttribute('id',uniq ? 'photo' : 'photo-' + 'notApi' + nbImg);
         preview.setAttribute('class','panel-heading preview');
         img.setAttribute('src',e.target.result);
-        button.setAttribute('class','btn-width-full btn btn-transparent-2 btn-xxs');
-        button.setAttribute('type','button');
-        button.setAttribute('data-picture', 'notApi' + nbImg);
-        button.setAttribute('value',e.target.result);
         inputImg.setAttribute('type','file');
         inputImg.setAttribute('style','display: none;');
         inputImg.setAttribute('name',`images[${input.files[0]}]`);
 
-        button.addEventListener("click", uniq ? (function(){ removePicture(this, uniq); }) : deletePicture, false);
-
         preview.appendChild(img);
-        button.appendChild(t);
         colMd.appendChild(preview);
-        colMd.appendChild(button);
+        if (!uniq) {
+          let button = document.createElement("button");
+          button.setAttribute('class','btn-width-full btn btn-transparent-2 btn-xxs');
+          button.setAttribute('type','button');
+          button.setAttribute('data-picture', 'notApi' + nbImg);
+          button.setAttribute('value',e.target.result);
+
+          button.addEventListener("click", uniq ? (function(){ removePicture(this, uniq); }) : deletePicture, false);
+          button.appendChild(t);
+          colMd.appendChild(button);
+        }
         colMd.appendChild(inputImg);
         document.getElementById("photos").appendChild(colMd);
       };
