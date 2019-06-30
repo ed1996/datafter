@@ -37,7 +37,7 @@
             <div class="form-group">
                <span class="btn btn-default btn-file">
                   <label for="images" class="form-label">Ajouter une photo de profil !</label>
-                 <%= f.file_field "avatar", type: :file, onchange: "readURL(this, true)" %>
+                 <%= f.file_field "avatar", type: :file, onchange: "addPicture(this, true)" %>
               </span>
             </div>
           </div>
