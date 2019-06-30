@@ -1,8 +1,7 @@
 <%= search_form_for @q, url: search_messages_path, :html => { :class => "form-inline-flex-lg form-inline-flex-lg-4 message_search" } do |f| %>
-  <!-- TODO search show results -->
   <div class="form-group">
     <%= f.label :Recherche, :class => "form-label", :for => "rd-search-form-input-2" %>
-    <%= f.search_field :content_or_object, :class => "form-control", :id => "rd-search-form-input-2", :autocomplete => "off" %>
+    <%= f.search_field :content_or_object_cont, :class => "form-control", :id => "rd-search-form-input-2", :autocomplete => "off" %>
   </div>
   <div class="text-center offset-top-30 offset-lg-top-0">
     <%= f.submit :class => "btn btn-sm btn-primary btn-height-50" %>
