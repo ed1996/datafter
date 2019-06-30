@@ -30,6 +30,6 @@ class Hommage < ApplicationRecord
   end
 
   def slug_hommages
-    "#{last_name} #{first_name} #{Time.now}"
+    "hommage #{last_name} #{first_name} #{Time.now}"
   end
 end
