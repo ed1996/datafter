@@ -1,20 +1,23 @@
-function removePicture (e) {
-  let findIndex = recipients.findIndex(r => r === this.value);
-  if (findIndex !== -1) {
-    recipients.splice(findIndex, 1);
+function removePicture (e, uniq) {
+  if (uniq) {
+    return document.getElementById('photo').remove();
   }
-  document.getElementById('photo-' + e.dataset.hommagePicture).remove();
+  let findIndex = pictures.findIndex(r => r === this.value);
+  if (findIndex !== -1) {
+    pictures.splice(findIndex, 1);
+  }
+  document.getElementById('photo-' + e.dataset.picture).remove();
   e.remove();
 }
 
-function deletePicture (e, url) {
+function deletePicture (e, url, method) {
   console.log(e)
   e = this.value ? this : e;
   if (url) {
     if ( confirm( "Voulez-vous vraiment supprimer cette image ?" ) ) {
       $.ajax({
         url: url,
-        type: "delete",
+        type: method || "delete",
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         success: function(response) {
           console.log(response);
@@ -29,9 +32,11 @@ function deletePicture (e, url) {
 }
 let pictures = [];
 
-function readURL(input) {
+function readURL(input, uniq) {
+  if (uniq && document.getElementById('photo')) {
+    document.getElementById('photo').remove();
+  }
   if (input.files && input.files[0]) {
-    input.files.forEach((picture) => {
       let reader = new FileReader();
 
       let nbImg = pictures.length || 0;
@@ -44,19 +49,18 @@ function readURL(input) {
         var t = document.createTextNode("Suppresion");
 
         colMd.setAttribute('class','col-md-4');
-        colMd.setAttribute('id','photo-' + 'notApi' + nbImg);
+        colMd.setAttribute('id',uniq ? 'photo' : 'photo-' + 'notApi' + nbImg);
         preview.setAttribute('class','panel-heading preview');
         img.setAttribute('src',e.target.result);
         button.setAttribute('class','btn-width-full btn btn-transparent-2 btn-xxs');
         button.setAttribute('type','button');
-        button.setAttribute('data-hommage-picture', 'notApi' + nbImg);
+        button.setAttribute('data-picture', 'notApi' + nbImg);
         button.setAttribute('value',e.target.result);
         inputImg.setAttribute('type','file');
         inputImg.setAttribute('style','display: none;');
-        console.log(picture)
-        inputImg.setAttribute('name',`images[${picture}]`);
+        inputImg.setAttribute('name',`images[${input.files[0]}]`);
 
-        button.addEventListener("click", deletePicture, false);
+        button.addEventListener("click", uniq ? (function(){ removePicture(this, uniq); }) : deletePicture, false);
 
         preview.appendChild(img);
         button.appendChild(t);
@@ -66,8 +70,7 @@ function readURL(input) {
         document.getElementById("photos").appendChild(colMd);
       };
 
-      reader.readAsDataURL(picture);
-      pictures.push(picture);
-    });
+      reader.readAsDataURL(input.files[0]);
+      pictures.push(input.files[0]);
   }
 }

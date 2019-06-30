@@ -46,7 +46,9 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_error"
 
   resources :subscribers
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    put 'update_avatar', on: :collection
+  end
   resources :hommages do
     get 'search', on: :collection
     get 'list', on: :collection

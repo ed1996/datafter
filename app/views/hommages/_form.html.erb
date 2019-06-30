@@ -51,7 +51,7 @@
             <div class="form-group">
                <span class="btn btn-default btn-file">
                   <label for="images" class="form-label">Ajouter des photos !</label>
-                 <%= file_field_tag "images[]", type: :file %>
+                 <%= file_field_tag "images[]", type: :file, onchange: "readURL(this);" %>
               </span>
             </div>
           </div>

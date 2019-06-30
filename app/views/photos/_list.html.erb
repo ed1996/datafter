@@ -1,12 +1,12 @@
 <div class="row">
   <% if resource and defined?(resource.last_name) %>
-    <div class="col-md-4">
+    <div class="col-md-4" id="photo">
       <div class="panel-heading preview">
         <%= image_tag avatar_url(resource) %>
       </div>
-      <%= link_to resource, class: "btn-width-full btn btn-transparent-2 btn-xxs", remote: true, method: :avatarDestroy, data: {confirm: "Attention vous allez supprimer cette photo"} do %>
+      <button class="btn-width-full btn btn-transparent-2 btn-xxs" type="button" data-picture="<%= resource.last_name %>" value="<%= resource.avatar %>" onclick="deletePicture(this, '/users/update_avatar', 'put')">
         Suppression
-      <% end %>
+      </button>
     </div>
   <% else %>
     <% resource.each do |photo| %>
@@ -14,7 +14,7 @@
         <div class="panel-heading preview">
           <%= image_tag photo.image.url() %>
         </div>
-        <button class="btn-width-full btn btn-transparent-2 btn-xxs" type="button" data-hommage-picture="<%= photo.id %>" value="<%= photo %>" onclick="deletePicture(this, `/photos/${<%= photo.id %>}`)">
+        <button class="btn-width-full btn btn-transparent-2 btn-xxs" type="button" data-picture="<%= photo.id %>" value="<%= photo %>" onclick="deletePicture(this, `/photos/${<%= photo.id %>}`)">
           Suppression
         </button>
       </div>

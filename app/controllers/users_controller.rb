@@ -8,19 +8,14 @@ class UsersController < ApplicationController
   end
 
   def update_avatar
+    @user = User.find(current_user.id)
     if params[:images]
       @user.avatar = :images
     else
-      @user.avatar_file_name = nil
-      @user.avatar_content_type = nil
-      @user.avatar_file_size = nil
-      @user.avatar_updated_at = Date.now
+      drop_attached_file :users, :avatar
     end
-    if @user.update(hommage_params)
-      save_photos
-      redirect_to edit_user_path(@user), notice:"Modification enregistrée..."
-    else
-      render :edit
+      respond_to do |format|
+        format.json { render json: @user }
+      end
     end
-  end
 end
