@@ -56,7 +56,7 @@ class MessagesController < ApplicationController
 
   private
   def set_message
-    @message = Message.find(params[:id])
+    @message = Message.friendly.find(params[:id])
   end
 
   def respond

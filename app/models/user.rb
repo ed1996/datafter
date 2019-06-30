@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   before_save :anti_spam
 
+  extend FriendlyId
+  friendly_id :slug_users, use: [:slugged, :history]
+
   do_not_validate_attachment_file_type :avatar
 
   def self.new_with_session(params, session)
@@ -58,6 +61,10 @@ class User < ApplicationRecord
       a[:target] = '_blank'
     end
     self.description = doc.to_s
+  end
+
+  def slug_users
+    "user #{first_name} #{last_name} #{Time.now}"
   end
 
   has_many :hommages

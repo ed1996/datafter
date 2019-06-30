@@ -72,7 +72,7 @@
                 <ul class="rd-navbar-dropdown">
                   <li class="<%= active_for(path: "/messages") %>"><%= link_to 'Mes messages', messages_path %></li>
                   <li class="<%= active_for(path: "/messages/new") %>"><%= link_to 'Ajouter un message', new_message_path %></li>
-                  <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user.id) %></li>
+                  <li class="<%= active_for(path: "/users/#{current_user.id}") %>"><%= link_to 'Mon profil', user_path(current_user) %></li>
                   <li class="<%= active_for(path: "/profile") %>"><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
                   <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
