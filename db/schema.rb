@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20190630111434) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-
   create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20190630111434) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "hommage_id"
     t.datetime "created_at", null: false
@@ -73,6 +71,13 @@ ActiveRecord::Schema.define(version: 20190630111434) do
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.index ["hommage_id"], name: "index_photos_on_hommage_id"
+  end
+
+  create_table "recipients_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "recipient"
+    t.bigint "message_id"
+    t.string "status"
+    t.index ["message_id"], name: "index_recipients_messages_on_message_id"
   end
 
   create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -130,5 +135,7 @@ ActiveRecord::Schema.define(version: 20190630111434) do
   end
 
   add_foreign_key "hommages", "users"
+  add_foreign_key "messages", "users"
   add_foreign_key "photos", "hommages"
+  add_foreign_key "recipients_messages", "messages"
 end

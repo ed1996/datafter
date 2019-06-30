@@ -2,6 +2,11 @@
 // Utility custom classes
 // --------------------------------------------------
 
+/*Border*/
+.border-default {
+  border: $gray-darker solid 0.05rem;
+}
+
 /*Divider*/
 .divider {
   position: relative;
@@ -101,6 +106,18 @@
   justify-content: center;
 }
 
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .fd-column {
   flex-direction: column;
 }
@@ -110,6 +127,10 @@
     size: cover;
     position: 50%;
   }
+}
+
+.max-height-15rem {
+  max-height: 15rem;
 }
 
 .height-15rem {
@@ -146,6 +167,14 @@
 
 .width-10rem {
   width: 10rem;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.min-width-24rem {
+  width: 24rem;
 }
 
 .flex-1 {

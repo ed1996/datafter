@@ -16,7 +16,7 @@
       <!-- RD Mailform-->
       <%= form_for @hommage, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>
         <div class="range">
-          <%= render 'shared/errors' %>
+          <%= render 'shared/errors', resource: @hommage %>
           <div class="cell-sm-6">
             <div class="form-group">
               <label for="last-name" class="form-label">Nom du défunt</label>
@@ -51,19 +51,21 @@
             <div class="form-group">
                <span class="btn btn-default btn-file">
                   <label for="images" class="form-label">Ajouter des photos !</label>
-                 <%= file_field_tag "images[]", type: :file %>
+                 <%= file_field_tag "images[]", id: "images-input", multiple: true, type: :file, onchange: "addPicture(this);" %>
               </span>
             </div>
           </div>
           <% if @photos %>
             <div class="cell-sm-12 offset-top-25">
-              <div id="photos"><%= render 'photos/list', resource: @photos %></div>
+              <div id="photos">
+                <%= render 'photos/list', resource: @photos %>
+              </div>
             </div>
           <% end %>
           <div class="cell-sm-12 offset-top-46">
             <div class="form-group">
               <label for="burial-place" class="form-label">Biographie du défunt</label>
-              <%= f.text_area :description, placeholder:"Biographie du défunt", class:"form-control" %>
+              <%= f.cktext_area :description, :class => 'anyclas ckeditor', :ckeditor => {:toolbar => 'mini'} %>
             </div>
           </div>
           <div class="cell-xs-12 text-center offset-top-27">

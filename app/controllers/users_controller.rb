@@ -7,14 +7,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def avatarDestroy
-    @user = User.find(params[:id])
-    user = @user.user
-
-    @user.user.avatar = nil
-
-    @user.update
-
-    respond_to :js
-  end
+  def update_avatar
+    @user = User.find(current_user.id)
+    if params[:images]
+      @user.avatar = :images
+    else
+      drop_attached_file :users, :avatar
+    end
+      respond_to do |format|
+        format.json { render json: @user }
+      end
+    end
 end

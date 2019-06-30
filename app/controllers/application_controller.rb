@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  ###    BREADCRUMBS
+  ###### Hommages
   def add_breadcrumbs_hommages
     if defined? (current_user) and defined?(current_user.id)
       add_breadcrumb "Mes hommages", :hommages_path
@@ -41,6 +44,27 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  ###### Message
+  def add_breadcrumbs_messages
+    if defined? (current_user) and defined?(current_user.id)
+      add_breadcrumb "Mes messages", :messages_path
+    end
+  end
+
+  def add_breadcrumbs_detail_message
+    if @message.id
+      add_breadcrumb "Detail " + @message.object, message_path(@message)
+    end
+  end
+
+  def add_breadcrumbs_edit_message
+    if current_user.id = @message.user_id and @message.id
+      add_breadcrumb "Edition " + @message.object
+    end
+  end
+
+
+  ###### Profile
   def add_breadcrumbs_edit_profile
     add_breadcrumb "Modifier mon profil", edit_user_registration_path
   end
@@ -49,11 +73,33 @@ class ApplicationController < ActionController::Base
     add_breadcrumb "Mon profil", user_path(current_user.id)
   end
 
+
+  ###### Divers
   def add_breadcrumbs_contact
     add_breadcrumb "Contactez nous", "/contact"
   end
 
   def add_breadcrumbs_services
     add_breadcrumb "Nos services", "/services"
+  end
+
+  def require_subscribed!
+    if current_user.subscribed != true
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to subscribers_path
+    end
+  end
+
+  def require_same_user (resource)
+    if current_user.id != resource.user_id
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to root_path
+    end
+  end
+
+  def not_search
+    if params.has_key?(:q) && params.has_key?(:commit)
+      @notSearch = true
+    end
   end
 end

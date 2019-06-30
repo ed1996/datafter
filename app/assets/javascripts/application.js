@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ckeditor/init
+//= require ckeditor/config.js
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
@@ -21,4 +23,4 @@
 
 toastr.options = {
     "positionClass":"toast-bottom-right"
-}
+};

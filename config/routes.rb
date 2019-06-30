@@ -47,9 +47,18 @@ Rails.application.routes.draw do
 
   resources :subscribers
   resources :users, only: [:show]
+=begin
+  resources :users, only: [:show] do
+    put 'update_avatar', on: :collection
+  end
+=end
   resources :hommages do
     get 'search', on: :collection
     get 'list', on: :collection
   end
+  resources :messages do
+    get 'search', on: :collection
+  end
+  resources :recipients_messages
   resources :photos
 end

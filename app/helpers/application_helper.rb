@@ -32,12 +32,4 @@ module ApplicationHelper
       'default_image.png'
     end
   end
-
-  def pagination_links(collection, options = {})
-    options[:renderer] ||= PAginateHelper::LinkRenderer
-    options[:class] ||= 'pagination pagination-centered'
-    options[:inner_window] ||= 2
-    options[:outer_window] ||= 1
-    will_paginate(collection, options)
-  end
 end
