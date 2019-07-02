@@ -9,11 +9,11 @@
       <div class="h3"><%= 'Objet - ' + @message.object %></div>
       <p class="small txt-darker">Statut - <%= @message.status %></p>
       <hr class="offset-top-12"/>
-      <div>
+      <div class="content-textarea">
         <h3>Contenu</h3>
-        <p><%= @message.content.html_safe %></p>
+        <div class="content-textarea"><%= @message.content.html_safe %></div>
       </div>
-      <div class="display-flex flex-wrap">
+      <div>
         <h3>Les destinataires</h3>
         <p>
           <% @recipients_messages.each do |recipients_message| %>

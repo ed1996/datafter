@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190628083123) do
+ActiveRecord::Schema.define(version: 20190630111434) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20190628083123) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_messages_on_slug", unique: true
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -134,9 +136,11 @@ ActiveRecord::Schema.define(version: 20190628083123) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "status"
+    t.string "slug"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "hommages", "users"

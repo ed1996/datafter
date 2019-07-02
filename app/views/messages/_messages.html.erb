@@ -6,7 +6,8 @@
         <a href="<%= message_path(message) %>" class="btn btn-primary btn-xs-2">Voir le détail</a>
       </div>
       <div class="cell-xs-12 offset-top-25">
-        Contenu : <%= message.content.html_safe %>
+        Contenu :
+        <div class="content-textarea"><%= message.content.html_safe %></div>
       </div>
     </div>
   <% end %>

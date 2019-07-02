@@ -6,7 +6,6 @@ const validate = (email) => {
 let recipients = [];
 
 function removeRecipient (e) {
-  e = this.value ? this : e;
   let findIndex = recipients.findIndex(r => r === this.value);
   if (findIndex !== -1) {
     recipients.splice(findIndex, 1);
@@ -14,27 +13,19 @@ function removeRecipient (e) {
   e.remove();
 }
 
-function confirmDelete () {
-  let e = confirm("Voulez-vous vraiment supprimer ce destinataire ?");
-  if (e === true)
-    return e;
-}
-
 function deleteRecipient (e, url) {
+  e = this.value ? this : e;
   if (url) {
     if ( confirm( "Voulez-vous vraiment supprimer ce destinataire ?" ) ) {
-      if (confirmDelete) {
-        $.ajax({
-          url: url,
-          type: "delete",
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          success: function(response) {
-            console.log(response);
-            //update the DOM
-          }
-        });
-        removeRecipient(e);
-      }
+      $.ajax({
+        url: url,
+        type: "delete",
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        success: function() {
+          removeRecipient(e);
+          toastr.info('Le destinataire a bien été supprimé');
+        }
+      });
     }
   } else {
     removeRecipient(e);

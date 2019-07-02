@@ -11,6 +11,11 @@ class User < ApplicationRecord
 
   before_save :anti_spam
 
+  extend FriendlyId
+  friendly_id :slug_users, use: [:slugged, :history]
+
+  do_not_validate_attachment_file_type :avatar
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -49,10 +54,6 @@ class User < ApplicationRecord
 
   private
 
-  def delete_avatar
-    self.avatar = nil
-  end
-
   def anti_spam
     doc = Nokogiri::HTML::DocumentFragment.parse(self.description)
     doc.css('a').each do |a|
@@ -60,6 +61,10 @@ class User < ApplicationRecord
       a[:target] = '_blank'
     end
     self.description = doc.to_s
+  end
+
+  def slug_users
+    "user #{first_name} #{last_name} #{Time.now}"
   end
 
   has_many :hommages

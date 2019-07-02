@@ -6,6 +6,9 @@ class Message < ApplicationRecord
   validates :content, presence: true, length: {maximum: 2600}
   validates :object, presence: true
 
+  extend FriendlyId
+  friendly_id :slug_messages, use: [:slugged, :history]
+
   def self.search(search)
     if search
       where('content LIKE ? '\
@@ -20,5 +23,9 @@ class Message < ApplicationRecord
       a[:target] = '_blank'
     end
     self.content = doc.to_s
+  end
+
+  def slug_messages
+    "message #{object} #{Time.now}"
   end
 end
