@@ -63,6 +63,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  ###### Memoire
+  def add_breadcrumbs_memories
+    if defined? (current_user) and defined? (current_user.id)
+      add_breadcrumb "Mes mémoires", :memory_path
+    end
+  end
 
   ###### Profile
   def add_breadcrumbs_edit_profile

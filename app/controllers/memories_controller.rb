@@ -5,13 +5,13 @@ class MemoriesController < ApplicationController
   before_action only: [:edit, :update] do
     require_same_user(@memory)
   end
+  before_action :add_breadcrumbs_memories, only: [:index, :search, :show, :edit, :new]
 
   def index
     @memory = current_user.memory
     @user = current_user
     if !@memory
       @memory = Memory.new
-      new
       render :new
     else
       render :edit
@@ -40,6 +40,7 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     current_user.memory = @memory
     if @memory.save
+      save_recipients_memories
       redirect_to edit_memory_path(@memory), notice:"Vos mémoires ont bien été enregistrées"
     else
       render :new
@@ -48,6 +49,7 @@ class MemoriesController < ApplicationController
 
   def update
     if @memory.update(memory_params)
+      save_recipients_memories
       redirect_to edit_memory_path(@memory), notice:"Modification enregistrée..."
     else
       render :index

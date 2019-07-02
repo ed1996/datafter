@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190630111434) do
+ActiveRecord::Schema.define(version: 20190702150036) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "data_file_name", null: false
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(version: 20190630111434) do
     t.index ["hommage_id"], name: "index_photos_on_hommage_id"
   end
 
+  create_table "recipients_memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "recipient"
+    t.bigint "memory_id"
+    t.string "status"
+    t.index ["memory_id"], name: "index_recipients_memories_on_memory_id"
+  end
+
   create_table "recipients_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "recipient"
     t.bigint "message_id"
@@ -147,5 +154,6 @@ ActiveRecord::Schema.define(version: 20190630111434) do
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "users"
   add_foreign_key "photos", "hommages"
+  add_foreign_key "recipients_memories", "memories"
   add_foreign_key "recipients_messages", "messages"
 end

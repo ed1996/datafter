@@ -62,4 +62,5 @@ Rails.application.routes.draw do
   resources :recipients_messages
   resources :photos
   resources :memories
+  resources :recipients_memories
 end
