@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20190628083123) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
+  create_table "hommages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.date "date_birth"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20190628083123) do
     t.index ["user_id"], name: "index_hommages_on_user_id"
   end
 
-  create_table "memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin" do |t|
+  create_table "memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "body"
     t.string "receivers"
     t.bigint "user_id"
