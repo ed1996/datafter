@@ -2,7 +2,9 @@ class MemoriesController < ApplicationController
 
   before_action :set_memory, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action only: [:edit, :update] do
+    require_same_user(@memory)
+  end
 
   def index
     @memory = current_user.memory
@@ -12,7 +14,6 @@ class MemoriesController < ApplicationController
       new
       render :new
     else
-      edit
       render :edit
     end
   end
@@ -47,9 +48,9 @@ class MemoriesController < ApplicationController
 
   def update
     if @memory.update(memory_params)
-      redirect_to edit_hommage_path(@hommage), notice:"Modification enregistrée..."
+      redirect_to edit_memory_path(@memory), notice:"Modification enregistrée..."
     else
-      render :edit
+      render :index
     end
   end
 
