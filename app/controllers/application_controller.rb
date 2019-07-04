@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   end
 
   def add_breadcrumbs_edit_hommage
-    if current_user.id = @hommage.user_id and @hommage.id
+    if current_user.id == @hommage.user_id and @hommage.id
       add_breadcrumb "Edition " + @hommage.first_name + " " + @hommage.last_name
     end
   end
@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
   end
 
   def add_breadcrumbs_edit_message
-    if current_user.id = @message.user_id and @message.id
+    if current_user.id == @message.user_id and @message.id
       add_breadcrumb "Edition " + @message.object
     end
   end
@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
   ###### Memoire
   def add_breadcrumbs_memories
     if defined? (current_user) and defined? (current_user.id)
-      add_breadcrumb "Mes mémoires", :memory_path
+      add_breadcrumb "Mes mémoires", memory_path(current_user.id)
     end
   end
 

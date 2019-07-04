@@ -5,13 +5,12 @@ class MemoriesController < ApplicationController
   before_action only: [:edit, :update] do
     require_same_user(@memory)
   end
-  before_action :add_breadcrumbs_memories, only: [:index, :search, :show, :edit, :new]
+  before_action :require_subscribed!, except: [:show]
+  before_action :add_breadcrumbs_memories, only: [:index, :show, :edit, :new]
 
   def index
     @memory = current_user.memory
-    @user = current_user
     if !@memory
-      @memory = Memory.new
       render :new
     else
       render :edit
