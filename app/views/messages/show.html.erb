@@ -1,9 +1,12 @@
 <%= content_for :meta_title, "#{@message.object} | #{DEFAULT_META["meta_title"]}" %>
 <%= content_for :meta_description, "#{@message.content.html_safe} | #{DEFAULT_META["meta_description"]}" %>
 <div class="shell">
-  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Message - <%= @message.object %>
-    <a href="<%= edit_message_path(@message) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
-  </h2>
+  <div class="divider offset-top-40 offset-md-top-80 text-center jc-center display-flex">
+    <h2>Message - <%= @message.object %>
+      <a href="<%= edit_message_path(@message) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+    </h2>
+    <%= button_to "Supprimer", @message, class: 'margin-left-xs btn btn-destructive btn-sm', :method => :delete %>
+  </div>
   <div class="range">
     <div class="cell-md-8 cell-md-preffix-2">
       <div class="h3"><%= 'Objet - ' + @message.object %></div>

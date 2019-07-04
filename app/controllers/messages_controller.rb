@@ -45,6 +45,18 @@ class MessagesController < ApplicationController
     @recipients_messages = @message.recipients_messages
   end
 
+  def destroy
+    @message = Message.friendly.find(params[:id])
+
+    @recipients_messages = RecipientsMessage.where(message_id: @message.id)
+    @recipients_messages.each do |i|
+      i.destroy
+    end
+    @message.destroy
+
+    redirect_to messages_path
+  end
+
   def update
     if @message.update(message_params)
       save_recipients_messages
@@ -71,6 +83,7 @@ class MessagesController < ApplicationController
 
   def save_recipients_messages
     if params[:recipients]
+      @message.recipients_messages.destroy_all
       params[:recipients].each do |i|
         @message.recipients_messages.create(recipient: i, status: 'not_send')
       end

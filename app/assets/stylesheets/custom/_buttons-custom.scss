@@ -67,6 +67,10 @@
   @include button-variant-custom($gray-darker, transparent, $gray, $white, $gray-darker, $gray-darker);
 }
 
+.btn-destructive {
+  @include button-variant-custom($white, $brand-danger, $brand-danger, $brand-danger, $white, $white);
+}
+
 .btn-primary {
   color: $white;
   transition: 0.4s;
