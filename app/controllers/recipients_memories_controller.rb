@@ -8,7 +8,9 @@ class RecipientsMemoriesController < ApplicationController
 
     @recipients_memories = RecipientsMemory.where(memory_id: memory.id)
 
-    respond_to :js
+    respond_to do |format|
+      format.json { render json: @recipients_memories }
+    end
   end
 
 end
