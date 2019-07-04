@@ -62,6 +62,7 @@ class MemoriesController < ApplicationController
 
   def save_recipients_memories
     if params[:recipients]
+      @memory.recipients_memories.destroy_all
       params[:recipients].each do |i|
         @memory.recipients_memories.create(recipient: i, status: 'not_send')
       end
