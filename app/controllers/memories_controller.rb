@@ -11,6 +11,7 @@ class MemoriesController < ApplicationController
   def index
     @memory = current_user.memory
     if !@memory
+      @memory = Memory.new
       render :new
     else
       render :edit
