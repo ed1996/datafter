@@ -1,36 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html class="height-100">
   <head>
-    <title>Datafter</title>
+    <title><%= meta_title %></title>
+
+    <meta name="description" content="<%= meta_description %>">
+
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:image" content="<%= meta_image %>">
+    <meta property="og:description" content="<%= meta_description %>">
+    <meta property="og:site_name" content="<%= meta_title %>">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+    <%= favicon_link_tag asset_path('/assets/images/favicon/favicon.ico') %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
-    <%= stylesheet_link_tag "style" %>
-    <%= javascript_include_tag 'core.min' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+    <% if controller_name == "hommages" %>
+      <% if (action_name == "list" or action_name == "index" or action_name == "search") %>
+        <% @hommages.each do |hommage| %>
+          <% picture = "/assets/images/hommage-default.jpg" %>
+          <% if defined? (hommage.photos[0]) and defined? (hommage.photos[0].image.url()) %>
+            <% picture = hommage.photos[0].image.url() %>
+          <% end %>
+          <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "image": "<%= picture %>",
+              "jobTitle": "Research Assistant",
+              "name": "<%= hommage.first_name %> <%= hommage.last_name %>",
+              "alumniOf": "Dartmouth",
+              "birthPlace": "<%= hommage.first_name %>",
+              "birthDate": "<%= hommage.date_birth %>",
+              "burialPlace": "<%= hommage.burial_place %>",
+              "burialDate": "<%= hommage.date_death %>",
+              "height": "72 inches",
+              "gender": "female",
+              "nationality": "African American",
+              "url": "http://www.example.com",
+              "sameAs" : [ "https://www.facebook.com/",
+                          "http://twitter.com/",
+                          "http://instagram.com/"]
+            }
+          </script>
+        <% end %>
+      <% else %>
+        <% picture = "/assets/images/hommage-default.jpg" %>
+        <% if defined? (@hommage.photos[0]) and defined? (@hommage.photos[0].image.url()) %>
+          <% picture = @hommage.photos[0].image.url() %>
+        <% end %>
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "image": "<%= picture %>",
+              "jobTitle": "Research Assistant",
+              "name": "<%= @hommage.first_name %> <%= @hommage.last_name %>",
+              "alumniOf": "Dartmouth",
+              "birthPlace": "<%= @hommage.first_name %>",
+              "birthDate": "<%= @hommage.date_birth %>",
+              "burialPlace": "<%= @hommage.burial_place %>",
+              "burialDate": "<%= @hommage.date_death %>",
+              "height": "72 inches",
+              "gender": "female",
+              "nationality": "African American",
+              "url": "http://www.example.com",
+              "sameAs" : [ "https://www.facebook.com/",
+                          "http://twitter.com/",
+                          "http://instagram.com/"]
+            }
+          </script>
+      <% end %>
+    <% end %>
   </head>
 
-  <body>
-  <div class="page">
-    <%= render 'layouts/navigation' %>
-    <%= render 'shared/message' %>
-    <main class="page-content">
-      <% if action_name == "home" and controller_name === "pages" %>
-        <%= yield %>
-      <% else %>
-        <section class="section-34 section-bottom-78">
-          <%= yield %>
-        </section>
-      <% end %>
-    </main>
+  <body class="height-100 display-flex overflow-x-hidden fd-column">
+    <div class="display-flex flex-1 fd-column page">
+      <div class="display-flex flex-1 fd-column page">
+        <%= render 'layouts/navigation' %>
+        <%= render 'shared/message' %>
+        <main class="page-content flex-1">
+          <% if controller_name == "errors" or (action_name == "home" and controller_name === "pages") %>
+            <%= yield %>
+          <% else %>
+            <% if (controller_name == "hommages" and (action_name == "list" or action_name == "index" or action_name == "search")) %>
+              <%= render 'hommages/banners' %>
+            <% end %>
+            <section class="section-53 section-bottom-78">
+              <%= render "layouts/breadcrumb" %>
+              <%= yield %>
+            </section>
+          <% end %>
+        </main>
 
-    <%= render 'layouts/footer' %>
-  </div>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
+    <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>
+      <% render 'layouts/gallery' %>
+    <% end %>
 
-  <% if (action_name == "show" and controller_name == "hommages") or (action_name == "pages" and controller_name == "home") %>
-    <% render 'layouts/gallery' %>
-  <% end %>
-
-  <%= javascript_include_tag 'core.min' %>
-  <%= javascript_include_tag 'jsfooter' %>
+    <%= javascript_include_tag 'core.min' %>
+    <%= javascript_include_tag 'jsfooter' %>
   </body>
 </html>

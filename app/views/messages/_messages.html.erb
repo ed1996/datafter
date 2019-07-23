@@ -1,0 +1,17 @@
+<div class="<% if action_name === 'search' %>rd-search-results offset-top-60 <% else %> offset-top-0 range <% end %>">
+  <% @messages.each do |message| %>
+    <div class="cell-xs-12 border-default offset-top-60">
+      <div class="cell-xs-12 display-flex jc-space-between offset-top-15">
+        <p class="padding-right-xs">Objet : <%= message.object %></p>
+        <a href="<%= message_path(message) %>" class="btn btn-primary btn-xs-2">Voir le détail</a>
+      </div>
+      <div class="cell-xs-12 offset-top-25">
+        Contenu :
+        <div class="content-textarea"><%= message.content.html_safe %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="text-center offset-top-40">
+  <%= will_paginate @messages, :renderer => 'PaginateHelper::LinkRenderer' %>
+</div>

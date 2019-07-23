@@ -12,9 +12,14 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 gem 'bootstrap-sass', '~> 3.3.7'
-
+gem "breadcrumbs_on_rails"
+gem 'popper_js'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.1.1'
 
+gem 'friendly_id', '~> 5.2.4'
+
+gem 'activerecord-session_store'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
@@ -31,6 +36,8 @@ gem "paperclip"
 gem 'toastr-rails'
 
 gem 'paperclip-cloudinary'
+
+gem 'ckeditor', '~> 4.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'

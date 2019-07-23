@@ -1,6 +1,6 @@
-<% unless @hommage.errors.empty? %>
+<% unless resource.errors.empty? %>
     <script type="text/javascript">
-        <% @hommage.errors.full_messages.each do |msg| %>
+        <% resource.errors.full_messages.each do |msg| %>
         toastr.error('<%= msg %>')
         <% end %>
     </script>

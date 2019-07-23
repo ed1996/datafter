@@ -1,22 +1,12 @@
+<%= content_for :meta_title, "Recherche d'un hommage Datafter | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "Retrouvez un hommage spécifique sur notre plateforme | #{DEFAULT_META["meta_description"]}" %>
 <div class="container">
-  <div class="text-center">
-    <ol class="breadcrumb">
-      <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Tout les hommages", list_hommages_path%></li>
-      <% if current_user %>
-        <li><%= link_to "Mes hommages", hommages_path%></li>
-      <% end %>
-      <li>Recherche</li>
-    </ol>
-  </div>
-
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">Recherche</h2>
 
   <div class="range">
     <div class="cell-md-8 cell-md-preffix-2">
       <%= render 'layouts/search' %>
       <%= render 'layouts/results' %>
-      <%= render 'layouts/paginate' %>
     </div>
   </div>
 </div>

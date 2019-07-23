@@ -752,7 +752,7 @@ li.rd-navbar--has-dropdown, li.rd-navbar--has-megamenu {
         padding: 15px 0 6px;
         @include justify-content(center);
         @media (min-width: $screen-lg-min) {
-          padding: 68px 0 62px;
+          padding: 25px 0 25px;
           display: table-cell;
         }
       }
@@ -833,7 +833,7 @@ li.rd-navbar--has-dropdown, li.rd-navbar--has-megamenu {
 }
 .header-minimal, .header-transparent,  .header-hamburger{
   .rd-navbar-fixed{
-    .rd-navbar-right-panel { 
+    .rd-navbar-right-panel {
       display: none;
 
       &-toggle {

@@ -1,0 +1,32 @@
+<div class="shell text-center">
+  <h2 class="divider offset-top-80">
+    <% if @memory.id %>
+      Editez vos mémoires
+    <% else %>
+      Rédigez vos mémoires
+    <% end %>
+  </h2>
+
+  <div class="range offset-md-top-60">
+    <div class="cell-lg-8 cell-lg-preffix-2">
+      <%= form_for @memory, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>
+        <div class="range">
+          <%= render 'shared/errors', resource: @memory %>
+
+          <%= render 'layouts/inputRecipient', render_src: 'recipients_memories/list',resource: @memory.recipients_memories %>
+
+
+          <div class="cell-sm-12 offset-top-48">
+            <div class="form-group">
+              <label for="body" class="form-label">Message</label>
+              <%= f.cktext_area :body, :class => 'anyclas ckeditor', :ckeditor => {:toolbar => 'mini'} %>
+            </div>
+          </div>
+          <div class="cell-xs-12 text-center offset-top-27">
+            <%= f.submit "Je valide mon message", class:"btn btn-primary btn-sm btn-min-width-230" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

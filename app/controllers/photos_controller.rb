@@ -8,7 +8,9 @@ class PhotosController < ApplicationController
 
     @photos = Photo.where(hommage_id: hommage.id)
 
-    respond_to :js
+    respond_to do |format|
+      format.json { render json: @photos }
+    end
   end
 
 end

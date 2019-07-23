@@ -1,3 +1,16 @@
-<h1>Memories#index</h1>
-<p>Find me in app/views/memories/index.html.erb</p>
-<p>user <% memory %></p>
+<div class="container">
+  <div class="range">
+    <div class="cell-md-8 cell-md-preffix-2">
+      <h1>Mes mémoires</h1>
+      Memoire : <%= current_user.memory.inspect %>
+      <div class="cell-xs-12 border-default offset-top-60">
+        <p>Vos mémoires</p>
+        <div class="cell-xs-12 display-flex jc-space-between offset-top-15">
+          <p class="padding-right-xs"> <%= @memory.body %></p>
+        </div>
+      </div>
+
+      <p>Listez les adresses emails des destinataires à qui seront destinés vos mémoires.</p>
+    </div>
+  </div>
+</div>

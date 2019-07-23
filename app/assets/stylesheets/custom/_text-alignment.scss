@@ -17,6 +17,10 @@
   vertical-align: middle;
 }
 
+.content-textarea img{
+  width: auto;
+}
+
 @mixin make-text-alignment($resolution){
   .text-#{$resolution}-left {
     text-align: left;

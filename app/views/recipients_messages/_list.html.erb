@@ -1,0 +1,7 @@
+<% resource.each do |recipient| %>
+  <button class="btn btn-xs2 btn-meta btn-icon btn-icon-right delete-recipient" type="button"  value="<%= recipient.recipient %>" onclick="deleteRecipient(this, `/recipients_messages/${<%= recipient.id %>}`)">
+    <%= recipient.recipient%>
+    <span class="icon fa-trash"></span>
+    <input type="hidden" name="recipients[<%= recipient.recipient %>]" value="<%= recipient.recipient %>">
+  </button>
+<% end %>

@@ -1,12 +1,4 @@
 <div class="shell">
-  <div class="text-center">
-    <ol class="breadcrumb">
-      <li><%= link_to 'Datafter', root_path%></li>
-      <li><%= link_to "Mes hommages", hommages_path%></li>
-      <li><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
-      <li>Mon profil</li>
-    </ol>
-  </div>
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">Team Member Page</h2>
   <div class="range">
     <div class="cell-sm-4">
@@ -23,7 +15,14 @@
     <div class="cell-sm-8">
       <div class="h3 reveal-block"><%= @user.first_name %> <%= @user.last_name %></div>
       <hr class="offset-top-12"/>
-      <h5 class="divider-small offset-top-22"><%= @user.description %></h5>
+        <div class="offset-top-22">Vérification du compte : <% if @user.confirmed_at %>
+            Email confirmé
+          <% else %>
+            Email non confirmé
+          <% end %></div>
+      <hr class="offset-top-12"/>
+      <h4 class="divider-small offset-top-22">Biographie</h4>
+      <div class="content-textarea"><%= @user.description.html_safe %></div>
     </div>
   </div>
 </div>
