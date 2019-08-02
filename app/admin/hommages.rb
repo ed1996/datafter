@@ -8,13 +8,14 @@ ActiveAdmin.register Hommage do
 #
   permit_params do
     permitted = [:permitted, :attributes]
-    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted << :other if params[:action] == 'create' && current_admin_user
     permitted
   end
 
   controller do
     def find_resource
       begin
+        puts current_admin_user
         scoped_collection.where(slug: params[:id]).first!
       rescue ActiveRecord::RecordNotFound
         scoped_collection.find(params[:id])

@@ -8,7 +8,6 @@ ActiveAdmin.register Message do
 #
   permit_params do
     permitted = [:permitted, :attributes]
-    permitted << :other if (params[:action] == 'create' || params[:action] == 'update') && current_user.admin?
     permitted
   end
 
