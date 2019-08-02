@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20190710201931) do
 
   create_table "memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "body"
+    t.string "receivers"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

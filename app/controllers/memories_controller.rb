@@ -32,8 +32,15 @@ class MemoriesController < ApplicationController
   end
 
   def edit
-    @recipients_memory = @memory.recipients_memories
     @memory = current_user.memory
+    if !@memory
+      @memory = Memory.new
+      @recipients_memory = @memory.recipients_memories
+      @memory = current_user.memory
+      render :new
+    else
+      render :edit
+    end
   end
 
   def create

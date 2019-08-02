@@ -358,6 +358,7 @@ DEPENDENCIES
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen
   mysql2 (>= 0.3.18, < 0.6.0)
   omniauth
