@@ -11,7 +11,7 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-google-oauth2'
 
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem "breadcrumbs_on_rails"
 gem 'popper_js'
 gem 'jquery-rails'
