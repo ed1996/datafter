@@ -176,7 +176,7 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    mysql2 (0.5.3)
+    mysql2 (0.4.10)
     netrc (0.11.0)
     nio4r (2.5.2)
     nokogiri (1.10.9)
@@ -357,7 +357,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen
-  mysql2 (>= 0.3.18, < 0.6.0)
+  mysql2 (>= 0.3.18, < 0.5)
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
@@ -383,3 +383,5 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   will_paginate (~> 3.1.1)
 
+BUNDLED WITH
+   2.1.4
