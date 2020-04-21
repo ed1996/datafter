@@ -132,7 +132,7 @@ fabric.properties
 
 .metadata
 bin/
-tmp/
+
 *.tmp
 *.bak
 .idea*
