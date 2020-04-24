@@ -15728,3 +15728,89 @@ Completed 200 OK in 251ms (Views: 246.0ms | ActiveRecord: 2.9ms)
 
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/logout" for ::1 at 2020-04-24 23:10:36 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rtgh3FswBLatu7E7sryysEYe5iY8H+OhobtU8vlEOZNwHvVnOHMLjIRCtntetAfGycCXO4jwSXW2Y+ES3Pc5jA=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendlyId::Slug Load (0.8ms)[0m  [1m[34mSELECT  `friendly_id_slugs`.* FROM `friendly_id_slugs` WHERE `friendly_id_slugs`.`sluggable_id` = 1 AND `friendly_id_slugs`.`sluggable_type` = 'User' ORDER BY `friendly_id_slugs`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 7.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGSSILbm90aWNlBjsARkkiIkTDqWNvbm5lY3TDqShlKSBhdmVjIHN1\nY2PDqHMuBjsAVA==\n' WHERE `sessions`.`id` = 20[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-04-24 23:10:36 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.9ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (2.6ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 4[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  Rendered layouts/_hommages.html.erb (17.0ms)
+  Rendered layouts/_services.html.erb (1.1ms)
+  Rendered layouts/_formContact.html.erb (1.1ms)
+  Rendered layouts/_map.html.erb (0.6ms)
+  Rendered pages/home.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 288ms (Views: 280.3ms | ActiveRecord: 4.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjEweDZRR3cwSTR0anVzM3NlaWVk\nMXNhTFNLT3NIaTE3RkNOcWExSVI4V0R3PQY7AEY=\n', `updated_at` = '2020-04-24 21:10:37' WHERE `sessions`.`id` = 20[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for ::1 at 2020-04-24 23:10:40 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjEweDZRR3cwSTR0anVzM3NlaWVk\nMXNhTFNLT3NIaTE3RkNOcWExSVI4V0R3PQY7AEZJIhlhZG1pbl91c2VyX3Jl\ndHVybl90bwY7AFRJIgsvYWRtaW4GOwBUSSIKZmxhc2gGOwBUewdJIgxkaXNj\nYXJkBjsAVFsASSIMZmxhc2hlcwY7AFR7BkkiCmFsZXJ0BjsARkkiQlZvdXMg\nZGV2ZXogdm91cyBjb25uZWN0ZXIgb3Ugdm91cyBlbnJlZ2lzdHJlciBwb3Vy\nIGNvbnRpbnVlci4GOwBU\n', `updated_at` = '2020-04-24 21:10:40' WHERE `sessions`.`id` = 20[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/login" for ::1 at 2020-04-24 23:10:40 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/shared/_links.erb (3.0ms)
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (28.4ms)
+Completed 200 OK in 138ms (Views: 134.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjEweDZRR3cwSTR0anVzM3NlaWVk\nMXNhTFNLT3NIaTE3RkNOcWExSVI4V0R3PQY7AEZJIhlhZG1pbl91c2VyX3Jl\ndHVybl90bwY7AFRJIgsvYWRtaW4GOwBU\n' WHERE `sessions`.`id` = 20[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/admin/login" for ::1 at 2020-04-24 23:10:46 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zlu5RtQfSVlq2km/D1t3NGKJBQWN6mWe8UCidhUA5c8dRSld2RergYRpMqGGvAKFwFst7ophO1v5mjiikXy98w==", "admin_user"=>{"email"=>"admin@datafter.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mAdminUser Load (4.7ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@datafter.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 143ms (ActiveRecord: 6.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiH3dhcmRlbi51c2VyLmFkbWluX3VzZXIua2V5BjoGRVRbB1sGaQZJ\nIiIkMmEkMTEkT1UyNjluYWNERDVqN3NSWVh1cTZYdQY7AFRJIgpmbGFzaAY7\nAFR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNl\nBjsARkkiH0Nvbm5lY3TDqShlKSBhdmVjIHN1Y2PDqHMuBjsAVA==\n' WHERE `sessions`.`id` = 21[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for ::1 at 2020-04-24 23:10:46 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (3.1ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/page/index.html.arb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/page/index.html.arb (368.7ms)
+Completed 200 OK in 379ms (Views: 371.1ms | ActiveRecord: 3.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiH3dhcmRlbi51c2VyLmFkbWluX3VzZXIua2V5BjoGRVRbB1sGaQZJ\nIiIkMmEkMTEkT1UyNjluYWNERDVqN3NSWVh1cTZYdQY7AFRJIhBfY3NyZl90\nb2tlbgY7AEZJIjFYZlhpd2F1b3A1MExTUmU5YjZwYVpySkdnd01BVFhpRHc3\nVUNkN1RBL040PQY7AEY=\n' WHERE `sessions`.`id` = 21[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 11[0m
+  [1m[36mMemory Load (1.9ms)[0m  [1m[34mSELECT  `memories`.* FROM `memories` LIMIT 11[0m
+  [1m[36mHommage Load (9.1ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` LIMIT 11[0m
+  [1m[36mAdminUser Load (9.9ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` LIMIT 11[0m
