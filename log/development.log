@@ -15814,3 +15814,60 @@ Completed 200 OK in 379ms (Views: 371.1ms | ActiveRecord: 3.4ms)
   [1m[36mMemory Load (1.9ms)[0m  [1m[34mSELECT  `memories`.* FROM `memories` LIMIT 11[0m
   [1m[36mHommage Load (9.1ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` LIMIT 11[0m
   [1m[36mAdminUser Load (9.9ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` LIMIT 11[0m
+Started GET "/admin/logout" for ::1 at 2020-04-24 23:40:09 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VcScYb64NYl/WjrrEJD0abrj/qT6w3HKnltmPb/G6y0IMX6gFRCSFHQTLVZ/Oq4PCKV9p/qOCUld7mRKCwYX8w=="}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 50ms (ActiveRecord: 6.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGSSILbm90aWNlBjsARkkiIkTDqWNvbm5lY3TDqShlKSBhdmVjIHN1\nY2PDqHMuBjsAVA==\n' WHERE `sessions`.`id` = 22[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for ::1 at 2020-04-24 23:40:09 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGSSIKYWxlcnQGOwBGSSJCVm91cyBkZXZleiB2b3VzIGNvbm5lY3Rl\nciBvdSB2b3VzIGVucmVnaXN0cmVyIHBvdXIgY29udGludWVyLgY7AFRJIhlh\nZG1pbl91c2VyX3JldHVybl90bwY7AFRJIgsvYWRtaW4GOwBU\n' WHERE `sessions`.`id` = 22[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/login" for ::1 at 2020-04-24 23:40:09 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/shared/_links.erb (2.2ms)
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (204.8ms)
+Completed 200 OK in 463ms (Views: 455.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiGWFkbWluX3VzZXJfcmV0dXJuX3RvBjoGRVRJIgsvYWRtaW4GOwBU\nSSIQX2NzcmZfdG9rZW4GOwBGSSIxQStXbzdSVGViTjE5OXBkUDF1cjA3ckhv\nWW9iYTVHajBvSmlBL3Fxb2YwUT0GOwBG\n' WHERE `sessions`.`id` = 22[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-04-24 23:40:13 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.8ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (3.6ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 4[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (20.9ms)
+  Rendered layouts/_services.html.erb (0.8ms)
+  Rendered layouts/_formContact.html.erb (0.7ms)
+  Rendered layouts/_map.html.erb (1.7ms)
+  Rendered pages/home.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 260ms (Views: 242.6ms | ActiveRecord: 3.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
