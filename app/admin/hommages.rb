@@ -14,8 +14,8 @@ ActiveAdmin.register Hommage do
 
  # le controlleur se trouve dans applicaitoncontroller il faut ajouter ce code car il y avait une erreur pour l'affichage
 
-  controller do
-    skip_before_action :set_search
-  end
+ # controller do
+ #   skip_before_action :set_search
+ # end
 
 end

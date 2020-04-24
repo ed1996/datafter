@@ -15871,3 +15871,109 @@ Completed 200 OK in 260ms (Views: 242.6ms | ActiveRecord: 3.2ms)
 
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for ::1 at 2020-04-24 23:41:03 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7CEkiGWFkbWluX3VzZXJfcmV0dXJuX3RvBjoGRVRJIgsvYWRtaW4GOwBU\nSSIQX2NzcmZfdG9rZW4GOwBGSSIxQStXbzdSVGViTjE5OXBkUDF1cjA3ckhv\nWW9iYTVHajBvSmlBL3Fxb2YwUT0GOwBGSSIKZmxhc2gGOwBUewdJIgxkaXNj\nYXJkBjsAVFsASSIMZmxhc2hlcwY7AFR7BkkiCmFsZXJ0BjsARkkiQlZvdXMg\nZGV2ZXogdm91cyBjb25uZWN0ZXIgb3Ugdm91cyBlbnJlZ2lzdHJlciBwb3Vy\nIGNvbnRpbnVlci4GOwBU\n', `updated_at` = '2020-04-24 21:41:03' WHERE `sessions`.`id` = 22[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/login" for ::1 at 2020-04-24 23:41:03 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/shared/_links.erb (1.3ms)
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (49.2ms)
+Completed 200 OK in 137ms (Views: 127.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiGWFkbWluX3VzZXJfcmV0dXJuX3RvBjoGRVRJIgsvYWRtaW4GOwBU\nSSIQX2NzcmZfdG9rZW4GOwBGSSIxQStXbzdSVGViTjE5OXBkUDF1cjA3ckhv\nWW9iYTVHajBvSmlBL3Fxb2YwUT0GOwBG\n' WHERE `sessions`.`id` = 22[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/admin/login" for ::1 at 2020-04-24 23:41:08 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AyqBbuSK2PbUS+aSMNPuCK8m+M2IaXMfMFVYzeNWllEAzymD8FS0K6m9cd3mORrmHs6aS1KNG+uQzdgzSf7pFQ==", "admin_user"=>{"email"=>"admin@datafter.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@datafter.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 137ms (ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiH3dhcmRlbi51c2VyLmFkbWluX3VzZXIua2V5BjoGRVRbB1sGaQZJ\nIiIkMmEkMTEkT1UyNjluYWNERDVqN3NSWVh1cTZYdQY7AFRJIgpmbGFzaAY7\nAFR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNl\nBjsARkkiH0Nvbm5lY3TDqShlKSBhdmVjIHN1Y2PDqHMuBjsAVA==\n' WHERE `sessions`.`id` = 23[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for ::1 at 2020-04-24 23:41:08 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/page/index.html.arb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/page/index.html.arb (80.6ms)
+Completed 200 OK in 86ms (Views: 82.9ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7B0kiH3dhcmRlbi51c2VyLmFkbWluX3VzZXIua2V5BjoGRVRbB1sGaQZJ\nIiIkMmEkMTEkT1UyNjluYWNERDVqN3NSWVh1cTZYdQY7AFRJIhBfY3NyZl90\nb2tlbgY7AEZJIjFFWWhzMlg3NXJObk45MFU5Mm9CMlJNZzVVVmw5NVVaL3BO\nbmY1M3p5cEs0PQY7AEY=\n' WHERE `sessions`.`id` = 23[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/hommages" for ::1 at 2020-04-24 23:41:10 +0200
+Processing by Admin::HommagesController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `hommages`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mHommage Load (0.3ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY `hommages`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos`[0m
+  [1m[36mFriendlyId::Slug Load (1.0ms)[0m  [1m[34mSELECT `friendly_id_slugs`.* FROM `friendly_id_slugs`[0m
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb (238.6ms)
+Completed 200 OK in 252ms (Views: 236.1ms | ActiveRecord: 10.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/users" for ::1 at 2020-04-24 23:41:15 +0200
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[36mFriendlyId::Slug Load (3.5ms)[0m  [1m[34mSELECT `friendly_id_slugs`.* FROM `friendly_id_slugs`[0m
+  [1m[36mHommage Load (0.3ms)[0m  [1m[34mSELECT `hommages`.* FROM `hommages`[0m
+  [1m[36mMemory Load (0.3ms)[0m  [1m[34mSELECT `memories`.* FROM `memories`[0m
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb (252.6ms)
+Completed 200 OK in 260ms (Views: 243.4ms | ActiveRecord: 12.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/hommages" for ::1 at 2020-04-24 23:41:16 +0200
+Processing by Admin::HommagesController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `hommages`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `hommages` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mHommage Load (0.3ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY `hommages`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos`[0m
+  [1m[36mFriendlyId::Slug Load (0.3ms)[0m  [1m[34mSELECT `friendly_id_slugs`.* FROM `friendly_id_slugs`[0m
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.4.0/app/views/active_admin/resource/index.html.arb (165.4ms)
+Completed 200 OK in 171ms (Views: 164.0ms | ActiveRecord: 3.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
