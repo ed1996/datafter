@@ -20382,3 +20382,91 @@ Completed 200 OK in 220ms (Views: 213.6ms | ActiveRecord: 3.5ms)
 
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/services" for ::1 at 2020-04-26 17:15:23 +0200
+Processing by PagesController#services as HTML
+  Rendering pages/services.html.erb within layouts/application
+  Rendered pages/services.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 245ms (Views: 242.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-04-26 17:15:25 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.4ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.6ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.6ms)
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.7ms)
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  Rendered layouts/_hommages.html.erb (20.8ms)
+  Rendered layouts/_services.html.erb (0.5ms)
+  Rendered layouts/_formContact.html.erb (0.5ms)
+  Rendered layouts/_map.html.erb (0.5ms)
+  Rendered pages/home.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 240ms (Views: 233.0ms | ActiveRecord: 3.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-04-26 17:17:16 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.4ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.9ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (14.5ms)
+  Rendered layouts/_services.html.erb (0.4ms)
+  Rendered layouts/_formContact.html.erb (0.5ms)
+  Rendered layouts/_map.html.erb (0.5ms)
+  Rendered pages/home.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 12838ms (Views: 12832.9ms | ActiveRecord: 2.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-04-26 17:17:55 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.7ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.8ms)
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.6ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (16.3ms)
+  Rendered layouts/_services.html.erb (0.4ms)
+  Rendered layouts/_formContact.html.erb (0.4ms)
+  Rendered layouts/_map.html.erb (0.4ms)
+  Rendered pages/home.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 231ms (Views: 226.2ms | ActiveRecord: 2.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
