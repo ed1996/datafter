@@ -47,7 +47,7 @@
               <li class="<%= active_for(path: "/") %>"><%= link_to 'Accueil', '/' %></li>
               <li class="<%= active_for(path: "/services") %>"><%= link_to 'Services', "/services" %></li>
               <li class="<%= active_for(path: "/hommages/list") %>"><%= link_to 'Hommage', list_hommages_path %></li>
-              <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', "/contact" %></li>
+              <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', new_contact_path %></li>
               <li class="<%= active_for(path: "/sign_up") %>"><%= link_to 'Inscription', new_user_registration_path %></li>
               <li class="<%= active_for(path: "/login") %>"><%= link_to 'Connexion', new_user_session_path %></li>
             <% else %>

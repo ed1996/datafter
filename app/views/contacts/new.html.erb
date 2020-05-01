@@ -1,0 +1,96 @@
+<%= content_for :meta_title, "Contactez Datafter | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "Pour plus d'information vous pouvez nous contacter | #{DEFAULT_META["meta_description"]}" %>
+<div class="shell">
+  <h2 class="divider offset-top-80 text-center">Contactez-nous</h2>
+  <div class="range">
+    <div class="cell-md-8">
+      <h3 class="txt-black text-center">Entrer en contact</h3>
+      <p class="offset-top-27">Vous pouvez nous contacter par tout moyen qui vous convient. Nous sommes disponibles 24h / 24 et 7j / 7 par e-mail. Vous pouvez également utiliser le formulaire de contact rapide ci-dessous.</p>
+      <p>Envoyez-nous un e-mail pour toutes questions ou demandes de renseignements ou utilisez nos coordonnées. Nous serions heureux de répondre à vos questions.</p>
+      <!-- RD Mailform-->
+      <div class="cell-lg-8 cell-lg-preffix-2 offset-top-118">
+        <!-- RD Mailform-->
+        <%= form_for @contact do |f| %>
+              <div class="range">
+                <div class="cell-sm-6">
+                  <div class="form-group">
+                    <!--<label for="contact-name" class="form-label">Your first name</label>-->
+                    <%= f.text_field :first_name, required: true, placeholder:"Votre prénom", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-sm-6 offset-top-48 offset-sm-top-0">
+                  <div class="form-group">
+                    <!--<label for="contact-name-last" class="form-label">Your last name</label>-->
+                    <%= f.text_field :name, required: true, placeholder:"Votre nom", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-sm-6 offset-top-48">
+                  <div class="form-group">
+                    <!--<label for="contact-phone" class="form-label">Your phone</label>-->
+                    <%= f.text_field :phone, required: true, placeholder:"Votre téléphone", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-sm-6 offset-top-48">
+                  <div class="form-group">
+                    <!--<label for="contact-email" class="form-label">Your email</label>-->
+                    <%= f.text_field :email, required: true, placeholder:"Votre email", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-xs-12 offset-top-48">
+                  <div class="form-group">
+                    <!--<label for="contact-email" class="form-label">Your email</label>-->
+                    <%= f.text_field :sujet, placeholder:"Sujet", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-xs-12 offset-top-48">
+                  <div class="form-group">
+                    <!--<label for="contact-message" class="form-label">Message</label>-->
+                    <%= f.text_area :message, required: true, placeholder:"Votre message", :class => "form-control" %>
+                  </div>
+                </div>
+                <div class="cell-xs-12 text-center offset-top-27">
+                  <%= f.submit 'Envoyer', class:'btn btn-primary btn-sm btn-min-width-230' %>
+                </div>
+              </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="cell-md-4">
+      <div class="inset-md-left-25">
+        <div class="range">
+          <div class="cell-xs-6 cell-sm-3 cell-md-12 cell-xs-push-1">
+            <h5 class="txt-matrix">Suivez-nous</h5>
+            <ul class="list-inline list-inline-variant-4 offset-top-7">
+              <li><a href="#" class="icon icon-xxs icon-darker fa-facebook"></a></li>
+              <li><a href="#" class="icon icon-xxs icon-darker fa-twitter"></a></li>
+              <li><a href="#" class="icon icon-xxs icon-darker fa-pinterest"></a></li>
+              <li><a href="#" class="icon icon-xxs icon-darker fa-vimeo"></a></li>
+              <li><a href="#" class="icon icon-xxs icon-darker fa-google"></a></li>
+            </ul>
+          </div>
+          <div class="cell-xs-6 cell-sm-3 cell-md-12 offset-top-36 offset-sm-top-0 offset-md-top-36 cell-xs-push-3 cell-md-push-2">
+            <h5 class="txt-matrix">Téléphones</h5>
+            <ul class="offset-top-10">
+              <li><a href="callto:#" class="txt-black">1-800-1234-567</a></li>
+              <li><a href="callto:#" class="txt-black">1-800-987-1234</a></li>
+            </ul>
+          </div>
+          <div class="cell-xs-6 cell-sm-3 cell-md-12 offset-top-36 offset-xs-top-0 offset-md-top-36 cell-xs-push-2 cell-md-push-3">
+            <h5 class="txt-matrix">E-mail</h5><a href="mailto:#" class="txt-matrix offset-top-10 reveal-inline-block">info@demolink.org</a>
+          </div>
+          <div class="cell-xs-6 cell-sm-3 cell-md-12 offset-top-36 offset-sm-top-0 offset-md-top-36 cell-xs-push-4">
+            <h5 class="txt-matrix">Address</h5>
+            <address class="address offset-top-7">
+              <p>5750 S Kenwood Ave 3,<br>Chicago, IL 60637</p>
+            </address>
+          </div>
+          <div class="cell-xs-6 cell-sm-4 cell-md-12 cell-xs-push-5">
+            <h5 class="txt-matrix offset-top-36">Working Hours</h5>
+            <p class="offset-top-7">Mon–Fri 9:00am–7:00pm</p>
+            <p class="offset-top-0">Sat–Sun 10:00am–5:00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

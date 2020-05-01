@@ -65,4 +65,5 @@ Rails.application.routes.draw do
   resources :photos
   resources :memories
   resources :recipients_memories
+  resources :contacts, only: [:new, :create]
 end

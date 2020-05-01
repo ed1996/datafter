@@ -21084,3 +21084,1350 @@ Completed 200 OK in 188ms (Views: 185.4ms | ActiveRecord: 0.6ms)
 
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contact" for ::1 at 2020-05-01 17:46:50 +0200
+  [1m[35m (10.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#contact as HTML
+  Rendering pages/contact.html.erb within layouts/application
+  Rendered layouts/_formContact.html.erb (0.3ms)
+  Rendered pages/contact.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 4247ms (Views: 4214.2ms | ActiveRecord: 16.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contact" for ::1 at 2020-05-01 17:48:12 +0200
+Processing by PagesController#contact as HTML
+  Rendering pages/contact.html.erb within layouts/application
+  Rendered layouts/_formContact.html.erb (0.3ms)
+  Rendered pages/contact.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 299ms (Views: 291.3ms | ActiveRecord: 5.9ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-01 17:48:14 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (4.8ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.2ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  Rendered layouts/_hommages.html.erb (69.9ms)
+  Rendered layouts/_services.html.erb (0.7ms)
+  Rendered layouts/_formContact.html.erb (0.3ms)
+  Rendered layouts/_map.html.erb (0.3ms)
+  Rendered pages/home.html.erb within layouts/application (77.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 224ms (Views: 204.1ms | ActiveRecord: 16.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/hommages/list" for ::1 at 2020-05-01 17:48:16 +0200
+Processing by HommagesController#list as HTML
+  Rendering hommages/list.erb within layouts/application
+  Rendered layouts/_search.html.erb (9.9ms)
+  [1m[36mHommage Load (1.3ms)[0m  [1m[34mSELECT  DISTINCT `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 10 OFFSET 0[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (0.9ms)
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 4[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 1[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (16.3ms)
+  Rendered hommages/list.erb within layouts/application (28.9ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered hommages/_banners.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 192ms (Views: 180.9ms | ActiveRecord: 4.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:48:16 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 155ms (Views: 141.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-01 17:48:25 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.4ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.6ms)
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.8ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.8ms)
+  [1m[36mPhoto Load (1.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.8ms)
+  Rendered layouts/_hommages.html.erb (21.5ms)
+  Rendered layouts/_services.html.erb (0.7ms)
+  Rendered layouts/_formContact.html.erb (0.9ms)
+  Rendered layouts/_map.html.erb (0.6ms)
+  Rendered pages/home.html.erb within layouts/application (29.7ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 248ms (Views: 235.9ms | ActiveRecord: 9.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-01 17:49:23 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.3ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.3ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.3ms)
+  Rendered layouts/_hommages.html.erb (13.3ms)
+  Rendered layouts/_services.html.erb (0.6ms)
+  Rendered layouts/_formContact.html.erb (0.4ms)
+  Rendered layouts/_map.html.erb (0.3ms)
+  Rendered pages/home.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 222ms (Views: 212.5ms | ActiveRecord: 7.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:49:25 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 151ms (Views: 148.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:50:10 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (38.8ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 204ms (Views: 201.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:50:40 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 155ms (Views: 151.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:51:16 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 251ms (Views: 248.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 17:55:51 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 212ms (Views: 209.3ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:00:32 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 211ms (Views: 208.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:08:07 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 208ms (Views: 206.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:08:34 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 221ms (Views: 218.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:09:00 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 153ms (Views: 151.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:19:55 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 220ms (Views: 217.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:21:29 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 159ms (Views: 151.9ms | ActiveRecord: 4.9ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-01 18:21:36 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.4ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.1ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  Rendered layouts/_hommages.html.erb (17.0ms)
+  Rendered layouts/_services.html.erb (0.7ms)
+  Rendered layouts/_formContact.html.erb (0.4ms)
+  Rendered layouts/_map.html.erb (0.3ms)
+  Rendered pages/home.html.erb within layouts/application (24.0ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 172ms (Views: 166.2ms | ActiveRecord: 3.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:21:37 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 211ms (Views: 208.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/services" for ::1 at 2020-05-01 18:42:47 +0200
+Processing by PagesController#services as HTML
+  Rendering pages/services.html.erb within layouts/application
+  Rendered pages/services.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered layouts/_breadcrumb.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 384ms (Views: 362.3ms | ActiveRecord: 1.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:42:49 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 277ms (Views: 274.4ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:43:37 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"83Vb06L9lgyfHORkdnDA16Lqte5SCGjX+qly9f/UI9CpWWv6ZeTLBuPbD3HJ05Ap4nOt07fTea5P+Q46xRCxDw==", "contact"=>{"first_name"=>"John", "name"=>"Smith", "phone"=>"0635263763", "email"=>"john@gmail.com", "sujet"=>"test mail", "message"=>"testtest"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (4.9ms)
+MailForm::Notifier#contact: processed outbound mail in 252.6ms
+Sent mail to edgar.bekier@gmail.com (15.0ms)
+Date: Fri, 01 May 2020 18:43:38 +0200
+From: Smith <john@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac51bad979_1229b3fbf8aa8eab06748c@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Smith</p>
+
+  <p><b>Phone:</b>
+  0635263763</p>
+
+  <p><b>Email:</b>
+  john@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  test mail</p>
+
+  <p><b>Message:</b>
+  testtest</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation.html.erb (10.4ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 595ms (Views: 270.7ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/index.html" for ::1 at 2020-05-01 18:43:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index.html"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.6ms)
+  Rendered errors/not_found.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 404 Not Found in 327ms (Views: 324.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-01 18:43:47 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (3.0ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.6ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.5ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (19.1ms)
+  Rendered layouts/_services.html.erb (0.6ms)
+  Rendered layouts/_formContact.html.erb (0.3ms)
+  Rendered layouts/_map.html.erb (0.4ms)
+  Rendered pages/home.html.erb within layouts/application (25.0ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 170ms (Views: 160.0ms | ActiveRecord: 6.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/index.html" for ::1 at 2020-05-01 18:44:05 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index.html"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.6ms)
+  Rendered errors/not_found.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 404 Not Found in 211ms (Views: 207.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contacts" for ::1 at 2020-05-01 18:44:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.6ms)
+  Rendered errors/not_found.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 404 Not Found in 167ms (Views: 165.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for ::1 at 2020-05-01 18:44:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.5ms)
+  Rendered errors/not_found.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 404 Not Found in 216ms (Views: 214.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts" for ::1 at 2020-05-01 18:44:12 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CPUTLBk43uqJZu6o9tnw9OWrGEo4BdTWaxIncKnzyhBk4PVkvMSY/PLUZeWWi7hejmqXisDfdXqdwsPKU2b5w==", "contact"=>{"first_name"=>"John", "name"=>"Smith", "phone"=>"0635263763", "email"=>"john@gmail.com", "sujet"=>"test mail", "message"=>"testtest"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.5ms)
+MailForm::Notifier#contact: processed outbound mail in 12.7ms
+Sent mail to edgar.bekier@gmail.com (1.9ms)
+Date: Fri, 01 May 2020 18:44:12 +0200
+From: Smith <john@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac51dced454_1229b3fbf8aa8e85867570@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Smith</p>
+
+  <p><b>Phone:</b>
+  0635263763</p>
+
+  <p><b>Email:</b>
+  john@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  test mail</p>
+
+  <p><b>Message:</b>
+  testtest</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 158ms (Views: 138.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for ::1 at 2020-05-01 18:45:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.5ms)
+  Rendered errors/not_found.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 404 Not Found in 180ms (Views: 178.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/contacts" for ::1 at 2020-05-01 18:45:41 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CPUTLBk43uqJZu6o9tnw9OWrGEo4BdTWaxIncKnzyhBk4PVkvMSY/PLUZeWWi7hejmqXisDfdXqdwsPKU2b5w==", "contact"=>{"first_name"=>"John", "name"=>"Smith", "phone"=>"0635263763", "email"=>"john@gmail.com", "sujet"=>"test mail", "message"=>"testtest"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.5ms)
+MailForm::Notifier#contact: processed outbound mail in 13.6ms
+Sent mail to edgar.bekier@gmail.com (2.4ms)
+Date: Fri, 01 May 2020 18:45:41 +0200
+From: Smith <john@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac52352c2e8_1229b3fbf8aa8e5ec67618@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Smith</p>
+
+  <p><b>Phone:</b>
+  0635263763</p>
+
+  <p><b>Email:</b>
+  john@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  test mail</p>
+
+  <p><b>Message:</b>
+  testtest</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 178ms (Views: 158.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for ::1 at 2020-05-01 18:46:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.5ms)
+  Rendered errors/not_found.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 404 Not Found in 231ms (Views: 228.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts" for ::1 at 2020-05-01 18:46:57 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CPUTLBk43uqJZu6o9tnw9OWrGEo4BdTWaxIncKnzyhBk4PVkvMSY/PLUZeWWi7hejmqXisDfdXqdwsPKU2b5w==", "contact"=>{"first_name"=>"John", "name"=>"Smith", "phone"=>"0635263763", "email"=>"john@gmail.com", "sujet"=>"test mail", "message"=>"testtest"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.4ms)
+MailForm::Notifier#contact: processed outbound mail in 13.0ms
+Sent mail to edgar.bekier@gmail.com (1.7ms)
+Date: Fri, 01 May 2020 18:46:57 +0200
+From: Smith <john@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac528176658_1229b3fbf8aa8e5ec677e5@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Smith</p>
+
+  <p><b>Phone:</b>
+  0635263763</p>
+
+  <p><b>Email:</b>
+  john@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  test mail</p>
+
+  <p><b>Message:</b>
+  testtest</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 201ms (Views: 182.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/new" for ::1 at 2020-05-01 18:47:05 +0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 236ms (Views: 233.4ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for ::1 at 2020-05-01 18:47:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.5ms)
+  Rendered errors/not_found.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 404 Not Found in 172ms (Views: 170.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts" for ::1 at 2020-05-01 18:47:31 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (2.4ms)
+MailForm::Notifier#contact: processed outbound mail in 16.6ms
+Sent mail to edgar.bekier@gmail.com (2.2ms)
+Date: Fri, 01 May 2020 18:47:31 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac52a38936f_1229b3fbf8aa8eab0678b3@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 184ms (Views: 160.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:48:13 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.6ms)
+MailForm::Notifier#contact: processed outbound mail in 15.0ms
+Sent mail to edgar.bekier@gmail.com (1.3ms)
+Date: Fri, 01 May 2020 18:48:13 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac52cd80068_1229b3fbf8aa8e70467944@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 217ms (Views: 197.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-01 18:48:17 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHommage Load (0.4ms)[0m  [1m[34mSELECT  `hommages`.* FROM `hommages` ORDER BY id DESC LIMIT 4[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 8[0m
+  Rendered layouts/_thumbnail.html.erb (1.3ms)
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 7[0m
+  Rendered layouts/_thumbnail.html.erb (0.8ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 6[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`hommage_id` = 5[0m
+  Rendered layouts/_thumbnail.html.erb (0.4ms)
+  Rendered layouts/_hommages.html.erb (15.3ms)
+  Rendered layouts/_services.html.erb (0.7ms)
+  Rendered layouts/_formContact.html.erb (0.3ms)
+  Rendered layouts/_map.html.erb (0.2ms)
+  Rendered pages/home.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 166ms (Views: 161.0ms | ActiveRecord: 2.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for ::1 at 2020-05-01 18:48:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/contacts"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by ErrorsController#not_found as HTML
+  Rendering errors/not_found.html.erb within layouts/application
+  Rendered errors/_layout.html.erb (0.7ms)
+  Rendered errors/not_found.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 404 Not Found in 196ms (Views: 194.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/contacts" for ::1 at 2020-05-01 18:50:03 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.5ms)
+MailForm::Notifier#contact: processed outbound mail in 13.7ms
+Sent mail to edgar.bekier@gmail.com (1.3ms)
+Date: Fri, 01 May 2020 18:50:03 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac533bb1e98_1229b3fbf8aa8e858680e8@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 166ms (Views: 147.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:50:52 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.9ms)
+MailForm::Notifier#contact: processed outbound mail in 13.2ms
+Sent mail to edgar.bekier@gmail.com (2.3ms)
+Date: Fri, 01 May 2020 18:50:52 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac536c1c625_1229b3fbf8aa8e5ec681d3@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 230ms (Views: 209.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:51:21 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.6ms)
+MailForm::Notifier#contact: processed outbound mail in 12.9ms
+Sent mail to edgar.bekier@gmail.com (2.0ms)
+Date: Fri, 01 May 2020 18:51:21 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac53898da8b_1229b3fbf8aa8e948682d@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 212ms (Views: 193.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:52:05 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.8ms)
+MailForm::Notifier#contact: processed outbound mail in 14.6ms
+Sent mail to edgar.bekier@gmail.com (2.0ms)
+Date: Fri, 01 May 2020 18:52:06 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac53b63e70_1229b3fbf8aa8e858683fd@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 179ms (Views: 158.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2020-05-01 18:52:36 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.9ms)
+MailForm::Notifier#contact: processed outbound mail in 14.8ms
+Sent mail to edgar.bekier@gmail.com (1.5ms)
+Date: Fri, 01 May 2020 18:52:36 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac53d445f20_1229b3fbf8aa8e7046847d@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (1271.4ms)
+Completed 500 Internal Server Error in 1295ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bgImg' for #<#<Class:0x00007f7f166b3ef0>:0x00007f7f10132b30>):
+    1: <section class="section-53 bg-image <%= bgImg %> section-bottom-88 ai-center display-flex height-100">
+    2:     <div class="container text-center txt-white">
+    3:       <div class="row">
+    4:         <div class="col-md-8 col-md-offset-2">
+  
+app/views/contacts/create.html.erb:1:in `_app_views_contacts_create_html_erb__1751116052784781013_70091853634360'
+Started POST "/contacts" for ::1 at 2020-05-01 18:52:48 +0200
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WrGs7JcXyR+V1Ao6YbirrqYzFTKLbhco4d7a8xBXG7fPAft1tYA4B8w6wBdUOeKMD5wTDYiNfa5SBZlh+71PeA==", "contact"=>{"first_name"=>"John", "name"=>"Tilin", "phone"=>"0637482738", "email"=>"john.tili@gmail.com", "sujet"=>"testtet", "message"=>"ttdezrgt"}, "commit"=>"Envoyer"}
+  Rendering /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/edgarbekier/.rvm/gems/ruby-2.6.5/gems/mail_form-1.8.0/lib/mail_form/views/mail_form/contact.erb (1.7ms)
+MailForm::Notifier#contact: processed outbound mail in 14.9ms
+Sent mail to edgar.bekier@gmail.com (1.3ms)
+Date: Fri, 01 May 2020 18:52:48 +0200
+From: Tilin <john.tili@gmail.com>
+To: edgar.bekier@gmail.com
+Message-ID: <5eac53e070de3_1229b3fbf8aa8eab0685dc@MacBook-Pro-de-Edgar.local.mail>
+Subject: Formulaire de contact
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Formulaire de contact</h4>
+
+
+  <p><b>First name:</b>
+  John</p>
+
+  <p><b>Name:</b>
+  Tilin</p>
+
+  <p><b>Phone:</b>
+  0637482738</p>
+
+  <p><b>Email:</b>
+  john.tili@gmail.com</p>
+
+  <p><b>Sujet:</b>
+  testtet</p>
+
+  <p><b>Message:</b>
+  ttdezrgt</p>
+
+
+  Rendering contacts/create.html.erb within layouts/application
+  Rendered contacts/create.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered layouts/_breadcrumb.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 183ms (Views: 163.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
