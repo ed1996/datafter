@@ -78,7 +78,7 @@
                   <li><%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
-              <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', "/contact" %></li>
+                <li class="<%= active_for(path: "/contact") %>"><%= link_to 'Contact', new_contact_path %></li>
             <% end %>
           </ul>
         </div>
