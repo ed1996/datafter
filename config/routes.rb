@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get "/robots.:format", to: "pages#robots"
   get '/contact', to: 'pages#contact'
   get '/services', to: 'pages#services'
+  get '/legal', to: 'pages#legal'
 
   get '/confirmation_instructions', to: 'device#mailer#confirmation_instructions'
   get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
