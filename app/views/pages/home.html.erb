@@ -94,7 +94,49 @@
     <h2 class="text-center divider">Contactez-nous pour une aide</h2>
     <div class="range">
       <div class="cell-lg-8 cell-lg-preffix-2">
-        <%= render 'layouts/formContact' %>
+        <%= form_for @contact do |f| %>
+            <div class="range">
+              <div class="cell-sm-6">
+                <div class="form-group">
+                  <!--<label for="contact-name" class="form-label">Your first name</label>-->
+                  <%= f.text_field :first_name, required: true, placeholder:"Votre prénom", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-sm-6 offset-top-48 offset-sm-top-0">
+                <div class="form-group">
+                  <!--<label for="contact-name-last" class="form-label">Your last name</label>-->
+                  <%= f.text_field :name, required: true, placeholder:"Votre nom", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-sm-6 offset-top-48">
+                <div class="form-group">
+                  <!--<label for="contact-phone" class="form-label">Your phone</label>-->
+                  <%= f.text_field :phone, required: true, placeholder:"Votre téléphone", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-sm-6 offset-top-48">
+                <div class="form-group">
+                  <!--<label for="contact-email" class="form-label">Your email</label>-->
+                  <%= f.text_field :email, required: true, placeholder:"Votre email", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-xs-12 offset-top-48">
+                <div class="form-group">
+                  <!--<label for="contact-email" class="form-label">Your email</label>-->
+                  <%= f.text_field :sujet, placeholder:"Sujet", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-xs-12 offset-top-48">
+                <div class="form-group">
+                  <!--<label for="contact-message" class="form-label">Message</label>-->
+                  <%= f.text_area :message, required: true, placeholder:"Votre message", :class => "form-control" %>
+                </div>
+              </div>
+              <div class="cell-xs-12 text-center offset-top-27">
+                <%= f.submit 'Envoyer', class:'btn btn-primary btn-sm btn-min-width-230' %>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>
