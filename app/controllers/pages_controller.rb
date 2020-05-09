@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def services
-    add_breadcrumbs_contact
+   # add_breadcrumbs_contact
     add_breadcrumbs_services
   end
 end
