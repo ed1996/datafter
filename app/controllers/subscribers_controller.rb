@@ -20,7 +20,7 @@ class SubscribersController < ApplicationController
 
     customer = Stripe::Customer.create(
         card: token,
-        plan: 2030,
+        plan: "price_1Grh5OG6VjaT54O4p1EgxfK3",
         email: current_user.email
     )
     current_user.subscribed = true

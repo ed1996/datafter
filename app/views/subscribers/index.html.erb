@@ -1,20 +1,19 @@
 <%= content_for :meta_title, "Abonnez-vous Datafter | #{DEFAULT_META["meta_title"]}" %>
 <%= content_for :meta_description, "Pour accèder à plus de fonctionnalités de notre plateforme abboner vous; | #{DEFAULT_META["meta_description"]}" %>
 <div class="shell">
-  <h2 class="divider offset-top-80 text-center">Vous devez payer par starpass pour pouvoir accéder à la fonctionnalité.</h2>
-  <!--<%#
-  <% if current_user.subscribed? %>%>
-    <h2 class="divider offset-top-80 text-center">Vous êtes déjà abonné.</h2>
-  <%#<% else %>%>
+  <!--<h2 class="divider offset-top-80 text-center">Vous devez payer par stripe pour pouvoir accéder à la fonctionnalité.</h2>-->
+  <% if current_user.subscribed? %>
+    <h2 class="divider offset-top-80 text-center">Vous avez déjà payé cette fonctionnalité.</h2>
+  <% else %>
       <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
       <script type="text/javascript">
-     <%#     Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');%>
+          Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
       </script>
-    <h2 class="divider offset-top-80 text-center">Souscription à l'abonnement</h2>
+    <h2 class="divider offset-top-80 text-center">Vous devez payer par stripe pour pouvoir accéder à la fonctionnalité</h2>
     <div class="range">
       <div class="cell-md-8 cell-md-preffix-2">
         <div class="jc-center display-flex">
-     <%#     <%= link_to 'Paiement avec Stripe', new_subscriber_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-transparent-2 btn-sm'}  %>%>
+     <%= link_to 'Paiement avec Stripe', new_subscriber_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-transparent-2 btn-sm'}  %>
         </div>
         <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-sm" role="document">
@@ -24,7 +23,7 @@
         </div>
       </div>
     </div>
-  <%#<% end %>%>-->
+  <% end %>
   <br><br>
-  <div id="starpass_438832"></div><script type="text/javascript" src="https://script.starpass.fr/script.php?idd=438832&amp;datas="></script><noscript>Veuillez activer le Javascript de votre navigateur s'il vous pla&icirc;t.<br /><a href="https://www.starpass.fr/">Micropaiement StarPass</a></noscript>
+ <!-- <div id="starpass_438832"></div><script type="text/javascript" src="https://script.starpass.fr/script.php?idd=438832&amp;datas="></script><noscript>Veuillez activer le Javascript de votre navigateur s'il vous pla&icirc;t.<br /><a href="https://www.starpass.fr/">Micropaiement StarPass</a></noscript>-->
 </div>

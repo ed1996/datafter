@@ -17,6 +17,10 @@ class PagesController < ApplicationController
 
   end
 
+  def politique
+
+  end
+
   def services
    # add_breadcrumbs_contact
     add_breadcrumbs_services

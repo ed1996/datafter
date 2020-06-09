@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/services', to: 'pages#services'
   get '/legal', to: 'pages#legal'
+  get '/politique', to: 'pages#politique'
 
   get '/confirmation_instructions', to: 'device#mailer#confirmation_instructions'
   get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
