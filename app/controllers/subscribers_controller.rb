@@ -20,14 +20,15 @@ class SubscribersController < ApplicationController
 
     customer = Stripe::Customer.create(
         card: token,
-        plan: "price_1Grh5OG6VjaT54O4p1EgxfK3",
+        plan: "price_1GrhYZG6VjaT54O4lEORakAF",
         email: current_user.email
     )
     current_user.subscribed = true
     current_user.stripeid = customer.id
     current_user.save
 
-    redirect_to root_path
+    #redirect_to root_path
+    redirect_to new_hommage_path
 
   end
 end
