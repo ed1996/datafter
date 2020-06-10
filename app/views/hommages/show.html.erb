@@ -45,11 +45,11 @@
       <div class="h3"><%= @hommage.first_name %> <%= @hommage.last_name %></div>
       <p class="small txt-darker"><%= @hommage.burial_place %></p>
       <p class="offset-md-top-17 reveal-inline-block">Naissance : <%= @hommage.date_birth %> - Décès : <%= @hommage.date_death %></p>
-      <ul class="list-inline pull-xs-right list-inline-variant-2 offset-top-10">
-        <li><%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-facebook"%></li>
-        <li><%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-twitter"%></li>
-        <li><%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-google"%></li>
-      </ul>
+      <!--<ul class="list-inline pull-xs-right list-inline-variant-2 offset-top-10">
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-facebook"%></li>
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-twitter"%></li>
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-google"%></li>
+      </ul>-->
       <hr class="offset-top-12"/>
       <!-- Responsive-tabs-->
       <div class="responsive-tabs responsive-tabs-default offset-top-57">
@@ -61,14 +61,14 @@
         <div class="resp-tabs-container text-left">
           <div>
             <div class="content-textarea"><%= @hommage.description.html_safe %></div>
-            <h3 class="offset-top-63">Charitable Donations May be Made to</h3>
+            <h3 class="offset-top-63">La mort n'est que le début d'une autre vie</h3>
             <ul class="list offset-top-20">
-              <li><span class="icon-xxs icon-darker icon fa-phone"></span> <span class="fw-bold">1-800-1234-567</span> <a href="callto:1-800-1234-567">Call us please</a>
+              <li><span class="icon-xxs icon-darker icon fa-envelope"></span> <span class="fw-bold">contact@datafter.fr</span> Contactez-nous pour plus d'informations.
               </li>
-              <li><span class="icon-xxs icon-darker icon fa-map-marker"></span> <span class="txt-light"><a href="#">5750 S Kenwood Ave 3, Chicago, IL 60637</a></span>
+              <li><span class="icon-xxs icon-darker icon fa-map-marker"></span> <span class="txt-light"><a href="#">Lieu de l'enterrement du défunt : <%= @hommage.burial_place %></a></span>
               </li>
             </ul>
-            <div class="btn-group-variant-2 offset-top-35 text-center text-xs-left"><a href="#" class="btn btn-xs btn-primary btn-min-width-240">Click to send flowers</a><a href="#" class="btn btn-xs btn-primary btn-min-width-240">View/Sign Guest Book</a></div>
+            <div class="btn-group-variant-2 offset-top-35 text-center text-xs-left"><a href="#" class="btn btn-xs btn-primary btn-min-width-240">Envoi de fleur bientôt disponible</a><!--<a href="#" class="btn btn-xs btn-primary btn-min-width-240">View/Sign Guest Book</a>--></div>
           </div>
           <div>
 
