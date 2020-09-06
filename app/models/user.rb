@@ -70,4 +70,5 @@ class User < ApplicationRecord
   has_many :hommages
   has_one :memory
   has_many :messages
+  has_many :animals
 end
