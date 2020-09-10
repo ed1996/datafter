@@ -1,0 +1,37 @@
+<% if action_name == "home" and controller_name === "pages" %>
+    <section class="section-60 section-md-83 bg-pampas">
+      <div class="shell">
+        <h2 class="text-center divider">Hommages pour animaux</h2>
+        <div class="range text-center text-md-left">
+          <% @animals.each do |animal| %>
+              <div class="cell-xs-6 cell-md-3 offset-top-50 offset-md-top-0">
+                <div class="thumbnail height-30rem"><%= render "layouts/thumbnail", notResponsive: true, height: "30rem", image: defined?(animal.pictures[0]) ? animal.pictures[0] : "", alt: animal.name %></div>
+                <div class="caption offset-top-13  display-flex fd-column">
+                  <%= link_to animal.name, animal_path(animal), class:"h3 text-ellipsis" %>
+                  <p class="offset-md-top-17"><%= animal.date_birth %> - <%= hommage.date_death %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
+        <div class="text-center offset-top-40"><a href="<%= list_hommages_path %>" class="btn btn-sm btn-transparent-2">voir tous les hommages</a></div>
+      </div>
+    </section>
+<% else %>
+    <div class="<% if action_name === 'search' %>rd-search-results offset-top-60 <% else %> offset-top-0 range <% end %>">
+      <% @animals.each do |animal| %>
+          <div class="cell-xs-6 cell-md-3 offset-top-60">
+            <%= render "layouts/thumbnail", notResponsive: true, image: defined?(animal.pictures[0]) ? animal.pictures[0] : false, height: action_name === 'search' ? "50rem" : "30rem", alt: animal.name %>
+            <div class="caption offset-top-13 display-flex fd-column">
+              <%= link_to animal.name, animal_path(animal), class:"h3 text-ellipsis" %>
+              <p class="offset-md-top-17"><%= animal.date_birth %> - <%= animal.date_death %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+<% end %>
+
+<% if action_name != "home" and controller_name != "pages" %>
+    <div class="text-center offset-top-40">
+      <%= will_paginate @animals, :renderer => 'PaginateHelper::LinkRenderer' %>
+    </div>
+<% end %>

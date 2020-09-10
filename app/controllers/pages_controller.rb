@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def home
       @hommages = Hommage.limit(4).order('id DESC')
+      @animals = Animal.limit(4).order('id DESC')
       @contact = Contact.new
   end
 

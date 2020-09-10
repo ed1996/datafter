@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190710201931) do
+ActiveRecord::Schema.define(version: 20200908205445) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20190710201931) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "animals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.date "date_birth"
+    t.date "date_death"
+    t.string "category"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_animals_on_user_id"
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -107,6 +119,17 @@ ActiveRecord::Schema.define(version: 20190710201931) do
     t.index ["hommage_id"], name: "index_photos_on_hommage_id"
   end
 
+  create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "animal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["animal_id"], name: "index_pictures_on_animal_id"
+  end
+
   create_table "recipients_memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "recipient"
     t.bigint "memory_id"
@@ -175,10 +198,12 @@ ActiveRecord::Schema.define(version: 20190710201931) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "animals", "users"
   add_foreign_key "hommages", "users"
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "users"
   add_foreign_key "photos", "hommages"
+  add_foreign_key "pictures", "animals"
   add_foreign_key "recipients_memories", "memories"
   add_foreign_key "recipients_messages", "messages"
 end

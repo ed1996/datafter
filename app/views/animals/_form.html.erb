@@ -1,0 +1,72 @@
+<div class="shell text-center">
+  <h2 class="divider offset-top-80">
+    <% if @animal.id %>
+        Modifier l'hommage de <%= @animal.name %>
+    <% else %>
+        Rendre un hommage
+    <% end %>
+  </h2>
+  <div class="range">
+    <div class="cell-md-10 cell-md-preffix-1">
+      <p class="h5">Create your contact form in seconds. With CF you can manage multiple contact forms easly.</p>
+    </div>
+  </div>
+  <div class="range offset-md-top-60">
+    <div class="cell-lg-8 cell-lg-preffix-2">
+      <!-- RD Mailform-->
+      <%= form_for @animal, html: {multipart: true, class: "rd-mailform text-left offset-top-57"} do |f| %>
+          <div class="range">
+            <%= render 'shared/errors', resource: @animal %>
+            <div class="cell-sm-6">
+              <div class="form-group">
+                <label for="last-name" class="form-label">Nom de l'animal</label>
+                <%= f.text_field :name, placeholder:"Nom de l'animal", class:"form-control" %>
+              </div>
+            </div>
+            <div class="cell-sm-6">
+              <div class="form-group">
+                <label class="form-label">Type d'animal</label>
+                <%= f.select :category, [["Chien","Chien"],["Chat","Chat"]], id: "category", class:"form-control" %>
+              </div>
+            </div>
+            <div class="cell-sm-6 offset-top-46">
+              <div class="form-group">
+                <label for="date-birth" class="form-label">Date de naissance</label>
+                <%= f.date_field :date_birth, class:"form-control" %>
+              </div>
+            </div>
+            <div class="cell-sm-6 offset-top-46">
+              <div class="form-group">
+                <label for="date-death" class="form-label">Date de décès</label>
+                <%= f.date_field :date_death, class:"form-control" %>
+              </div>
+            </div>
+            <div class="cell-sm-12 display-flex offset-top-48">
+              <div class="form-group">
+               <span class="btn btn-default btn-file">
+                  <label for="images" class="form-label">Ajouter des photos !</label>
+                 <%= file_field_tag "images[]", id: "images-input", multiple: true, type: :file, onchange: "addPicture(this);" %>
+              </span>
+              </div>
+            </div>
+            <% if @pictures %>
+                <div class="cell-sm-12 offset-top-25">
+                  <div id="photos">
+                    <%= render 'pictures/list', resources: @pictures %>
+                  </div>
+                </div>
+            <% end %>
+            <div class="cell-sm-12 offset-top-46">
+              <div class="form-group">
+                <label for="burial-place" class="form-label">Biographie de l'animal</label>
+                <%= f.cktext_area :description, :class => 'anyclas ckeditor', :ckeditor => {:toolbar => 'mini'} %>
+              </div>
+            </div>
+            <div class="cell-xs-12 text-center offset-top-27">
+              <%= f.submit "Je valide mon annonce", class:"btn btn-primary btn-sm btn-min-width-230" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

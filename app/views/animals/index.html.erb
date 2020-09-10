@@ -1,0 +1,11 @@
+<%= content_for :meta_title, "Liste de vos hommages pour animaux Datafter | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "Parcourez tout vos hommages pour animaux que vous avez rendu | #{DEFAULT_META["meta_description"]}" %>
+<div class="container">
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">Tous mes hommages pour animaux</h2>
+  <div class="range">
+    <div class="cell-md-8 cell-md-preffix-2">
+      <%= render 'layouts/searchanimal' %>
+    </div>
+  </div>
+  <%= render 'layouts/animals' %>
+</div>

@@ -1,0 +1,125 @@
+<%= content_for :meta_title, "#{@animal.name} | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "#{@animal.description} | #{DEFAULT_META["meta_description"]}" %>
+<% if defined? (image) and defined? (image.image.url())%>
+    <%= content_for :meta_image, "#{@animal.pictures[0].image.url()} | #{DEFAULT_META["meta_image"]}" %>
+<% end %>
+<div class="shell">
+  <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @animal.name %>
+    <% if defined?(current_user.id) and (@animal.user_id === current_user.id) %>
+        <a href="<%= edit_animal_path(@animal) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
+    <% end %></h2>
+  <div class="range">
+    <div class="cell-sm-6 cell-sm-preffix-3 cell-md-4 cell-md-preffix-0">
+      <div class="inset-md-right-22">
+        <%= render "layouts/thumbnail", image: @pictures[0]  %>
+        <!-- Accordion-->
+        <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group offset-top-40">
+          <div class="panel panel-default">
+            <div id="headingOne" role="tab" class="panel-heading">
+              <div class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><span class="btn-plus"></span>Visite</a></div>
+            </div>
+           <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+              <div class="panel-body">Type d'animal : <%= @animal.category %>.</div>
+            </div>
+          </div>
+          <!-- <div class="panel panel-default">
+             <div id="headingTwo" role="tab" class="panel-heading">
+               <div class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed"><span class="btn-plus"></span>Funeral Service</a></div>
+             </div>
+             <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" class="panel-collapse collapse">
+               <div class="panel-body">You can share the organization of a funeral with relatives and friends of the deceased.</div>
+             </div>
+           </div>
+           <div class="panel panel-default">
+             <div id="headingThree" role="tab" class="panel-heading">
+               <div class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed"><span class="btn-plus"></span>Funeral Mass</a></div>
+             </div>
+             <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree" class="panel-collapse collapse">
+               <div class="panel-body">A Funeral Mass is an important sacrament of the Eucharist held by a deacons or a priest during a funeral.</div>
+             </div>
+           </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="cell-md-8">
+      <div class="h3"><%= @animal.name %></div>
+      <%#<p class="small txt-darker"><%= @hommage.burial_place %></p>
+      <p class="offset-md-top-17 reveal-inline-block">Naissance : <%= @animal.date_birth %> - Décès : <%= @animal.date_death %></p>
+      <!--<ul class="list-inline pull-xs-right list-inline-variant-2 offset-top-10">
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-facebook"%></li>
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-twitter"%></li>
+        <li><%#<%= link_to 'Datafter', root_path, class: "icon icon-xxs icon-darker fa-google"%></li>
+      </ul>-->
+      <hr class="offset-top-12"/>
+      <!-- Responsive-tabs-->
+      <div class="responsive-tabs responsive-tabs-default offset-top-57">
+        <ul class="resp-tabs-list resp-tabs-list-3">
+          <li>Biographie</li>
+          <li>Photos</li>
+          <li>Envoyer des fleurs</li>
+        </ul>
+        <div class="resp-tabs-container text-left">
+          <div>
+            <div class="content-textarea"><%= @animal.description.html_safe %></div>
+            <h3 class="offset-top-63">La mort n'est que le début d'une autre vie</h3>
+            <ul class="list offset-top-20">
+              <li><span class="icon-xxs icon-darker icon fa-envelope"></span> <span class="fw-bold">contact@datafter.fr</span> Contactez-nous pour plus d'informations.
+              </li>
+             <%# <li><span class="icon-xxs icon-darker icon fa-map-marker"></span> <span class="txt-light"><a href="#">Lieu de l'enterrement du défunt : <%= @animal.burial_place %></a></span>
+              </li>
+            </ul>
+            <div class="btn-group-variant-2 offset-top-35 text-center text-xs-left"><a href="#" class="btn btn-xs btn-primary btn-min-width-240">Envoi de fleur bientôt disponible</a><!--<a href="#" class="btn btn-xs btn-primary btn-min-width-240">View/Sign Guest Book</a>--></div>
+          </div>
+          <div>
+
+            <!-- Slick Carousel-->
+            <div data-arrows="true" data-loop="false" data-dots="false" data-swipe="true" data-xs-items="1" data-child="#child-carousel" data-for=".thumbnail-carousel" class="slick-slider carousel-parent offset-top-10">
+
+              <% @pictures.each do |picture| %>
+                  <div class="item">
+                    <!-- PhotoSwipe-->
+                    <a data-photo-swipe-item="" data-size="1200x789" href="<%= picture.image.url() %>" data-author="Unknow" class="figure">
+                      <%= render "layouts/thumbnail",  notResponsive: true, height: "60rem", image: picture, alt: @animal.name %>
+                    </a>
+                  </div>
+              <% end %>
+            </div>
+            <div id="child-carousel" data-for=".carousel-parent" data-arrows="true" data-loop="false" data-dots="false" data-swipe="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="4" data-lg-items="4" data-slide-to-scroll="1" class="slick-slider slick-slider-3 thumbnail-carousel">
+              <% @pictures.each do |picture| %>
+                  <div class="item">
+                    <!-- PhotoSwipe-->
+                    <%= render "layouts/thumbnail", notResponsive: true, height: "15rem", image: picture, alt: @animal.name %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <div>
+            <h3>Bientôt disponible</h3>
+            <!--<p class="offset-top-20">The essence of a green funeral is age-old elemental simplicity. It rejects the so-called traditional funeral with its stuffy, Victorian, urban look, in favour of an outdoorsy, homespun, back-to-nature look. It prefers an unspoilt landscape to that of a regimented conventional cemetery. If it’s a look you like, natural burial is as lovely as it gets.</p>
+            <ul class="list-marked list-marked-variant-2 offset-top-10 inset-xs-left-38">
+              <li>Buy direct from our local area florist and save on wire service fees</li>
+              <li>No need to enter our funeral home address, nor the service details - our order system already knows this</li>
+              <li>Just pick out the flowers, add your message and pay online. Your order is immediately sent to our local flower shop</li>
+              <li>We retain a copy of your order so we know that your flowers are on their way</li>
+            </ul>
+            <h3 class="txt-black offset-top-63">Bouquets</h3>
+            <div class="range offset-top-0">
+              <div class="cell-xs-6 cell-sm-3">
+                <div class="thumbnail text-center thumbnail-product thumbnail-product-variant-1"><a href="#" class="img-link">
+                  <%= render "layouts/thumbnail", height: "35rem", image: @pictures[0], alt: @animal.name %>
+                </a>
+                  <div class="caption">
+                    <div class="reveal-block"><a href="single.html" class="h5 txt-matrix">Heavenly Red <br class="veil reveal-lg-inline"> Rose Hand-tied</a></div>
+                    <div class="h4 reveal-inline-block">$39.00</div> <span class="txt-darker reveal-block reveal-lg-inline-block">
+                    <del>$49.00</del></span><a href="#" class="btn btn-xs btn-primary">add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-top-22 text-center text-md-left"><a href="#" class="btn btn-sm btn-transparent-2 btn-min-width-220">view all shop</a></div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

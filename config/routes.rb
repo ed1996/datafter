@@ -60,11 +60,16 @@ Rails.application.routes.draw do
     get 'search', on: :collection
     get 'list', on: :collection
   end
+  resources :animals do
+    get 'search', on: :collection
+    get 'list', on: :collection
+  end
   resources :messages do
     get 'search', on: :collection
   end
   resources :recipients_messages
   resources :photos
+  resources :pictures
   resources :memories
   resources :recipients_memories
   resources :contacts, only: [:new, :create]

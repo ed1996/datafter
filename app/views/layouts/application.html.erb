@@ -101,6 +101,9 @@
             <% if (controller_name == "hommages" and (action_name == "list" or action_name == "index" or action_name == "search")) %>
               <%= render 'hommages/banners' %>
             <% end %>
+              <% if (controller_name == "animals" and (action_name == "list" or action_name == "index" or action_name == "search")) %>
+                  <%= render 'animals/banners' %>
+              <% end %>
             <section class="section-53 section-bottom-78">
               <%= render "layouts/breadcrumb" %>
               <%= yield %>

@@ -1,0 +1,14 @@
+<% if @pictures %>
+    <div class="row">
+      <% @pictures.each do |picture| %>
+          <div class="col-md-4" id="photo-<%= picture.id %>">
+            <div class="panel-heading preview">
+              <%= image_tag picture.image.url() %>
+            </div>
+            <button class="btn-width-full btn btn-transparent-2 btn-xxs" type="button" data-picture="<%= picture.id %>" value="<%= picture %>" onclick="deletePicture(this, `/pictures/${<%= picture.id %>}`)">
+              Suppression
+            </button>
+          </div>
+      <% end %>
+<% end %>
+</div>
