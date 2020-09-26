@@ -11,8 +11,8 @@ class User < ApplicationRecord
 
   before_save :anti_spam
 
-  extend FriendlyId
-  friendly_id :slug_users, use: [:slugged, :history]
+  #extend FriendlyId
+  #friendly_id :slug_users, use: [:slugged, :history]
 
   do_not_validate_attachment_file_type :avatar
 

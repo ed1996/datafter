@@ -5,6 +5,8 @@
 <% end %>
 <div class="shell">
   <h2 class="divider offset-top-40 offset-md-top-80 text-center">En Mémoire de <%= @hommage.first_name %> <%= @hommage.last_name %>
+    <br>
+    <%= image_tag "/assets/images/couronne-flower.jpg", alt: "", style:"width: 250px;" %>
     <% if defined?(current_user.id) and (@hommage.user_id === current_user.id) %>
       <a href="<%= edit_hommage_path(@hommage) %>" class="btn btn-primary btn-sm btn-icon btn-icon-left"><span class="icon icon-white fa-edit"></span>Modifier</a>
     <% end %></h2>
@@ -69,6 +71,8 @@
               </li>
             </ul>
             <div class="btn-group-variant-2 offset-top-35 text-center text-xs-left"><a href="#" class="btn btn-xs btn-primary btn-min-width-240">Envoi de fleur bientôt disponible</a><!--<a href="#" class="btn btn-xs btn-primary btn-min-width-240">View/Sign Guest Book</a>--></div>
+            <br>
+            <%= image_tag "/assets/images/flower-deuil.jpg", alt: "", style:"width: 450px;" %>
           </div>
           <div>
 

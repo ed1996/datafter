@@ -7,7 +7,7 @@ class AnimalsController < ApplicationController
   end
 
 
-  before_action :require_subscribed!, except: [:search, :list, :show]
+  before_action :require_subscribed!, except: [:search, :list, :show, :edit, :update]
 
 
 
