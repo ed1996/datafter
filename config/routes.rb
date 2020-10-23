@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_error"
 
   resources :subscribers
+  resources :charges, only: [:new, :create]
   resources :users, only: [:show]
 =begin
   resources :users, only: [:show] do

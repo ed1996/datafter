@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  
   before_action :add_breadcrumbs_hommages, only: [:show,]
   before_action :add_breadcrumbs_edit_profile, only: [:show]
   before_action :add_breadcrumbs_my_profile, only: [:show]
 
   def show
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update_avatar
-    @user = User.friendly.find(current_user.id)
+    @user = User.find(current_user.id)
     if params[:images]
       @user.avatar = :images
     else
@@ -21,8 +21,8 @@ class UsersController < ApplicationController
   end
 
   private
-  def set_user
-    @message = User.friendly.find(params[:id])
-  end
+#  def set_user
+ #   @message = User.friendly.find(params[:id])
+ # end
 
 end

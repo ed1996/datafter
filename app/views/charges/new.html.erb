@@ -1,0 +1,17 @@
+<!-- app/views/charges/new.html.erb -->
+<%= content_for :meta_title, "Abonnez-vous Datafter | #{DEFAULT_META["meta_title"]}" %>
+<%= content_for :meta_description, "Pour accèder à plus de fonctionnalités de notre plateforme abboner vous; | #{DEFAULT_META["meta_description"]}" %>
+<div class="shell">
+  <h2 class="divider offset-top-80 text-center">Paiement avec stripe :</h2>
+
+  <div class="text-center">
+    <%= form_tag charges_path do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.application.secrets.stripe[:publishable_key] %>"
+                data-description="Paiement pour créer un hommage"
+                data-amount="500"
+                data-locale="auto"></script>
+    <% end %>
+  </div>
+  <br><br>
+</div>
