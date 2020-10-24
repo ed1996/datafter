@@ -5,7 +5,7 @@
   <h2 class="divider offset-top-80 text-center">Paiement avec stripe :</h2>
 
   <div class="text-center">
-    <%= form_tag charges_path do %>
+    <%= form_tag chargeanimals_path do %>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.application.secrets.stripe[:publishable_key] %>"
                 data-description="Paiement pour créer un hommage"

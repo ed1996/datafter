@@ -6,8 +6,10 @@ ActiveAdmin.register Hommage do
 #
 # or
 #
+
+
  permit_params do
-   permitted = [:last_name, :first_name, :date_birth, :date_death, :burial_place, :description, :user_id]
+   permitted = [:last_name, :first_name, :date_birth, :date_death, :burial_place, :description, :user_id, :photos]
    permitted << :other if params[:action] == 'create' && current_user.admin?
    permitted
  end

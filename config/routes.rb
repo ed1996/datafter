@@ -55,6 +55,7 @@ Rails.application.routes.draw do
 
   resources :subscribers
   resources :charges, only: [:new, :create]
+  resources :chargeanimals, only: [:new, :create]
   resources :users, only: [:show]
 =begin
   resources :users, only: [:show] do

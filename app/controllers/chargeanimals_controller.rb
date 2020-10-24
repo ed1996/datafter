@@ -1,4 +1,4 @@
-class ChargesController < ApplicationController
+class ChargeanimalsController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -18,12 +18,12 @@ class ChargesController < ApplicationController
       charge = Stripe::Charge.create(
           customer: customer.id,
           amount: @amount,
-          description: 'Hommage pour un humain',
+          description: 'Hommage pour un animal',
           currency: 'eur'
       )
       current_user.update_attribute(:subscribed, true)
       current_user.update_attribute(:stripeid, customer.id)
-      redirect_to new_hommage_path
+      redirect_to new_animal_path
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path

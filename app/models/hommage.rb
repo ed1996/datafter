@@ -1,6 +1,6 @@
 class Hommage < ApplicationRecord
   belongs_to :user
-  has_many :photos
+  has_many :photos, :dependent => :destroy
   before_save :anti_spam
 
   validates :last_name, presence: true

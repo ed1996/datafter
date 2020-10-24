@@ -37,7 +37,8 @@ class AnimalsController < ApplicationController
     @animal = current_user.animals.build(animal_params)
     if @animal.save
       save_pictures
-      redirect_to edit_animal_path(@animal), notice:"Votre annonce a été ajouté avec succès"
+#      redirect_to edit_animal_path(@animal), notice:"Votre annonce a été ajouté avec succès"
+      redirect_to animals_path, notice:"Votre hommage a été ajouté avec succès"
     else
       render :new
     end
