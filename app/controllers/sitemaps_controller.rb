@@ -5,6 +5,7 @@ class SitemapsController < ApplicationController
 
   def index
     @hommages = Hommage.all
+    @animals = Animal.all
   end
 
   private

@@ -16,5 +16,11 @@ xml.tag! 'sitemapindex', 'xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9
     end
   end
 
+  @animals.each do |animal|
+    xml.tag! 'url' do
+      xml.tag! 'loc', animal_url(animal)
+      xml.lastmod animal.updated_at.strftime("%F")
+    end
+  end
+
 end
-view raw
