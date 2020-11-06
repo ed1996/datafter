@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get "/robots.:format", to: "pages#robots"
+  get '/robots.:format', to: 'pages#robots'
   get '/contact', to: 'pages#contact'
   get '/services', to: 'pages#services'
   get '/legal', to: 'pages#legal'
