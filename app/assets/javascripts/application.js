@@ -19,6 +19,7 @@
 //= require toastr
 //= require turbolinks
 //= require html5shiv.min
+//= require google_analytics
 //= require_tree .
 
 toastr.options = {
