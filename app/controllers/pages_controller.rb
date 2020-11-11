@@ -22,6 +22,10 @@ class PagesController < ApplicationController
 
   end
 
+  def cgv
+
+  end
+
   def services
    # add_breadcrumbs_contact
     add_breadcrumbs_services
