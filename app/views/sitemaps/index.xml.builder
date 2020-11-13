@@ -9,6 +9,22 @@ xml.tag! 'sitemapindex', 'xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9
     xml.tag! 'loc', contact_url
   end
 
+  xml.tag! 'url' do
+    xml.tag! 'loc', services_url
+  end
+
+  xml.tag! 'url' do
+    xml.tag! 'loc', legal_url
+  end
+
+  xml.tag! 'url' do
+    xml.tag! 'loc', cgv_url
+  end
+
+  xml.tag! 'url' do
+    xml.tag! 'loc', politique_url
+  end
+
   @hommages.each do |hommage|
     xml.tag! 'url' do
       xml.tag! 'loc', hommage_url(hommage)
