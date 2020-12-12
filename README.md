@@ -1,5 +1,5 @@
 ### Getting Started Projetc Datafter
-nouveau test
+
 Add publishable_key and secret_key 
 in files config => initialiszers => stripe.rb 
 
